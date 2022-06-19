@@ -173,7 +173,13 @@
         });
 
         $(document).on('keypress', function(e){
-            $.alert(e.event);
+
+            var key = e.which || e.keyCode;
+            if (key == 13) { // codigo da tecla enter
+                $.alert('carregou enter o valor digitado foi: ' +this.value);
+            }
+
+
         });
 
     })
