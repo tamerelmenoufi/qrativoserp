@@ -147,14 +147,14 @@
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="nome" class="form-control" placeholder="Nome" required autofocus>
+                <input type="text" id="nome" class="form-control" placeholder="Login" required autofocus>
                 <input type="password" id="senha" class="form-control" placeholder="Senha" required>
                 <div id="remember" class="checkbox">
                     <label>
-                        <input type="checkbox" value="remember-me"> Lembre-se de mim
+                        <input type="checkbox" value="remember-me"> Manter-me sempre conectado
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signinXX" type="submit">Entrar</button>
             </form><!-- /form -->
             <a href="#" class="forgot-password">
                 Esqueceu a senha?
