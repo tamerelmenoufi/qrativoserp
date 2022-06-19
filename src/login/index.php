@@ -149,7 +149,7 @@
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="text" id="nome" class="form-control" placeholder="Login" required autofocus>
                 <input type="password" id="senha" class="form-control" placeholder="Senha" required>
-                <div id="remember" class="checkbox">
+                <div id="remember" class="checkbox mb-1 mt-1">
                     <label>
                         <input type="checkbox" value="remember-me"> Manter-me sempre conectado
                     </label>
