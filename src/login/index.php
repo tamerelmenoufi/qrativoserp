@@ -14,6 +14,7 @@
 .card-container.card {
     width: 350px;
     padding: 40px 40px;
+    border-radius:5px;
 }
 
 
