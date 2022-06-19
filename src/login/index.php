@@ -8,7 +8,8 @@
     width:100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    /* background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33)); */
+    background-image: linear-gradient(#19ae46, #ffffff);
 }
 
 .card-container.card {
