@@ -44,13 +44,10 @@
 }
 
 .profile-img-card {
-    width: 96px;
-    height: 96px;
+    width: 150px;
+    height: auto;
     margin: 0 auto 10px;
     display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
 }
 
 /*
