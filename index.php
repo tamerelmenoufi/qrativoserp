@@ -11,7 +11,7 @@
   <body>
     <h1>Hello, world!</h1>
 
-    <button id="alerta">TESTE</button>
+    <button class="btn btn-success" id="alerta">TESTE</button>
 
     <?php
     include("lib/footer.php");
