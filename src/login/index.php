@@ -1,3 +1,31 @@
+<?php
+    include("../../lib/includes.php");
+
+    if($_POST['acao'] == 'login'){
+        $login = $_POST['login'];
+        $senha = md5($_POST['senha']);
+        $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
+        $result = mysqli_query($conn, $query);
+        if(mysqli_num_rows($result)){
+            $d = mysqli_fetch_object($result);
+            $_SESSION['QrAtivosLogin'] = $d->codigo;
+            $retorno = [
+                'success' => true,
+                'QrAtivosLogin' => $d->codigo,
+                'MaterConnectado' => $_POST['MaterConnectado'],
+                'msg' => 'Login Realizado com sucesso'
+            ];
+        }else{
+            $retorno = [
+                'success' => false,
+                'QrAtivosLogin' => false,
+                'MaterConnectado' => false,
+                'msg' => 'Ocorreu um erro no seu login'
+            ];
+        }
+        echo json_encode($retorno);
+    }
+?>
 <style>
 .pagina{
     position:fixed;
@@ -125,7 +153,7 @@
                         <input type="checkbox" value="remember-me"> Manter-me sempre conectado
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signinXX" type="submit">Entrar</button>
+                <button id="Acessar" class="btn btn-lg btn-primary btn-block btn-signinXX" type="submit">Entrar</button>
             </div><!-- /form -->
             <a href="#" class="forgot-password">
                 Esqueceu a senha?
@@ -133,3 +161,20 @@
         </div><!-- /card-container -->
     </div><!-- /container -->
 </div>
+
+<script>
+    $(function(){
+        AcaoBotao = ()=>{
+            $.alert('Acionando o botão!');
+        };
+
+        $("#Acessar").click(function(){
+            AcaoBotao();
+        });
+
+        $(document).on('keypress', function(e){
+            $.alert(e.event);
+        });
+
+    })
+</script>
