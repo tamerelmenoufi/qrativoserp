@@ -16,14 +16,6 @@
     padding: 40px 40px;
 }
 
-.btn {
-    font-weight: 700;
-    height: 36px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
-}
 
 /*
  * Card component
@@ -102,30 +94,6 @@
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-}
-
-.btn-signin {
-    /*background-color: #4d90fe; */
-    background-color: rgb(104, 145, 162);
-    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-    padding: 0px;
-    font-weight: 700;
-    font-size: 14px;
-    height: 36px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
-}
-
-.btn-signin:hover,
-.btn-signin:active,
-.btn-signin:focus {
-    background-color: rgb(12, 97, 33);
 }
 
 .forgot-password {
