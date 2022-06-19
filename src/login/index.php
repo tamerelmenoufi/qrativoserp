@@ -1,5 +1,11 @@
 <style>
 .pagina{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    width:100%;
     height: 100%;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
