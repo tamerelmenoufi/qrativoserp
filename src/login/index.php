@@ -116,7 +116,7 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="img/logo.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
+            <div class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="text" id="nome" class="form-control" placeholder="Login" required autofocus>
                 <input type="password" id="senha" class="form-control" placeholder="Senha" required>
@@ -126,7 +126,7 @@
                     </label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signinXX" type="submit">Entrar</button>
-            </form><!-- /form -->
+            </div><!-- /form -->
             <a href="#" class="forgot-password">
                 Esqueceu a senha?
             </a>
