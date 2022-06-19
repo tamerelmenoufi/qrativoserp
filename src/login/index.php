@@ -44,7 +44,7 @@
 }
 
 .profile-img-card {
-    width: 150px;
+    width: 200px;
     height: auto;
     margin: 0 auto 10px;
     display: block;
