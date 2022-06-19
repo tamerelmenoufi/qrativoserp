@@ -1,3 +1,13 @@
+<?php
+    include("lib/includes.php");
+
+    if($_SESSION['QrAtivosLogin']){
+        $url = "src/home/index.php";
+    }else{
+        $url = "src/login/index.php";
+    }
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,9 +20,7 @@
     ?>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-
-    <button class="btn btn-success" id="alerta">TESTE</button>
+    <div class="CorpoApp"></div>
 
     <?php
     include("lib/footer.php");
@@ -21,10 +29,12 @@
     <script>
         $(function(){
 
-            $("#alerta").click(function(){
-                $.alert('Tudo funcionando até aqui!')
+            $.ajax({
+                url:"<?=$url?>",
+                success:function(dados){
+                    $(".CorpoApp").html(dados);
+                }
             });
-
         })
     </script>
 
