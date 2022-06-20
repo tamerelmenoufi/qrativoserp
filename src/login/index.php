@@ -8,7 +8,7 @@
         $login = 'tamer';
         $senha = md5('Mf6t1y76');
 
-        $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
+        echo $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
         $result = mysqli_query($conn, $query);
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
