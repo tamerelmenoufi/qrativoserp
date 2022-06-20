@@ -174,7 +174,7 @@
             $.ajax({
                 url:"src/login/index.php",
                 type:"POST",
-                dataType:"JSON",
+                dataType:"json",
                 data:{
                     acao:'login'
                 },
