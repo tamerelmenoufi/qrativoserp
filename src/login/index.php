@@ -14,21 +14,21 @@
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
             $_SESSION['QrAtivosLogin'] = $d->codigo;
-            $retorno = "{
-                'sucesso' : true,
-                'QrAtivosLogin' : $d->codigo,
-                'MaterConnectado' : {$_POST['MaterConnectado']},
-                'msg' : 'Login Realizado com sucesso'
-            }";
+            $retorno = [
+                'sucesso' => true,
+                'QrAtivosLogin' => $d->codigo,
+                'MaterConnectado' => $_POST['MaterConnectado'],
+                'msg' => 'Login Realizado com sucesso'
+            ];
         }else{
-            $retorno = "{
-                'sucesso' : false,
-                'QrAtivosLogin' : false,
-                'MaterConnectado' : false,
-                'msg' : 'Ocorreu um erro no seu login'
-            }";
+            $retorno = [
+                'sucesso' => false,
+                'QrAtivosLogin' => false,
+                'MaterConnectado' => false,
+                'msg' => 'Ocorreu um erro no seu login'
+            ];
         }
-        echo $retorno;
+        echo json_encode($retorno);
         exit();
     }
 ?>
@@ -174,12 +174,13 @@
             $.ajax({
                 url:"src/login/index.php",
                 type:"POST",
-                dataType:"json",
+                // dataType:"json",
                 data:{
                     acao:'login'
                 },
                 success:function(dados){
-                    $.alert(dados);
+                    let retorno = JSON.parse(dados);
+                    $.alert(retorno.sucesso);
                 }
             });
         };
