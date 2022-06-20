@@ -18,14 +18,14 @@
                 'sucesso' => true,
                 'QrAtivosLogin' => $d->codigo,
                 'MaterConnectado' => $_POST['MaterConnectado'],
-                'msg' => 'Login Realizado com sucesso'
+                'msg' => 'Login Realizado com sucesso',
             ];
         }else{
             $retorno = [
                 'sucesso' => false,
                 'QrAtivosLogin' => false,
                 'MaterConnectado' => false,
-                'msg' => 'Ocorreu um erro no seu login'
+                'msg' => 'Ocorreu um erro no seu login',
             ];
         }
         echo json_encode($retorno);
