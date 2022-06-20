@@ -15,14 +15,14 @@
             $d = mysqli_fetch_object($result);
             $_SESSION['QrAtivosLogin'] = $d->codigo;
             $retorno = [
-                'success' => true,
+                'sucesso' => true,
                 'QrAtivosLogin' => $d->codigo,
                 'MaterConnectado' => $_POST['MaterConnectado'],
                 'msg' => 'Login Realizado com sucesso'
             ];
         }else{
             $retorno = [
-                'success' => false,
+                'sucesso' => false,
                 'QrAtivosLogin' => false,
                 'MaterConnectado' => false,
                 'msg' => 'Ocorreu um erro no seu login'
@@ -179,7 +179,7 @@
                     acao:'login'
                 },
                 success:function(dados){
-                    $.alert(dados.success);
+                    $.alert(dados.sucesso);
                 }
             });
         };
