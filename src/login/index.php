@@ -174,13 +174,14 @@
             $.ajax({
                 url:"src/login/index.php",
                 type:"POST",
-                // dataType:"json",
+                dataType:"json",
                 data:{
                     acao:'login'
                 },
                 success:function(dados){
-                    let retorno = JSON.parse(dados);
-                    $.alert(retorno.sucesso);
+                    // let retorno = JSON.parse(dados);
+                    // $.alert(dados.sucesso);
+                    console.log(dados);
                 }
             });
         };
