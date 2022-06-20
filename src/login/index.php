@@ -181,7 +181,7 @@
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
                     // $.alert(dados.sucesso);
-                    console.log(dados);
+                    console.log(dados.QrAtivosLogin);
                 }
             });
         };
