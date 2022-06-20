@@ -24,6 +24,7 @@
             ];
         }
         echo json_encode($retorno);
+        exit();
     }
 ?>
 <style>
@@ -169,6 +170,9 @@
                 url:"src/login/index.php",
                 type:"POST",
                 typeData:"JSON",
+                data:{
+                    acao:'login'
+                },
                 success:function(dados){
                     $.alert(dados);
                 }
