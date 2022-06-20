@@ -165,7 +165,14 @@
 <script>
     $(function(){
         AcaoBotao = ()=>{
-            $.alert('Acionando o botão!');
+            $.ajax({
+                url:"src/login/index.php",
+                type:"POST",
+                typeData:"JSON",
+                success:function(dados){
+                    $.alert(dados);
+                }
+            });
         };
 
         $("#Acessar").click(function(){
