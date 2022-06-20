@@ -10,9 +10,6 @@
 
         $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
         $result = mysqli_query($conn, $query);
-        $d = mysqli_fetch_object($result);
-
-        print_r($d);
 
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
