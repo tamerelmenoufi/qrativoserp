@@ -6,7 +6,7 @@
         $senha = md5($_POST['senha']);
         $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
         $result = mysqli_query($conn, $query);
-        if(mysqli_num_rows($conn, $result)){
+        if(mysqli_num_rows($conn)){
             $d = mysqli_fetch_object($result);
             $_SESSION['QrAtivosLogin'] = $d->codigo;
             $retorno = [
