@@ -179,7 +179,7 @@
                     acao:'login'
                 },
                 success:function(dados){
-                    $.alert(dados.sucesso);
+                    $.alert(dados);
                 }
             });
         };
