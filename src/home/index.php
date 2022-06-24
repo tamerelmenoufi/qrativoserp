@@ -8,10 +8,12 @@
             ];
 
         for(i=0;i<pags.length;i++){
+            url = pags[i][0];
+            local = pags[i][1];
             $.ajax({
-                url:pags[i][0],
+                url,
                 success:function(dados){
-                    $("#"+pags[i][1]).html(dados);
+                    $(`#${local}`).html(dados);
                 }
             });
         }
