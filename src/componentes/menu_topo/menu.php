@@ -1,3 +1,9 @@
+<style>
+  .MenuLogin{
+    min-width:250px;
+    margin:0 10px 0 10px;
+  }
+</style>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <img src="img/logo_h60.png" style="height:40px;" alt="Sistema de Gestão QrAtivos">
@@ -38,7 +44,7 @@
                     Link
                 </a>
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
-                    <li>
+                    <li class="MenuLogin">
                         Aqui seria o texto com o conteúdo do DropDown
                     </li>
                 </ul>
