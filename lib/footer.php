@@ -1,1 +1,1 @@
-<script src="lib/vendor/bootstrap-5.2.0/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+<script src="lib/vendor/bootstrap-5.2.0/js/bootstrap.min.js"></script>
