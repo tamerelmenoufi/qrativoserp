@@ -35,8 +35,6 @@
   </div>
 </nav>
 
-<div class="row">
-    <div class="col">
-        <h4>Título da página</h4>
-    </div>
+<div class="col">
+    <h4>Título da página</h4>
 </div>
