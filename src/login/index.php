@@ -152,21 +152,27 @@
             <p id="profile-name" class="profile-name-card"></p>
 
             <div class="form-floating">
-            <input type="text" class="form-control" id="login" placeholder="Digite seu login">
-            <label for="login">E-mail/Login</label>
+                <input type="text" class="form-control" id="login" placeholder="Digite seu login" required autofocus>
+                <label for="login">Login</label>
             </div>
 
-            <div class="form-signin">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="senha" placeholder="Digite sua Senha" required>
+                <label for="senha">Senha</label>
+            </div>
+            <button id="Acessar" class="btn btn-lg btn-primary btn-block btn-signinXX" type="submit">Entrar</button>
+
+            <!-- <div class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="login" class="form-control" placeholder="Login" required autofocus>
+                <input type="text" id="login" class="form-control" placeholder="Login">
                 <input type="password" id="senha" class="form-control" placeholder="Senha" required>
                 <div id="remember" class="checkbox mb-1 mt-1">
                     <label>
                         <input type="checkbox" value="remember-me"> Manter-me sempre conectado
                     </label>
                 </div>
-                <button id="Acessar" class="btn btn-lg btn-primary btn-block btn-signinXX" type="submit">Entrar</button>
-            </div><!-- /form -->
+
+            </div> -->
             <a href="#" class="forgot-password">
                 Esqueceu a senha?
             </a>
