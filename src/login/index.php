@@ -183,7 +183,7 @@
                     // $.alert(dados.sucesso);
                     console.log(dados.QrAtivosLogin);
                     if(dados.QrAtivosLogin > 0){
-                        $.alert(ados.QrAtivosLogin)
+                        $.alert(dados.QrAtivosLogin)
                     }else{
                         $.alert('Ocorreu um erro')
                     }
