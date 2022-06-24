@@ -6,8 +6,14 @@
             'src/componentes/menu_lateral/menu.php',
             ];
 
-        pags.each(function(p){
-        console.log(`p:${p}`);
-        });
+        for(i=0;i<pags.lenght;i++){
+            $.ajax({
+                url:pags[i],
+                success:function(dados){
+                    $("#paginaHome").append(dados);
+                }
+            });
+        }
+
     })
 </script>
