@@ -1,6 +1,16 @@
 <div id="paginaHomeTopo"></div>
 <div id="paginaHomeLateral"></div>
 <script>
+
+    function Abrir(u, l){
+        $.ajax({
+            url:u,
+            success:function(dados){
+                $(`#${l}`).html(dados);
+            }
+        });
+    }
+
     $(function(){
         pags = [
             ['src/componentes/menu_topo/menu.php','paginaHomeTopo'],
@@ -10,12 +20,7 @@
         for(i=0;i<pags.length;i++){
             url = pags[i][0];
             local = pags[i][1];
-            $.ajax({
-                url,
-                success:function(dados){
-                    $(`#${local}`).html(dados);
-                }
-            });
+            Abrir(url, local);
         }
 
     })
