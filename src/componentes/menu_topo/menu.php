@@ -45,8 +45,8 @@
                 </a>
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
                     <li class="MenuLogin">
-                      <ul class="list-group">
-                        <li class="list-group-item disabled" aria-disabled="true">
+                      <ul class="list-group  list-group-flush">
+                        <li class="list-group-item" aria-disabled="true">
                           <i class="fa-solid fa-user"></i> Dados Pessoais
                         </li>
                         <li class="list-group-item">
