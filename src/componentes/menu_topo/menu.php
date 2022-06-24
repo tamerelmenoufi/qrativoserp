@@ -25,7 +25,7 @@
           </ul>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link disabled" href='?s=1'>Link</a>
+          <a class="nav-link" href='?s=1'>Link</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
