@@ -6,7 +6,7 @@
             'src/componentes/menu_lateral/menu.php',
             ];
 
-        for(i=0;i<pags.lenght;i++){
+        for(i=0;i<pags.length;i++){
             $.ajax({
                 url:pags[i],
                 success:function(dados){
