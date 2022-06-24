@@ -45,7 +45,20 @@
                 </a>
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
                     <li class="MenuLogin">
-                        Aqui seria o texto com o conteúdo do DropDown
+                      <ul class="list-group">
+                        <li class="list-group-item disabled" aria-disabled="true">
+                          <i class="fa-solid fa-user"></i> Dados Pessoais
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa-solid fa-key"></i> Senha de Acesso
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa-solid fa-calendar-check"></i> Atividades
+                        </li>
+                        <li class="list-group-item">
+                        <i class="fa-solid fa-right-from-bracket"></i> Sair
+                        </li>
+                      </ul>
                     </li>
                 </ul>
             </li>
