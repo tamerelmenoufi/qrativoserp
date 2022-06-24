@@ -151,14 +151,19 @@
             <img id="profile-img" class="profile-img-card" src="img/logo.png" />
             <p id="profile-name" class="profile-name-card"></p>
 
-            <div class="form-floating">
+            <div class="form-floating mb-1">
                 <input type="text" class="form-control" id="login" placeholder="Digite seu login" required autofocus>
                 <label for="login">Login</label>
             </div>
 
-            <div class="form-floating">
+            <div class="form-floating mb-1">
                 <input type="password" class="form-control" id="senha" placeholder="Digite sua Senha" required>
                 <label for="senha">Senha</label>
+            </div>
+            <div id="remember" class="checkbox mb-1 mt-1">
+                <label>
+                    <input type="checkbox" value="remember-me"> Manter-me sempre conectado
+                </label>
             </div>
             <button id="Acessar" class="btn btn-lg btn-primary btn-block btn-signinXX" type="submit">Entrar</button>
 
