@@ -182,6 +182,12 @@
                     // let retorno = JSON.parse(dados);
                     // $.alert(dados.sucesso);
                     console.log(dados.QrAtivosLogin);
+                    if(dados.QrAtivosLogin > 0){
+                        $.alert(ados.QrAtivosLogin)
+                    }else{
+                        $.alert('Ocorreu um erro')
+                    }
+
                 }
             });
         };
