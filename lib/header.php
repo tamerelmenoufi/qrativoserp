@@ -4,4 +4,4 @@
 
 <script src="lib/vendor/jquery-3.6.0/jquery-3.6.0.min.js" ></script>
 <script src="lib/vendor/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js" ></script>
-<script src="lib/vendor/bootstrap-5.2.0/js/bootstrap.min.js"></script>
+
