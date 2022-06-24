@@ -1,6 +1,12 @@
 <?php
     include("lib/includes.php");
 
+    if($_GET['s']){
+        $_SESSION = [];
+        header("location:./");
+        exit();
+    }
+
     if($_SESSION['QrAtivosLogin']){
         $url = "src/home/index.php";
     }else{
