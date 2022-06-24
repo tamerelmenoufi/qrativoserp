@@ -152,7 +152,7 @@
             <p id="profile-name" class="profile-name-card"></p>
             <div class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="nome" class="form-control" placeholder="Login" required autofocus>
+                <input type="text" id="login" class="form-control" placeholder="Login" required autofocus>
                 <input type="password" id="senha" class="form-control" placeholder="Senha" required>
                 <div id="remember" class="checkbox mb-1 mt-1">
                     <label>
@@ -171,12 +171,16 @@
 <script>
     $(function(){
         AcaoBotao = ()=>{
+            login = $("#login").val();
+            senha = $("#senha").val();
             $.ajax({
                 url:"src/login/index.php",
                 type:"POST",
                 dataType:"json",
                 data:{
-                    acao:'login'
+                    acao:'login',
+                    login,
+                    senha
                 },
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
