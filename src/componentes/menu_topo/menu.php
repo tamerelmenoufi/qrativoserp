@@ -38,7 +38,9 @@
                     Link
                 </a>
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
-                  Aqui o texto do dropdown
+                    <li>
+                        Aqui seria o texto com o conteúdo do DropDown
+                    </li>
                 </ul>
             </li>
         </ul>
