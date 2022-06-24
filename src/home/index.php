@@ -11,7 +11,7 @@
             $.ajax({
                 url:pags[i][0],
                 success:function(dados){
-                    $(`#${pags[i][1]}`).html(dados);
+                    $("#"+pags[i][1]).html(dados);
                 }
             });
         }
