@@ -6,17 +6,13 @@
 </style>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <img src="img/logo_h60.png" style="height:40px;" alt="Sistema de Gestão QrAtivos">
     <div class="collapse navbar-collapse" id="navbarScroll">
 
-      <!-- <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <img src="img/logo_h60.png" style="height:40px;" alt="Sistema de Gestão QrAtivos">
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-      </ul> -->
+      </ul>
 
 
         <ul class="navbar-nav">
