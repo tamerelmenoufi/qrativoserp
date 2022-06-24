@@ -49,9 +49,9 @@
                         <li class="list-group-item" aria-disabled="true">
                           <i class="fa-solid fa-user"></i> Dados Pessoais
                         </li>
-                        <li class="list-group-item">
+                        <a class="list-group-item" href='#'>
                           <i class="fa-solid fa-key"></i> Senha de Acesso
-                        </li>
+                        </a>
                         <li class="list-group-item">
                           <i class="fa-solid fa-calendar-check"></i> Atividades
                         </li>
