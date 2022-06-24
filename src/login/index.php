@@ -5,8 +5,8 @@
         $login = $_POST['login'];
         $senha = md5($_POST['senha']);
 
-        $login = 'tamer';
-        $senha = md5('Mf6t1y76');
+        // $login = 'tamer';
+        // $senha = md5('Mf6t1y76');
 
         $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
         $result = mysqli_query($conn, $query);
