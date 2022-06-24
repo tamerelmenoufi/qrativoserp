@@ -150,6 +150,12 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="img/logo.png" />
             <p id="profile-name" class="profile-name-card"></p>
+
+            <div class="form-floating">
+            <input type="text" class="form-control" id="login" placeholder="Digite seu login">
+            <label for="login">E-mail/Login</label>
+            </div>
+
             <div class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="text" id="login" class="form-control" placeholder="Login" required autofocus>
