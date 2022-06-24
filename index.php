@@ -6,7 +6,6 @@
     }else{
         $url = "src/login/index.php";
     }
-    $url = "src/login/index.php";
 ?>
 <!doctype html>
 <html lang="en">

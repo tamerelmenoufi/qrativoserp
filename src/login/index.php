@@ -187,9 +187,9 @@
                     // $.alert(dados.sucesso);
                     console.log(dados.QrAtivosLogin);
                     if(dados.QrAtivosLogin > 0){
-                        $.alert(dados.QrAtivosLogin)
+                        window.location.href='./';
                     }else{
-                        $.alert('Ocorreu um erro')
+                        $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
                     }
 
                 }
