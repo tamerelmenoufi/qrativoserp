@@ -10,10 +10,10 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="container-fluid">
-    <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    <div data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
       <img src="img/logo_h60_fundo_escuro.png" style="height:40px; margin-right:20px;" alt="Sistema de Gestão QrAtivos">
       <i class="fa-solid fa-bars" style="color:#fff"></i>
-    </a>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
