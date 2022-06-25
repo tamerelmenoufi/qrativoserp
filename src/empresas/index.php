@@ -1,5 +1,5 @@
 <?php
-    echo __DIR__;
+    echo "<pre>".print_r($_SERVER, true)."</pre>";
 ?>
 <style>
     .tab-content{
