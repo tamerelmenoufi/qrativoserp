@@ -9,3 +9,4 @@
 
 <script src="lib/vendor/dataTable/js/jquery.dataTables.min.js" ></script>
 <script src="lib/vendor/dataTable/js/dataTables.bootstrap5.min.js" ></script>
+<link href="lib/vendor/dataTable/css/dataTables.bootstrap5.min.css" rel="stylesheet">

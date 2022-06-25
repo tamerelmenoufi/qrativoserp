@@ -17,3 +17,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(function(){
+        $.ajax({
+            url:"src/empresas/lista.php",
+            success:function(dados){
+                $("#v-pills-home").html(dados);
+            }
+        });
+    })
+</script>
