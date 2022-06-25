@@ -10,10 +10,7 @@
     style="--bs-offcanvas-width:60%;"
   >
   <div class="offcanvas-header">
-    <h2 id="tituloMenuLateralDireita"></h2>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body LateralDireita">
-
-  </div>
+  <div class="offcanvas-body LateralDireita"></div>
 </div>
