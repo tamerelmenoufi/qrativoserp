@@ -6,3 +6,6 @@
 <script src="lib/vendor/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js" ></script>
 
 <link href="lib/vendor/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+
+<script src="lib/vendor/dataTable/js/jquery.dataTables.min.js" ></script>
+<script src="lib/vendor/dataTable/js/dataTables.bootstrap5.min.js" ></script>
