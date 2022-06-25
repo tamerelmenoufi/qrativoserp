@@ -26,6 +26,6 @@
 
 <script>
     $(document).ready(function () {
-        $.alert('Teste de mensagem');
+
     });
 </script>
