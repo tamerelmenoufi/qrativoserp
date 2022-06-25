@@ -30,6 +30,17 @@
 <script>
     $(function(){
 
+        $.ajax({
+            url:"src/empresas/lista.php",
+            type:"POST",
+            data:{
+                opc:''
+            },
+            success:function(dados){
+                $(".tab-pane").html(dados);
+            }
+        });
+
         $(".nav-link").click(function(){
             $(".nav-link").removeClass("active");
             $(this).addClass("active");
