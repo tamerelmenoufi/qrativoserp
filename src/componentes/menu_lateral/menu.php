@@ -7,7 +7,9 @@
     <h5>Sistema de Gestão QrAtivos</h5>
     <div class="row mb-1">
       <div class="col">
-        <a href="#" class="text-decoration-none"><i class="fa-solid fa-clipboard-list"></i> Controle de Ordem de Serviços</a>
+        <a href="#" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Controle de Ordem de Serviços
+        </a>
       </div>
     </div>
     <div class="row mb-1">
