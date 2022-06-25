@@ -10,7 +10,7 @@
         <a href="#" class="text-decoration-none"><i class="fa-solid fa-clipboard-list"></i> Controle de Ordem de Serviços</a>
       </div>
     </div>
-    <div class="row">
+    <div class="row mb-1">
       <div class="col">
         <i class="fa-solid fa-clipboard-list"></i> Abertura de processos
       </div>
