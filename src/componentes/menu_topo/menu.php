@@ -11,6 +11,7 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <img src="img/logo_h60.png" style="height:40px; margin-right:20px;" alt="Sistema de Gestão QrAtivos">
+    <i class="fa-solid fa-bars"></i>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,7 +20,7 @@
 
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <i class="fa-solid fa-bars"></i>
+
         </li>
       </ul>
 
