@@ -26,19 +26,18 @@
             $('#example').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: 'src/empresas/post.php',
-                // ajax: {
-                //     url: 'src/empresas/post.php',
-                //     type: 'POST',
-                // },
-                // columns: [
-                //     { data: 'first_name' },
-                //     { data: 'last_name' },
-                //     { data: 'position' },
-                //     { data: 'office' },
-                //     { data: 'start_date' },
-                //     { data: 'salary' },
-                // ],
+                ajax: {
+                    url: 'src/empresas/post.php',
+                    type: 'POST',
+                },
+                columns: [
+                    { data: 'first_name' },
+                    { data: 'last_name' },
+                    { data: 'position' },
+                    { data: 'office' },
+                    { data: 'start_date' },
+                    { data: 'salary' },
+                ],
             });
         });
     </script>

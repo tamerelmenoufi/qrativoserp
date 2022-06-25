@@ -1,3 +1,8 @@
+<?php
+    $d  = print_r($_POST,true);
+    file_put_contents('xxx.txt', $d);
+?>
+
 {
   "draw": 1,
   "recordsTotal": 57,
