@@ -1,5 +1,6 @@
 <div id="paginaHomeTopo"></div>
 <div id="paginaHomeLateral"></div>
+<div id="pagina"></div>
 <script>
 
     function Abrir(u, l){
@@ -15,6 +16,7 @@
         pags = [
             ['src/componentes/menu_topo/menu.php','paginaHomeTopo'],
             ['src/componentes/menu_lateral/menu.php','paginaHomeLateral'],
+            ['src/home/dashboard/index.php','paginaHome'],
             ];
 
         for(i=0;i<pags.length;i++){
