@@ -1,7 +1,14 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 ?>
-<h2>Dados do Título do formulário</h2>
+<style>
+    .Topo{
+        position:fixed;
+        top:10px;
+        left:40px;
+    }
+</style>
+<h2 class="Topo">Dados do Título do formulário</h2>
 Aqui é o formulário para cadastro e edição das empresas
 
 <br>
