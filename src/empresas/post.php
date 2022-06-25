@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 {
   "draw": 1,
   "recordsTotal": 57,
