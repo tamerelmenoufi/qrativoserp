@@ -5,9 +5,18 @@
   </div>
   <div class="offcanvas-body">
     <h5>Sistema de Gestão QrAtivos</h5>
+
     <div class="row mb-1">
       <div class="col">
-        <a href="#" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+        <a url="src/home/dashboard/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Dashboard
+        </a>
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="col">
+        <a url="src/empresas/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-clipboard-list"></i> Controle de Ordem de Serviços
         </a>
       </div>
@@ -20,3 +29,17 @@
 
   </div>
 </div>
+
+<script>
+  $(function(){
+    $("a[url]").click(function(){
+      url = $(this).attr("url");
+      $.ajax({
+        url,
+        success:function(dados){
+          $("#paginaHome").html(dados);
+        }
+      });
+    });
+  })
+</script>
