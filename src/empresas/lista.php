@@ -1,11 +1,16 @@
 <?php
 
 ?>
-<div class="col d-flex justify-content-end">
-    <button class="btn btn-primary">
-        <i class="fa-solid fa-plus"></i>
-        Novo Cadasrto
-    </button>
+<div class="col">
+    <div class="col d-flex justify-content-start">
+        Dados da tabel de Empresas
+    </div>
+    <div class="col d-flex justify-content-end">
+        <button class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i>
+            Novo Cadasrto
+        </button>
+    </div>
 </div>
 <table id="example" class="table table-hover" style="width:100%">
     <thead>
