@@ -1,3 +1,8 @@
+<style>
+    .tab-pane{
+        border:solid 1px red;
+    }
+</style>
 <div class="col">
     <div class="m-3">
         <h5>Gerenciamento de Empresas</h5>
