@@ -1,3 +1,6 @@
+<?php
+    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+?>
 <style>
   .MenuLogin{
     min-width:250px;

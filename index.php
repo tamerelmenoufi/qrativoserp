@@ -1,5 +1,5 @@
 <?php
-    include("lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
     if($_GET['s']){
         $_SESSION = [];

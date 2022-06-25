@@ -1,3 +1,6 @@
+<?php
+    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+?>
 <div id="paginaHomeTopo"></div>
 <div id="paginaHomeLateral"></div>
 <div id="paginaHome"></div>

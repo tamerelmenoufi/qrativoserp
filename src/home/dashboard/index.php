@@ -1,3 +1,6 @@
+<?php
+    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+?>
 <div class="col">
   <div class="m-3">
 
