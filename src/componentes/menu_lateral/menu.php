@@ -5,7 +5,7 @@
   </div>
   <div class="offcanvas-body">
     <h5>Sistema de Gestão QrAtivos</h5>
-    <div class="row">
+    <div class="row mb-1">
       <div class="col">
         <a href="#" class="text-decoration-none"><i class="fa-solid fa-clipboard-list"></i> Controle de Ordem de Serviços</a>
       </div>
