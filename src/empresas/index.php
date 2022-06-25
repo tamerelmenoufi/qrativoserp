@@ -7,7 +7,7 @@
         width:100%;
     }
     .nav-link{
-        font-weight:nowrap;
+        white-space:nowrap;
     }
 </style>
 <div class="col">
