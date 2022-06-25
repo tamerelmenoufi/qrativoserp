@@ -5,7 +5,13 @@
     <div class="col d-flex justify-content-between">
         <div class="p-2">Dados da tabel de Empresas (<?=$_POST['opc']?>)</div>
         <div class="p-2">
-            <button class="btn btn-primary">
+            <button
+                class="btn btn-primary"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"
+            >
                 <i class="fa-solid fa-plus"></i>
                 Novo
             </button>

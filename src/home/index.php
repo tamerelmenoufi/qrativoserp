@@ -3,6 +3,7 @@
 ?>
 <div id="paginaHomeTopo"></div>
 <div id="paginaHomeLateral"></div>
+<div id="paginaHomeLateralDireita"></div>
 <div id="paginaHome"></div>
 <script>
 

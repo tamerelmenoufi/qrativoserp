@@ -20,12 +20,11 @@
 
     <div class="collapse navbar-collapse" id="navbarScroll">
 
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
 
-        </li>
-      </ul>
-
+          </li>
+        </ul>
 
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
