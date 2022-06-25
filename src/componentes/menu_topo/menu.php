@@ -8,7 +8,7 @@
 
 
 
-<nav class="navbar navbar-expand-lgXXX navbar-dark bg-dark">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="container-fluid">
     <img src="img/logo_h60.png" style="height:40px; margin-right:20px;" alt="Sistema de Gestão QrAtivos">
     <i class="fa-solid fa-bars"></i>
