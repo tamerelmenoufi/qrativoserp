@@ -1,3 +1,6 @@
+<?php
+    echo __DIR__;
+?>
 <style>
     .tab-content{
         border:solid 1px red;

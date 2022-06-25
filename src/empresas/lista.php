@@ -7,7 +7,7 @@
         <div class="p-2">
             <button class="btn btn-primary">
                 <i class="fa-solid fa-plus"></i>
-                Novo Cadasrto
+                Novo
             </button>
         </div>
     </div>
