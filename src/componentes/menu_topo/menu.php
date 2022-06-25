@@ -5,9 +5,6 @@
   }
 </style>
 
-
-
-
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="container-fluid">
     <div data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
