@@ -6,7 +6,7 @@
         position:fixed;
         top:10px;
         left:40px;
-        z-index:10px;
+        z-index:10;
     }
 </style>
 <h2 class="Topo">Dados do Título do formulário</h2>
