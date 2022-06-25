@@ -1,7 +1,13 @@
 <?php
 
 ?>
-<table id="example" class="display" style="width:100%">
+<div class="col">
+    <button class="btn btn-primary">
+        <i class="fa-solid fa-plus"></i>
+        Novo Cadasrto
+    </button>
+</div>
+<table id="example" class="table table-hover" style="width:100%">
     <thead>
         <tr>
             <th>First name</th>
@@ -12,16 +18,6 @@
             <th>Salary</th>
         </tr>
     </thead>
-    <tfoot>
-        <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Start date</th>
-            <th>Salary</th>
-        </tr>
-    </tfoot>
 </table>
 
 <script>
