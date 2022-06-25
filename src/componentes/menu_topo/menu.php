@@ -11,7 +11,7 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="container-fluid">
     <img src="img/logo_h60.png" style="height:40px; margin-right:20px;" alt="Sistema de Gestão QrAtivos">
-    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-bars text-color-white"></i>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
