@@ -5,8 +5,16 @@
   </div>
   <div class="offcanvas-body">
     <h5>Sistema de Gestão QrAtivos</h5>
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    <div class="row">
+      <div class="col">
+        <i class="fa-solid fa-clipboard-list"></i> Controle de Orde de Serviços
+      </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <i class="fa-solid fa-clipboard-list"></i> Abertura de processos
+      </div>
+    </div>
+
   </div>
 </div>
