@@ -1,5 +1,6 @@
 <?php
-    echo "<pre>".print_r($_SERVER, true)."</pre>";
+    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    echo $md5;
 ?>
 <style>
     .tab-content{
