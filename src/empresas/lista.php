@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div class="col">
+<div class="col d-flex justify-content-end">
     <button class="btn btn-primary">
         <i class="fa-solid fa-plus"></i>
         Novo Cadasrto
