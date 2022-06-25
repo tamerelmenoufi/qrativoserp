@@ -1,5 +1,5 @@
 <style>
-    .tab-pane{
+    .tab-content{
         border:solid 1px red;
         width:100%;
     }
