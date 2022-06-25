@@ -1,6 +1,6 @@
 <div id="paginaHomeTopo"></div>
 <div id="paginaHomeLateral"></div>
-<div id="pagina"></div>
+<div id="paginaHome"></div>
 <script>
 
     function Abrir(u, l){
