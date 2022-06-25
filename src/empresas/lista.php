@@ -7,10 +7,8 @@
         <div class="p-2">
             <button
                 class="btn btn-primary"
-                data-bs-toggle="offcanvas"
-                href="#offcanvasDireita"
-                role="button"
-                aria-controls="offcanvasDireita"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
             >
                 <i class="fa-solid fa-plus"></i>
                 Novo
