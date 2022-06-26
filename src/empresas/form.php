@@ -4,8 +4,8 @@
 <style>
     .Topo{
         position:fixed;
-        top:10px;
-        margin-left:40px;
+        top:0px;
+        margin-left:50px;
         z-index:10;
     }
 </style>
