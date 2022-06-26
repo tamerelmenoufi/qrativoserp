@@ -54,7 +54,17 @@
                 <label for="situacao">Situação</label>
             </div>
             <input type="hidden" name="codigo" value="<?=$d->codigo?>">
-            <button salvar class="btn btn-primary" type="submit">Salvar</button>
+            <button
+                salvar
+                class="btn btn-primary"
+                type="submit"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"
+            >
+                Salvar
+            </button>
             <button cancelar class="btn btn-danger" type="button">Cancelar</button>
         </form>
     </div>
