@@ -1,8 +1,10 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
-    if($_POST['codigo']){
-        $query = "select *, if(situacao = '1', 'Ativa', 'Bloqueada') as situacao_descricao from empresas where codigo = '{$_POST['codigo']}'";
+    if($_POST['empresa']) $_SESSION['empresa'] = $_POST['empresa'];
+
+    if($_SESSION['empresa']){
+        $query = "select *, if(situacao = '1', 'Ativa', 'Bloqueada') as situacao_descricao from empresas where codigo = '{$_SESSION['empresa']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
     }

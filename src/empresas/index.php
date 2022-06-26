@@ -54,7 +54,8 @@
                     url:`src/empresas/${opc}.php`,
                     type:"POST",
                     data:{
-                        opc
+                        opc,
+                        empresa
                     },
                     success:function(dados){
                         $(".tab-pane").html(dados);
