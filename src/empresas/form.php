@@ -19,7 +19,7 @@ print_r($_POST);
         if($_POST['codigo']){
             echo $query = "update empresas set {$attr} where codigo = '{$_POST['codigo']}'";
         }else{
-            echo $query = "insert into from data_cadastro = NOW(), {$attr}";
+            echo $query = "insert into from empresas set data_cadastro = NOW(), {$attr}";
         }
         mysqli_query($con, $query);
         exit();
