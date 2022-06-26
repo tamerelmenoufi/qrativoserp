@@ -1,5 +1,10 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+
+
+    $query = "select * from empresas order by razao_social";
+    $result = mysqli_query($con, $query);
+
 ?>
 <div class="col">
     <div class="col d-flex justify-content-between">
@@ -22,14 +27,29 @@
 <table id="example" class="table table-hover" style="width:100%">
     <thead>
         <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>CNPJ</th>
+            <th>Razão Social</th>
+            <th>Situação</th>
+            <th>Ações</th>
         </tr>
     </thead>
+    <tbody>
+        <?php
+        while($d = mysqli_fetch_object($result)){
+        ?>
+        <tr>
+            <td><?=$d->cnpj?></td>
+            <td><?=$d->razao_social?></td>
+            <td><?=$d->situacao?></td>
+            <td>
+                <button class="btn btn-success btn-xs">Ed</button>
+                <button class="btn btn-danger btn-xs">ex</button>
+            </td>
+        </tr>
+        <?php
+        }
+        ?>
+    </tbody>
 </table>
 
 <script>

@@ -1,5 +1,24 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+
+    if($_POST['acao'] == 'salvar'){
+        if($_POST['codigo']){
+            $query = "update empresas set
+                                        cnpj='{$_POST['cnpj']}',
+                                        razao_social='{$_POST['razao_social']}',
+                                        situacao='{$_POST['situacao']}'
+                        where codigo = '{$_POST['codigo']}'";
+        }else{
+            $query = "insert into from
+                                    cnpj='{$_POST['cnpj']}',
+                                    razao_social='{$_POST['razao_social']}',
+                                    situacao='{$_POST['situacao']}',
+                                    data_cadastro = NOW()";
+        }
+        mysqli_query($con, $query);
+        exit();
+    }
+
 ?>
 <style>
 

@@ -1,5 +1,5 @@
 <?php
     session_start();
     include("/appinc/connect.php");
-    $conn = AppConnect();
+    $con = AppConnect();
     $md5 = md5(date("YmdHis"));
