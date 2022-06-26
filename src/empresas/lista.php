@@ -74,6 +74,7 @@
 
         $("button[editar]").click(function(){
             codigo = $(this).attr("editar");
+            console.log(codigo);
             $.ajax({
                 url:"src/empresas/form.php",
                 type:"POST",
