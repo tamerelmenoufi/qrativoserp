@@ -79,7 +79,7 @@
 
             $("a[empresa]").attr("empresa",codigo);
             $("a[empresa]").removeClass("active");
-            $('a[opc="visualizar"]').addClass("active");
+            $('a[opc="visuaizar"]').addClass("active");
 
             $.ajax({
                 url:"src/empresas/visualizar.php",
