@@ -85,7 +85,7 @@
                     codigo,
                 },
                 success:function(dados){
-                    $(".LateralDireita").html(dados);
+                    $(".tab-pane").html(dados);
                 }
             });
         });
