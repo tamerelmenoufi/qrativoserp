@@ -9,6 +9,7 @@ print_r($_POST);
         $attr = [];
 
         unset($data['codigo']);
+        unset($data['acao']);
 
         foreach ($data as $name => $value) {
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
