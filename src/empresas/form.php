@@ -3,10 +3,10 @@
 ?>
 <style>
     .Topo{
-        position:fixed;
+        /* position:fixed;
         top:2px;
         margin-left:50px;
-        z-index:10;
+        z-index:10; */
     }
 </style>
 <h2 class="Topo">Dados do Título do formulário</h2>
