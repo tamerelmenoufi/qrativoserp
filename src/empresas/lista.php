@@ -42,7 +42,16 @@
             <td><?=$d->razao_social?></td>
             <td><?=$d->situacao?></td>
             <td>
-                <button editar="<?=$codigo?>" class="btn btn-success btn-xs">Ed</button>
+                <button
+                    editar="<?=$codigo?>"
+                    class="btn btn-success btn-xs"
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+                >
+                    Ed
+                </button>
                 <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button>
             </td>
         </tr>
