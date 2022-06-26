@@ -24,7 +24,7 @@
         </div>
     </div>
 </div>
-<table id="example" class="table table-hover" style="width:100%">
+<table id="TableEmpresas" class="table table-hover" style="width:100%">
     <thead>
         <tr>
             <th>CNPJ</th>
@@ -63,6 +63,9 @@
 
 <script>
     $(document).ready(function () {
+
+        $("#TableEmpresas").dataTable();
+
         $("button[offcanvasDireita]").click(function(){
             $.ajax({
                 url:"src/empresas/form.php",
