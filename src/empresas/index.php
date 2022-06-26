@@ -14,10 +14,10 @@
         <h5>Gerenciamento de Empresas</h5>
         <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active"><i class="fa-solid fa-building"></i> Emresas</a>
-                <a class="nav-link" disabled><i class="fa-solid fa-list-check"></i> Dados da empresa</a>
-                <a class="nav-link" disabled><i class="fa-solid fa-id-badge"></i> Contatos / Representantes</a>
-                <a class="nav-link" disabled><i class="fa-solid fa-location-dot"></i> Endereços / Filiais</a>
+                <a empresa="" class="nav-link active"><i class="fa-solid fa-building"></i> Emresas</a>
+                <a empresa="" class="nav-link"><i class="fa-solid fa-list-check"></i> Dados da empresa</a>
+                <a empresa="" class="nav-link"><i class="fa-solid fa-id-badge"></i> Contatos / Representantes</a>
+                <a empresa="" class="nav-link"><i class="fa-solid fa-location-dot"></i> Endereços / Filiais</a>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade show active">...</div>
@@ -41,20 +41,25 @@
         });
 
         $(".nav-link").click(function(){
-            $(".nav-link").removeClass("active");
-            $(this).addClass("active");
 
-            opc = $(this).text();
-            $.ajax({
-                url:"src/empresas/lista.php",
-                type:"POST",
-                data:{
-                    opc
-                },
-                success:function(dados){
-                    $(".tab-pane").html(dados);
-                }
-            });
+            empresa = $(this).attr("empresa");
+
+            if(parseInt(empresa) > 0){
+                $(".nav-link").removeClass("active");
+                $(this).addClass("active");
+
+                opc = $(this).text();
+                $.ajax({
+                    url:"src/empresas/lista.php",
+                    type:"POST",
+                    data:{
+                        opc
+                    },
+                    success:function(dados){
+                        $(".tab-pane").html(dados);
+                    }
+                });
+            }
         });
 
     })
