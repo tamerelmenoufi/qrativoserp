@@ -70,7 +70,7 @@ print_r($_POST);
             console.log(campos);
             $.ajax({
                 url: 'src/empresas/index.php',
-                type:"POST",
+                method: 'POST',
                 data: campos,
                 success: function (dados) {
                     console.log("Dados:" + dados);
