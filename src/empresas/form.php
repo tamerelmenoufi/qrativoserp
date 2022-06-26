@@ -43,6 +43,7 @@
                 </select>
                 <label for="situacao">Situação</label>
             </div>
+            <input type="hidden" name="codigo" value="<?=$d->codigo?>">
             <button salvar class="btn btn-primary" type="submit">Salvar</button>
             <button cancelar class="btn btn-danger" type="button">Cancelar</button>
         </form>
@@ -62,6 +63,8 @@
             if (codigo) {
                 campos.push({name: 'codigo', value: codigo})
             }
+
+            campos.push({name: 'acao', value: 'salvar'})
 
             $.ajax({
                 url: 'src/empresas/index.php',
