@@ -5,6 +5,9 @@ print_r($_POST);
 
     if($_POST['acao'] == 'salvar'){
 
+        $data = $_POST;
+        $attr = [];
+
         unset($data['codigo']);
 
         foreach ($data as $name => $value) {
