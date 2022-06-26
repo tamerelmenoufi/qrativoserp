@@ -1,6 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
+print_r($_POST);
+
     if($_POST['acao'] == 'salvar'){
 
         unset($data['codigo']);
