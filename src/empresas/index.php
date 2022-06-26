@@ -15,7 +15,7 @@
         <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a empresa="" opc="lista" class="nav-link active"><i class="fa-solid fa-building"></i> Emresas</a>
-                <a empresa="" opc="visuaizar" class="nav-link"><i class="fa-solid fa-list-check"></i> Dados da empresa</a>
+                <a empresa="" opc="visualizar" class="nav-link"><i class="fa-solid fa-list-check"></i> Dados da empresa</a>
                 <a empresa="" opc="contatos" class="nav-link"><i class="fa-solid fa-id-badge"></i> Contatos / Representantes</a>
                 <a empresa="" opc="enderecos" class="nav-link"><i class="fa-solid fa-location-dot"></i> Endereços / Filiais</a>
             </div>
