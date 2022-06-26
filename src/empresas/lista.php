@@ -64,8 +64,6 @@
 <script>
     $(document).ready(function () {
 
-        $("#TableEmpresas").dataTable();
-
         $("button[offcanvasDireita]").click(function(){
             $.ajax({
                 url:"src/empresas/form.php",
