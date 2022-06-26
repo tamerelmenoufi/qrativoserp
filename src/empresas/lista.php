@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
 
-    $query = "select * from empresas order by razao_social";
+    $query = "select *, if(situacao = '1', 'Liberado', 'Bloqueado') as situacao from empresas order by razao_social";
     $result = mysqli_query($con, $query);
 
 ?>
