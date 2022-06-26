@@ -37,7 +37,7 @@
         <?php
         while($d = mysqli_fetch_object($result)){
         ?>
-        <tr linha<?=$d->codigo?>>
+        <tr linha='<?=$d->codigo?>'>
             <td><?=$d->cnpj?></td>
             <td><?=$d->razao_social?></td>
             <td><?=$d->situacao?></td>
@@ -75,6 +75,22 @@
             });
         });
 
+
+        $("tr[linha]").click(function(){
+            codigo = $(this).attr("linha");
+            $.ajax({
+                url:"src/empresas/visualizar.php",
+                tye:"POST",
+                data:{
+                    codigo,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        });
+
+
         $("button[editar]").click(function(){
             codigo = $(this).attr("editar");
             $.ajax({
@@ -88,6 +104,8 @@
                 }
             });
         });
+
+
 
 
     });
