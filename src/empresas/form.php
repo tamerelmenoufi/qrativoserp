@@ -68,6 +68,7 @@
             console.log(campos);
             $.ajax({
                 url: 'src/empresas/index.php',
+                type:"POST",
                 data: campos,
                 success: function (dados) {
                     console.log("Dados:" + dados);
