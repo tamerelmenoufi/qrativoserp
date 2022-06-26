@@ -1,8 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
-print_r($_POST);
-
     if($_POST['acao'] == 'salvar'){
 
         $data = $_POST;
@@ -17,9 +15,9 @@ print_r($_POST);
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
-            echo $query = "update empresas set {$attr} where codigo = '{$_POST['codigo']}'";
+            $query = "update empresas set {$attr} where codigo = '{$_POST['codigo']}'";
         }else{
-            echo $query = "insert into empresas set data_cadastro = NOW(), {$attr}";
+            $query = "insert into empresas set data_cadastro = NOW(), {$attr}";
         }
         mysqli_query($con, $query);
         exit();
@@ -71,13 +69,12 @@ print_r($_POST);
             }
 
             campos.push({name: 'acao', value: 'salvar'})
-            console.log(campos);
             $.ajax({
                 url: 'src/empresas/form.php',
                 type:"POST",
                 data: campos,
                 success: function (dados) {
-                    console.log("Dados:" + dados);
+
                 }
             })
 
