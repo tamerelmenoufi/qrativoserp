@@ -16,11 +16,11 @@
             <input type="text" class="form-control" id="cnpj" placeholder="CNPJ">
             <label for="cnpj">CNPJ</label>
         </div>
-        <div class="form-floating">
+        <div class="form-floating mb-3">
             <input type="text" class="form-control" id="razao_social" placeholder="Razão Social">
             <label for="razao_social">Razão Social</label>
         </div>
-        <div class="form-floating">
+        <div class="form-floating mb-3">
             <select class="form-select" id="situacao" aria-label="Situação">
                 <option value="1">Liberado</option>
                 <option value="2">Bloqueado</option>
