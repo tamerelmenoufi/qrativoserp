@@ -23,6 +23,12 @@
         exit();
     }
 
+
+
+    $query = "select * from empresas where codigo = '{$_POST['codigo']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
 ?>
 <style>
 
@@ -33,17 +39,17 @@
     <div class="col">
         <form id="form-<?= $md5 ?>">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ">
+                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ" value="<?=$d->cnpj?>">
                 <label for="cnpj">CNPJ</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="razao_social" name="razao_social" placeholder="Razão Social">
+                <input type="text" class="form-control" id="razao_social" name="razao_social" placeholder="Razão Social" value="<?=$d->razao_social?>">
                 <label for="razao_social">Razão Social</label>
             </div>
             <div class="form-floating mb-3">
                 <select class="form-select" id="situacao" name="situacao" aria-label="Situação">
-                    <option value="1">Liberado</option>
-                    <option value="2">Bloqueado</option>
+                    <option value="1" <?=(($d->situacao == '1')?'selected':false)?> >Liberado</option>
+                    <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
                 </select>
                 <label for="situacao">Situação</label>
             </div>
