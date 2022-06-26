@@ -5,7 +5,7 @@
     .Topo{
         position:fixed;
         top:10px;
-        left:40px;
+        margin-left:40px;
         z-index:10;
     }
 </style>
