@@ -43,7 +43,7 @@
             <td><?=$d->situacao?></td>
             <td>
                 <button
-                    editar="<?=$codigo?>"
+                    editar="<?=$d->codigo?>"
                     class="btn btn-success btn-xs"
                     data-bs-toggle="offcanvas"
                     href="#offcanvasDireita"
@@ -74,7 +74,6 @@
 
         $("button[editar]").click(function(){
             codigo = $(this).attr("editar");
-            console.log(codigo);
             $.ajax({
                 url:"src/empresas/form.php",
                 type:"POST",
