@@ -2,12 +2,8 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 ?>
 <style>
-    .Topo{
-        /* position:fixed;
-        top:2px;
-        margin-left:50px;
-        z-index:10; */
-    }
+
+
 </style>
 <h2 class="Topo">Dados do Título do formulário</h2>
 <div class="row">
@@ -31,3 +27,9 @@
         <button class="btn btn-danger" type="button">Cancelar</button>
     </div>
 </div>
+
+<script>
+    $(function(){
+
+    })
+</script>

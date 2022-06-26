@@ -10,3 +10,7 @@
 <script src="lib/vendor/dataTable/js/jquery.dataTables.min.js" ></script>
 <script src="lib/vendor/dataTable/js/dataTables.bootstrap5.min.js" ></script>
 <link href="lib/vendor/dataTable/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="lib/vendor/jquery-confirm/jquery-confirm.min.css">
+<script src="lib/vendor/jquery-confirm/jquery-confirm.min.js"></script>
