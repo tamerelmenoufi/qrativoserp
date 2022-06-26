@@ -11,5 +11,5 @@
 <script src="lib/vendor/dataTable/js/dataTables.bootstrap5.min.js" ></script>
 <link href="lib/vendor/dataTable/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 
-
+<script src="lib/vendor/jQuery-Mask/jquery.mask.min.js" ></script>
 
