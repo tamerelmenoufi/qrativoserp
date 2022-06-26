@@ -11,9 +11,9 @@
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
-            $query = "update empresas set {$attr} where codigo = '{$_POST['codigo']}'";
+            echo $query = "update empresas set {$attr} where codigo = '{$_POST['codigo']}'";
         }else{
-            $query = "insert into from data_cadastro = NOW(), {$attr}";
+            echo $query = "insert into from data_cadastro = NOW(), {$attr}";
         }
         mysqli_query($con, $query);
         exit();
@@ -65,12 +65,12 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
-
+            console.log(campos);
             $.ajax({
                 url: 'src/empresas/index.php',
                 data: campos,
                 success: function (dados) {
-
+                    console.log("Dados:" + dados);
                 }
             })
 
