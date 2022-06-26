@@ -69,8 +69,8 @@ print_r($_POST);
             campos.push({name: 'acao', value: 'salvar'})
             console.log(campos);
             $.ajax({
-                url: 'src/empresas/index.php',
-                method: 'POST',
+                url: 'src/empresas/form.php',
+                type:"POST",
                 data: campos,
                 success: function (dados) {
                     console.log("Dados:" + dados);
