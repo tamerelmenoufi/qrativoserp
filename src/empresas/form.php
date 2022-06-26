@@ -65,7 +65,17 @@
             >
                 Salvar
             </button>
-            <button cancelar class="btn btn-danger" type="button">Cancelar</button>
+            <button
+                cancelar
+                class="btn btn-danger"
+                type="button"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"
+            >
+                Cancelar
+            </button>
         </form>
     </div>
 </div>
