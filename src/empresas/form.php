@@ -43,7 +43,7 @@
                 </select>
                 <label for="situacao">Situação</label>
             </div>
-            <button salvar class="btn btn-primary" type="button">Salvar</button>
+            <button salvar class="btn btn-primary" type="submit">Salvar</button>
             <button cancelar class="btn btn-danger" type="button">Cancelar</button>
         </form>
     </div>
