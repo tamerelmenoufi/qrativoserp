@@ -80,7 +80,7 @@
             codigo = $(this).attr("linha");
             $.ajax({
                 url:"src/empresas/visualizar.php",
-                tye:"POST",
+                type:"POST",
                 data:{
                     codigo,
                 },
