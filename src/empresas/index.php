@@ -3,7 +3,6 @@
 ?>
 <style>
     .tab-content{
-        border:solid 1px red;
         width:100%;
     }
     .nav-link{
