@@ -48,7 +48,7 @@
             if(parseInt(empresa) > 0 || opc == 'lista'){
                 $(".nav-link").removeClass("active");
                 $(this).addClass("active");
-                $("a[empresa]").attr("empresa",'');
+                if(opc == 'lista') $("a[empresa]").attr("empresa",'');
 
                 $.ajax({
                     url:`src/empresas/${opc}.php`,
