@@ -14,10 +14,10 @@
         <h5>Gerenciamento de Empresas</h5>
         <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a empresa="" class="nav-link active"><i class="fa-solid fa-building"></i> Emresas</a>
-                <a empresa="" class="nav-link"><i class="fa-solid fa-list-check"></i> Dados da empresa</a>
-                <a empresa="" class="nav-link"><i class="fa-solid fa-id-badge"></i> Contatos / Representantes</a>
-                <a empresa="" class="nav-link"><i class="fa-solid fa-location-dot"></i> Endereços / Filiais</a>
+                <a empresa="" opc="lista" class="nav-link active"><i class="fa-solid fa-building"></i> Emresas</a>
+                <a empresa="" opc="visuaizar" class="nav-link"><i class="fa-solid fa-list-check"></i> Dados da empresa</a>
+                <a empresa="" opc="contatos" class="nav-link"><i class="fa-solid fa-id-badge"></i> Contatos / Representantes</a>
+                <a empresa="" opc="enderecos" class="nav-link"><i class="fa-solid fa-location-dot"></i> Endereços / Filiais</a>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade show active">...</div>
@@ -40,17 +40,17 @@
             }
         });
 
-        $(".nav-link").click(function(){
+        $("a[empresa]").click(function(){
 
             empresa = $(this).attr("empresa");
+            opc = $(this).attr("opc");
 
-            if(parseInt(empresa) > 0){
+            if(parseInt(empresa) > 0 || opc == 'lista'){
                 $(".nav-link").removeClass("active");
                 $(this).addClass("active");
 
-                opc = $(this).text();
                 $.ajax({
-                    url:"src/empresas/lista.php",
+                    url:`src/empresas/${opc}.php`,
                     type:"POST",
                     data:{
                         opc
