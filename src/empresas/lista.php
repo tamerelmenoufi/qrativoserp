@@ -76,6 +76,11 @@
 
         $("tr[linha]").click(function(){
             codigo = $(this).attr("linha");
+
+            $("a[empresa]").attr("empresa",codigo);
+            $("a[empresa]").removeClass("active");
+            $('a[acao="visualizar"]').addClass("active");
+
             $.ajax({
                 url:"src/empresas/visualizar.php",
                 type:"POST",
@@ -91,11 +96,6 @@
 
         $("button[editar]").click(function(){
             codigo = $(this).attr("editar");
-
-            $("a[empresa]").attr("empresa",codigo);
-            $("a[empresa]").removeClass("active");
-            $('a[acao="visualizar"]').addClass("active");
-
             $.ajax({
                 url:"src/empresas/form.php",
                 type:"POST",
