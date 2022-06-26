@@ -91,6 +91,11 @@
 
         $("button[editar]").click(function(){
             codigo = $(this).attr("editar");
+
+            $("a[empresa]").attr("empresa",codigo);
+            $("a[empresa]").removeClass("active");
+            $('a[acao="visualizar"]').addClass("active");
+
             $.ajax({
                 url:"src/empresas/form.php",
                 type:"POST",
