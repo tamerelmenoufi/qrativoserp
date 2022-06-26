@@ -74,7 +74,7 @@
 
 
         $("tr[linha]").click(function(){
-            codigo = $(this).attr("linha");
+            empresa = $(this).attr("linha");
 
             $("a[empresa]").attr("empresa",codigo);
             $("a[empresa]").removeClass("active");
@@ -84,7 +84,7 @@
                 url:"src/empresas/visualizar.php",
                 type:"POST",
                 data:{
-                    codigo,
+                    empresa,
                 },
                 success:function(dados){
                     $(".tab-pane").html(dados);
