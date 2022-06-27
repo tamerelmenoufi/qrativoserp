@@ -201,8 +201,8 @@
                 },
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
-                     $.alert(dados.sucesso);
-                    console.log(dados.QrAtivosLogin);
+                     $.alert(dados);
+                    //console.log(dados.QrAtivosLogin);
                     if(dados.QrAtivosLogin > 0){
                         window.location.href='./';
                     }else{
