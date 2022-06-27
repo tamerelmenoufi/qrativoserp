@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
     if($_POST['acao'] == 'coordenadas'){
-        echo $query = "update empresas_enderecos set coordenadas = '{$_POST['coordenadas']}' where codigo = '{$_POST['codigo']}'";
+        $query = "update empresas_enderecos set coordenadas = '{$_POST['coordenadas']}' where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
         exit();
     }
@@ -137,7 +137,17 @@
                 },
                 success:function(dados){
 
-                    $.alert(dados);
+                    $.ajax({
+                        url:`src/empresas/enderecos.php`,
+                        type:"POST",
+                        data:{
+                            opc:'enderecos',
+                            empresa:'<?=$d->empresa?>'
+                        },
+                        success:function(dados){
+                            $(".tab-pane").html(dados);
+                        }
+                    });
 
                 }
             });
