@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SERVER['SCRIPT_FILENAME'] == '/var/www/html/sis/index.php'){
+    if($_SERVER['SCRIPT_FILENAME'] != '/var/www/html/sis/index.php'){
         if(!$_SESSION['QrAtivosLogin']){
             $_SESSION = [];
             echo "<script>window.location.href='./'</script>";
