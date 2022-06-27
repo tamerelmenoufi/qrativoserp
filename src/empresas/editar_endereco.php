@@ -27,8 +27,8 @@
 
     #topo<?=$md5?> {
         position:absolute;
-        left:50;
-        top:5px;
+        left:150;
+        top:10px;
         z-index:2;
     }
     #map<?=$md5?> {
