@@ -28,7 +28,7 @@
     #map<?=$md5?> {
         position:absolute;
         left:0;
-        top:70px;
+        top:50px;
         bottom:0;
         width:100%;
         z-index:0;
