@@ -7,7 +7,7 @@
 
     $endereco =  "{$d->rua}, {$d->numero}, {$d->bairro}";
 
-    $coordenadas = explode(',', $d->coordenadas);
+    $coordenadas = json_decode($d->coordenadas);
 
 ?>
 
@@ -26,7 +26,7 @@
     <div id="map<?=$md5?>"></div>
 
     <script>
-        coordenadas<?=$md5?> = '<?=$d->coordenadas?>';
+        coordenadas<?=$md5?> = '<?="{$coordenadas[0]},{$coordenadas[1]}"?>';
         endereco<?=$md5?> = "<?=$endereco?>";
         geocoder<?=$md5?> = new google.maps.Geocoder();
         map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
