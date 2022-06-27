@@ -115,6 +115,7 @@
                 data: campos,
                 success: function (dados) {
                     empresa = dados.codigo;
+                    console.log(empresa);
                     $.ajax({
                         url:"src/empresas/visualizar.php",
                         type:"POST",
