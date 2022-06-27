@@ -16,7 +16,14 @@
   <div class="card-body">
     <h5 class="card-title"><?=$d->cnpj?></h5>
     <p class="card-text">Cadastrado em <?=$d->data_cadastro?></p>
-    <a editar class="btn btn-<?=(($d->situacao == '1')?'primary':'danger')?>"><?=$d->situacao_descricao?></a>
+    <a
+      editar
+      class="btn btn-<?=(($d->situacao == '1')?'primary':'danger')?>"
+      data-bs-toggle="offcanvas"
+      href="#offcanvasDireita"
+      role="button"
+      aria-controls="offcanvasDireita"
+    ><?=$d->situacao_descricao?></a>
   </div>
 </div>
 
