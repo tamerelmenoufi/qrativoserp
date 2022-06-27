@@ -203,11 +203,11 @@
                     // let retorno = JSON.parse(dados);
                      $.alert(dados);
                     //console.log(dados.QrAtivosLogin);
-                    if(dados.QrAtivosLogin > 0){
-                        window.location.href='./';
-                    }else{
-                        $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
-                    }
+                    // if(dados.QrAtivosLogin > 0){
+                    //     window.location.href='./';
+                    // }else{
+                    //     $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
+                    // }
 
                 }
             });
