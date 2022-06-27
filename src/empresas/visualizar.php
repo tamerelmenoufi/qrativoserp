@@ -16,6 +16,26 @@
   <div class="card-body">
     <h5 class="card-title"><?=$d->cnpj?></h5>
     <p class="card-text">Cadastrado em <?=$d->data_cadastro?></p>
-    <a href="#" class="btn btn-<?=(($d->situacao == '1')?'primary':'danger')?>"><?=$d->situacao_descricao?></a>
+    <a editar class="btn btn-<?=(($d->situacao == '1')?'primary':'danger')?>"><?=$d->situacao_descricao?></a>
   </div>
 </div>
+
+<script>
+  $(function(){
+
+    $("a[editar]").click(function(){
+            codigo = $(this).attr("editar");
+            $.ajax({
+                url:"src/empresas/form.php",
+                type:"POST",
+                data:{
+                    codigo,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        });
+
+  })
+</script>

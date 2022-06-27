@@ -29,7 +29,7 @@
             <th>CNPJ</th>
             <th>Razão Social</th>
             <th>Situação</th>
-            <th>Ações</th>
+            <!-- <th>Ações</th> -->
         </tr>
     </thead>
     <tbody>
@@ -40,7 +40,7 @@
             <td><?=$d->cnpj?></td>
             <td><?=$d->razao_social?></td>
             <td><?=$d->situacao?></td>
-            <td>
+            <!-- <td>
                 <button
                     editar="<?=$d->codigo?>"
                     class="btn btn-success btn-xs"
@@ -52,7 +52,7 @@
                     Ed
                 </button>
                 <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button>
-            </td>
+            </td> -->
         </tr>
         <?php
         }
@@ -91,22 +91,6 @@
                 }
             });
         });
-
-
-        $("button[editar]").click(function(){
-            codigo = $(this).attr("editar");
-            $.ajax({
-                url:"src/empresas/form.php",
-                type:"POST",
-                data:{
-                    codigo,
-                },
-                success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            });
-        });
-
 
 
 
