@@ -190,7 +190,6 @@
         AcaoBotao = ()=>{
             login = $("#login").val();
             senha = $("#senha").val();
-            alert(senha);
             $.ajax({
                 url:"src/login/index.php",
                 type:"POST",
@@ -202,7 +201,7 @@
                 },
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
-                    // $.alert(dados.sucesso);
+                     $.alert(dados.sucesso);
                     console.log(dados.QrAtivosLogin);
                     if(dados.QrAtivosLogin > 0){
                         window.location.href='./';
