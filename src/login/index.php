@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
     if($_POST['acao'] == 'login'){
         $login = $_POST['login'];
@@ -9,7 +9,7 @@
         // $senha = md5('Mf6t1y76');
 
         $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
-        $result = mysqli_query($conn, $query);
+        $result = mysqli_query($con, $query);
 
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
@@ -193,7 +193,7 @@
             $.ajax({
                 url:"src/login/index.php",
                 type:"POST",
-                // dataType:"json",
+                dataType:"json",
                 data:{
                     acao:'login',
                     login,
@@ -201,13 +201,13 @@
                 },
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
-                     $.alert(dados);
-                    //console.log(dados.QrAtivosLogin);
-                    // if(dados.QrAtivosLogin > 0){
-                    //     window.location.href='./';
-                    // }else{
-                    //     $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
-                    // }
+                    // $.alert(dados.sucesso);
+                    console.log(dados.QrAtivosLogin);
+                    if(dados.QrAtivosLogin > 0){
+                        window.location.href='./';
+                    }else{
+                        $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
+                    }
 
                 }
             });
