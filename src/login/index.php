@@ -188,6 +188,7 @@
 <script>
     $(function(){
         AcaoBotao = ()=>{
+            alert('Teste');
             login = $("#login").val();
             senha = $("#senha").val();
             $.ajax({
@@ -214,7 +215,6 @@
         };
 
         $("#Acessar").click(function(){
-            alert('Teste');
             AcaoBotao();
         });
 
