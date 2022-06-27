@@ -8,7 +8,7 @@
     }
 
 
-    $query = "select * from empresas_enderecos where codigo = '{$_POST['cod']}'";
+    $query = "select * from empresas_enderecos where codigo = '{$_POST['e']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
