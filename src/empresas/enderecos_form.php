@@ -75,6 +75,14 @@
                 <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" value="<?=$d->rua?>">
                 <label for="rua">Rua</label>
             </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="numero" name="numero" placeholder="Número" value="<?=$d->numero?>">
+                <label for="numero">Número</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Complemento" value="<?=$d->complemento?>">
+                <label for="complemento">Complemento</label>
+            </div>
 
             <div class="form-floating mb-3">
                 <select class="form-select" id="situacao" name="situacao" aria-label="Situação">

@@ -35,6 +35,8 @@
     <p class="card-text"><?=$d->bairro?></p>
     <p class="card-text"><?=$d->cep?></p>
     <p class="card-text"><?=$d->rua?></p>
+    <p class="card-text"><?=$d->numero?></p>
+    <p class="card-text"><?=$d->complemento?></p>
     <p class="card-text">Cadastrado em <?=$d->data_cadastro?></p>
 
     <a
