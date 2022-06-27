@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
     if($_POST['acao'] == 'coordenadas'){
-        $query = "update empresas_enderecos set coordenadas = '{$_POST['coordenadas']}' where codigo = '{$_POST['codigo']}'";
+        echo $query = "update empresas_enderecos set coordenadas = '{$_POST['coordenadas']}' where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
         exit();
     }
@@ -137,7 +137,7 @@
                 },
                 success:function(dados){
 
-                    $.alert('Endereço Confirmado.');
+                    $.alert(dados);
 
                 }
             });
