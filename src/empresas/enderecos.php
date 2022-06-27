@@ -55,7 +55,6 @@
         <div class="col mapa" e="<?=$d->codigo?>">
             Dados do Mapa
         </div>
-
     </div>
 </div>
 
@@ -67,15 +66,15 @@
 
     function Mapas(e){
         $.ajax({
-                url:"src/empresas/visualizar_endereco.php",
-                type:"POST",
-                data:{
-                    e,
-                },
-                success:function(dados){
-                    $(`div[e="${e}"]`).html(dados);
-                }
-            });
+            url:"src/empresas/visualizar_endereco.php",
+            type:"POST",
+            data:{
+                e,
+            },
+            success:function(dados){
+                $(`div[e="${e}"]`).html(dados);
+            }
+        });
     }
 
 
