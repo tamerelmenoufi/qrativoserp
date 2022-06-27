@@ -23,15 +23,20 @@
     </div>
 </div>
 <?php
-    $query = "select * from empresas_contatos where empresa = '{$_SESSION['empresa']}' order by nome";
+    $query = "select *, if(situacao = '1', 'Ativo', 'Bloqueado') as situacao_descricao from empresas_contatos where empresa = '{$_SESSION['empresa']}' order by nome";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
 <div class="card">
-  <h5 class="card-header"><?=$d->razao_social?></h5>
+  <h5 class="card-header"><?=$d->nome?></h5>
   <div class="card-body">
-    <h5 class="card-title"><?=$d->cnpj?></h5>
+    <h5 class="card-title"><?=$d->cpf?></h5>
+    <p class="card-text"><?=$d->telefone?></p>
+    <p class="card-text"><?=$d->email?></p>
+    <p class="card-text"><?=$d->departamento?></p>
+    <p class="card-text"><?=$d->cargo?></p>
     <p class="card-text">Cadastrado em <?=$d->data_cadastro?></p>
+
     <a
       editar="<?=$d->codigo?>"
       class="btn btn-<?=(($d->situacao == '1')?'primary':'danger')?>"

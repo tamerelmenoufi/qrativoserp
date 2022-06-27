@@ -25,7 +25,7 @@
         }
 
         $retorno = [
-            'status' => $query,
+            'status' => true,
             'codigo' => $cod
         ];
 
@@ -137,7 +137,6 @@
                 data: campos,
                 success: function (dados) {
                     empresa = dados.codigo;
-                    console.log(dados.status)
                     $.ajax({
                         url:"src/empresas/contatos.php",
                         type:"POST",
