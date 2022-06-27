@@ -11,6 +11,10 @@
     a[empresa=""]{
         color:#eee;
     }
+    a[empresa=""]:hover{
+        color:#eee;
+    }
+
 </style>
 <div class="col">
     <div class="m-3">
