@@ -16,10 +16,21 @@
 
         if($_POST['codigo']){
             $query = "update empresas set {$attr} where codigo = '{$_POST['codigo']}'";
+            mysqli_query($con, $query);
+            $cod = $_POST['codigo'];
         }else{
             $query = "insert into empresas set data_cadastro = NOW(), {$attr}";
+            mysqli_query($con, $query);
+            $cod = mysqli_insert_id($con);
         }
-        mysqli_query($con, $query);
+
+        $retorno = [
+            'status' => true,
+            'codigo' => $cod
+        ];
+
+        echo json_encode($retorno);
+
         exit();
     }
 
@@ -100,8 +111,20 @@
             $.ajax({
                 url: 'src/empresas/form.php',
                 type:"POST",
+                dataType:"json",
                 data: campos,
                 success: function (dados) {
+                    empresa = dados.codigo;
+                    $.ajax({
+                        url:"src/empresas/visualizar.php",
+                        type:"POST",
+                        data:{
+                            empresa,
+                        },
+                        success:function(dados){
+                            $(".tab-pane").html(dados);
+                        }
+                    });
 
                 }
             })

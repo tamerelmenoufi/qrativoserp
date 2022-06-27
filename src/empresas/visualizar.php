@@ -33,7 +33,7 @@
     $("a[editar]").click(function(){
             codigo = $(this).attr("editar");
             $.ajax({
-                url:"src/empresas/form.php",
+                url:"src/empresas/empresa_form.php",
                 type:"POST",
                 data:{
                     codigo,
