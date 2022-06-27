@@ -188,9 +188,9 @@
 <script>
     $(function(){
         AcaoBotao = ()=>{
-            alert('Teste');
             login = $("#login").val();
             senha = $("#senha").val();
+            alert(senha);
             $.ajax({
                 url:"src/login/index.php",
                 type:"POST",
