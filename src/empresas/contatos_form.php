@@ -83,8 +83,8 @@
                 </select>
                 <label for="situacao">Situação</label>
             </div>
-            <input type="hidden" name="codigo" value="<?=$d->codigo?>">
-            <input type="hidden" name="empresa" value="<?=$_POST['empresa']?>">
+            <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
+            <input type="hidden" name="empresa" id="empresa" value="<?=$_POST['empresa']?>">
             <button
                 salvar
                 class="btn btn-primary"
