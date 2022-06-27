@@ -53,7 +53,7 @@
 
 <script>
     $(function(){
-        $("button[novoContatoEmpresa]").click(function(){
+        $("button[novoEnderecoEmpresa]").click(function(){
             $.ajax({
                 url:"src/empresas/enderecos_form.php",
                 type:"POST",
