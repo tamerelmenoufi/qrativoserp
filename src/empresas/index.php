@@ -8,6 +8,9 @@
     .nav-link{
         white-space:nowrap;
     }
+    a[empresa=""]{
+        color:#eee;
+    }
 </style>
 <div class="col">
     <div class="m-3">
@@ -46,6 +49,7 @@
             opc = $(this).attr("opc");
 
             if(parseInt(empresa) > 0 || opc == 'lista'){
+
                 $(".nav-link").removeClass("active");
                 $(this).addClass("active");
                 if(opc == 'lista') $("a[empresa]").attr("empresa",'');
