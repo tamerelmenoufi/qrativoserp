@@ -80,7 +80,7 @@
 
         $(".mapa").each(function(){
             e = $(this).attr('e');
-            Mapa(e);
+            Mapas(e);
         });
 
         $("button[novoEnderecoEmpresa]").click(function(){
