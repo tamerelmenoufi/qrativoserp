@@ -27,7 +27,7 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
-<div class="card">
+<div class="card mb-3">
   <h5 class="card-header"><?=$d->nome?></h5>
   <div class="card-body">
     <h5 class="card-title"><?=$d->cpf?></h5>
