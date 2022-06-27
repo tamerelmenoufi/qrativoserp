@@ -25,6 +25,12 @@
 
 <style>
 
+    #topo<?=$md5?> {
+        position:absolute;
+        left:50;
+        top:5px;
+        z-index:2;
+    }
     #map<?=$md5?> {
         position:absolute;
         left:0;
@@ -32,6 +38,7 @@
         bottom:0;
         width:100%;
         z-index:0;
+        color:#333;
     }
     .ConfirmaCoordenadas{
         position:fixed;
@@ -41,6 +48,10 @@
 
 </style>
 
+
+    <div id="topo<?=$md5?>">
+        <h4><?=$d->nome?></h4>
+    </div>
     <div id="map<?=$md5?>"></div>
 
     <button class="ConfirmaCoordenadas btn btn-success btn-block" coordenada="<?=$d->coordenadas?>">Confirmar a Localização</button>
