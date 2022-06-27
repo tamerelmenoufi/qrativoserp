@@ -17,7 +17,7 @@
     <h5 class="card-title"><?=$d->cnpj?></h5>
     <p class="card-text">Cadastrado em <?=$d->data_cadastro?></p>
     <a
-      editar
+      editar="<?=$d->codigo?>"
       class="btn btn-<?=(($d->situacao == '1')?'primary':'danger')?>"
       data-bs-toggle="offcanvas"
       href="#offcanvasDireita"
