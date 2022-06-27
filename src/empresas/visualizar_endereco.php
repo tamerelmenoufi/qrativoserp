@@ -8,7 +8,7 @@
     $endereco =  "{$d->rua}, {$d->numero}, {$d->bairro}";
 
     $coordenada = json_decode($d->coordenadas);
-    if(!$coordenada[0] or !$coordenada[1]){
+    if($coordenada[0] and $coordenada[1]){
         $coordenadas = "{$coordenada[0]},{$coordenada[1]}";
     }else{
         $coordenadas = false;
@@ -46,7 +46,7 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             fullscreenControl: false,
             <?php
-            if($d->coordenadas){
+            if($coordenadas){
             ?>
             center: { lat: <?=$coordenada[0]?>, lng: <?=$coordenada[1]?> },
             zoom: 18,
