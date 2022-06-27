@@ -27,28 +27,35 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
-<div class="card mb-3">
-  <h5 class="card-header"><?=$d->nome?></h5>
-  <div class="card-body">
-    <p class="card-text"><?=$d->estado?></p>
-    <p class="card-text"><?=$d->cidade?></p>
-    <p class="card-text"><?=$d->bairro?></p>
-    <p class="card-text"><?=$d->cep?></p>
-    <p class="card-text"><?=$d->rua?></p>
-    <p class="card-text"><?=$d->numero?></p>
-    <p class="card-text"><?=$d->complemento?></p>
-    <p class="card-text">Cadastrado em <?=$d->data_cadastro?></p>
-
-    <a
-      editar="<?=$d->codigo?>"
-      class="btn btn-<?=(($d->situacao == '1')?'primary':'danger')?>"
-      data-bs-toggle="offcanvas"
-      href="#offcanvasDireita"
-      role="button"
-      aria-controls="offcanvasDireita"
-    ><?=$d->situacao_descricao?></a>
-  </div>
+<div class="row">
+    <div class="col">
+        <div class="card mb-3">
+        <h5 class="card-header"><?=$d->nome?></h5>
+        <div class="card-body">
+            <p class="card-text"><?=$d->estado?></p>
+            <p class="card-text"><?=$d->cidade?></p>
+            <p class="card-text"><?=$d->bairro?></p>
+            <p class="card-text"><?=$d->cep?></p>
+            <p class="card-text"><?=$d->rua?></p>
+            <p class="card-text"><?=$d->numero?></p>
+            <p class="card-text"><?=$d->complemento?></p>
+            <p class="card-text">Cadastrado em <?=$d->data_cadastro?></p>
+            <a
+            editar="<?=$d->codigo?>"
+            class="btn btn-<?=(($d->situacao == '1')?'primary':'danger')?>"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasDireita"
+            role="button"
+            aria-controls="offcanvasDireita"
+            ><?=$d->situacao_descricao?></a>
+        </div>
+        </div>
+    </div>
+    <div class="col mapa" e="<?=$d->codigo?>">
+        Aqui é o mapa
+    </div>
 </div>
+
 <?php
     }
 ?>
