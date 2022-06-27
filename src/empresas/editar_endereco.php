@@ -126,7 +126,7 @@
 
         $(".ConfirmaCoordenadas").click(function(){
             coordenadas = $(this).attr("coordenadas");
-            Carregando();
+
             $.ajax({
                 url:"src/empresas/editar_endereco.php",
                 type:"POST",
