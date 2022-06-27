@@ -56,7 +56,7 @@
             zoomControl: false,
             mapTypeControl: false,
             draggable: true,
-            scaleControl: false,
+            scaleControl: true,
             scrollwheel: false,
             navigationControl: false,
             streetViewControl: false,
@@ -66,7 +66,7 @@
             if($coordenadas){
             ?>
             center: { lat: <?=$coordenada[0]?>, lng: <?=$coordenada[1]?> },
-            zoom: 16,
+            zoom: 18,
 
             <?php
             }
