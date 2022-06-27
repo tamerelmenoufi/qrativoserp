@@ -31,18 +31,18 @@
   $(function(){
 
     $("a[editar]").click(function(){
-            codigo = $(this).attr("editar");
-            $.ajax({
-                url:"src/empresas/empresa_form.php",
-                type:"POST",
-                data:{
-                    codigo,
-                },
-                success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            });
+        codigo = $(this).attr("editar");
+        $.ajax({
+            url:"src/empresas/empresa_form.php",
+            type:"POST",
+            data:{
+                codigo,
+            },
+            success:function(dados){
+                $(".LateralDireita").html(dados);
+            }
         });
+    });
 
   })
 </script>

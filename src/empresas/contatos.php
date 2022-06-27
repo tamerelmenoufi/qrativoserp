@@ -65,5 +65,21 @@
                 }
             });
         });
+
+        $("a[editar]").click(function(){
+            codigo = $(this).attr("editar");
+            $.ajax({
+                url:"src/empresas/contatos_form.php",
+                type:"POST",
+                data:{
+                    codigo,
+                    empresa:'<?=$_SESSION['empresa']?>',
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        });
+
     })
 </script>
