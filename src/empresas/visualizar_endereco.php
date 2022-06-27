@@ -75,6 +75,9 @@
 
                     var latitude<?=$md5?> = results[0].geometry.location.lat();
                     var longitude<?=$md5?> = results[0].geometry.location.lng();
+                    console.log('Coordenadas:')
+                    console.log('Lat:'+latitude<?=$md5?>)
+                    console.log('Lng:'+longitude<?=$md5?>)
 
                     var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
                     marker<?=$md5?>.setPosition(location<?=$md5?>);
