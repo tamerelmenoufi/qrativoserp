@@ -7,7 +7,13 @@
 
     $endereco =  "{$d->rua}, {$d->numero}, {$d->bairro}";
 
-    $coordenadas = json_decode($d->coordenadas);
+    $coordenada = json_decode($d->coordenadas);
+    if(!$coordenada[0] or !$coordenada[1]){
+        $coordenadas = "{$coordenada[0]},{$coordenada[1]}";
+    }else{
+        $coordenadas = false;
+    }
+
 
 ?>
 
@@ -26,7 +32,7 @@
     <div id="map<?=$md5?>"></div>
 
     <script>
-        coordenadas<?=$md5?> = ''; //'<?="{$coordenadas[0]},{$coordenadas[1]}"?>';
+        coordenadas<?=$md5?> = '<?="{$coordenadas}"?>';
         endereco<?=$md5?> = "<?=$endereco?>";
         geocoder<?=$md5?> = new google.maps.Geocoder();
         map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
@@ -42,7 +48,7 @@
             <?php
             if($d->coordenadas){
             ?>
-            center: { lat: <?=$coordenadas[0]?>, lng: <?=$coordenadas[1]?> },
+            center: { lat: <?=$coordenada[0]?>, lng: <?=$coordenada[1]?> },
             zoom: 18,
 
             <?php
@@ -56,7 +62,7 @@
         );
 
         marker<?=$md5?> = new google.maps.Marker({
-            position: { lat: <?=(($coordenadas[0])?:0)?>, lng: <?=(($coordenadas[1])?:0)?> },
+            position: { lat: <?=(($coordenada[0])?:0)?>, lng: <?=(($coordenada[1])?:0)?> },
             map:map<?=$md5?>,
             title: "Hello World!",
             draggable:false,
