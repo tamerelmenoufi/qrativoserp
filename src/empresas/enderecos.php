@@ -61,7 +61,28 @@
 ?>
 
 <script>
+
+    function Mapas(e){
+        $.ajax({
+                url:"src/empresas/visualizar_endereco.php",
+                type:"POST",
+                data:{
+                    e,
+                },
+                success:function(dados){
+                    $(`div[e="${e}"]`).html(dados);
+                }
+            });
+    }
+
+
     $(function(){
+
+        $(".mapa").each(function(){
+            e = $(this).attr('e');
+            Mapa(e);
+        });
+
         $("button[novoEnderecoEmpresa]").click(function(){
             $.ajax({
                 url:"src/empresas/enderecos_form.php",
