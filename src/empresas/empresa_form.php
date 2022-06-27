@@ -125,8 +125,8 @@
                         success:function(dados){
                             $(".tab-pane").html(dados);
                             $("a[empresa]").removeClass("active");
-                            $(`a[empresa="${empresa}"]`).addClass("active");
                             $("a[empresa]").attr("empresa",empresa);
+                            $(`a[empresa="${empresa}"]`).addClass("active");
                         }
                     });
 
