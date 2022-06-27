@@ -98,9 +98,7 @@
                     acao:'coordenadas'
                 },
                 success:function(dados){
-                    let myOffCanvas = document.getElementById('offcanvasDireita');
-                    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
-                    openedCanvas.hide();
+
                 }
             });
         });
@@ -148,6 +146,9 @@
                         },
                         success:function(dados){
                             $(".tab-pane").html(dados);
+                            let myOffCanvas = document.getElementById('offcanvasDireita');
+                            let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                            openedCanvas.hide();
                         }
                     });
 
