@@ -65,7 +65,7 @@
 
         $("button[offcanvasDireita]").click(function(){
             $.ajax({
-                url:"src/empresas/form.php",
+                url:"src/empresas/empresa_form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
