@@ -91,7 +91,7 @@
         e = $(this).attr("e");
         if(e){
             $.ajax({
-                url:"src/empresas/visualizar_endereco.php",
+                url:"src/empresas/editar_endereco.php",
                 type:"POST",
                 data:{
                     e,
