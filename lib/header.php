@@ -9,7 +9,4 @@
 
 <script src="lib/vendor/jQuery-Mask/jquery.mask.min.js" ></script>
 
-<script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSnblPMOwEdteX5UPYXf7XUtJYcbypx6w&callback=initMap&v=weekly&language=pt&region=BR"
-      async
-    ></script>
+
