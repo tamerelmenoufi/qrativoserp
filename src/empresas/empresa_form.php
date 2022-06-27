@@ -124,6 +124,7 @@
                         },
                         success:function(dados){
                             $(".tab-pane").html(dados);
+                            $("a[empresa]").attr("empresa",empresa);
                         }
                     });
 
