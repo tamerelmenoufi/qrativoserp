@@ -126,7 +126,7 @@
         $("a[editar]").click(function(){
             codigo = $(this).attr("editar");
             $.ajax({
-                url:"src/empresas/enderecos_form.php",
+                url:"src/empresas/editar_endereco.php",
                 type:"POST",
                 data:{
                     codigo,
