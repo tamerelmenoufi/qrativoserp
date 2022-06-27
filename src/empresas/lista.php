@@ -76,7 +76,7 @@
         $("tr[linha]").click(function(){
             empresa = $(this).attr("linha");
 
-            $("a[empresa]").attr("empresa",codigo);
+            $("a[empresa]").attr("empresa",empresa);
             $("a[empresa]").removeClass("active");
             $('a[opc="visualizar"]').addClass("active");
 
