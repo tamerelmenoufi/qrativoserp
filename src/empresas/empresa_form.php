@@ -109,7 +109,7 @@
 
             campos.push({name: 'acao', value: 'salvar'})
             $.ajax({
-                url: 'src/empresas/form.php',
+                url: 'src/empresas/empresa_form.php',
                 type:"POST",
                 dataType:"json",
                 data: campos,
