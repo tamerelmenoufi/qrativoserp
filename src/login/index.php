@@ -214,6 +214,7 @@
         };
 
         $("#Acessar").click(function(){
+            alert('Teste');
             AcaoBotao();
         });
 
