@@ -51,7 +51,14 @@
                         aria-controls="offcanvasDireita"
                         ><?=$d->situacao_descricao?></a>
                     </div>
-                    <div class="col mapa" e="<?=$d->codigo?>">
+                    <div
+                        class="col mapa"
+                        e="<?=$d->codigo?>"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                    >
                         Dados do Mapa
                     </div>
                 </div>
@@ -80,6 +87,21 @@
         });
     }
 
+    $(".mapa").click(function(){
+        e = $(this).attr("e");
+        if(e){
+            $.ajax({
+                url:"src/empresas/visualizar_endereco.php",
+                type:"POST",
+                data:{
+                    e,
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        }
+    });
 
     $(function(){
 
