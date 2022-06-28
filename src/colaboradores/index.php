@@ -77,7 +77,7 @@
             colaborador = $(this).attr("linha");
 
             $.ajax({
-                url:"src/empresas/form.php",
+                url:"src/colaboradores/form.php",
                 type:"POST",
                 data:{
                     colaborador,
