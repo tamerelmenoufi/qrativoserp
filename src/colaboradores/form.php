@@ -127,23 +127,17 @@
 
             campos.push({name: 'acao', value: 'salvar'})
             $.ajax({
-                url: 'src/empresas/contatos_form.php',
+                url: 'src/colaboradores/form.php',
                 type:"POST",
                 dataType:"json",
                 data: campos,
                 success: function (dados) {
                     empresa = dados.codigo;
                     $.ajax({
-                        url:"src/empresas/contatos.php",
+                        url:"src/colaboradores/index.php",
                         type:"POST",
-                        // data:{
-                        //     empresa,
-                        // },
                         success:function(dados){
-                            $(".tab-pane").html(dados);
-                            // $("a[empresa]").removeClass("active");
-                            // $("a[empresa]").attr("empresa",empresa);
-                            // $(`a[opc="visualizar"]`).addClass("active");
+                            $("#paginaHome").html(dados);
                         }
                     });
 
