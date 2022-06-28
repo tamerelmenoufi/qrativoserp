@@ -35,8 +35,8 @@
     }
 
 
-    if($_POST['codigo']){
-        $query = "select * from colaboradores where codigo = '{$_POST['codigo']}'";
+    if($_POST['colaborador']){
+        $query = "select * from colaboradores where codigo = '{$_POST['colaborador']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
     }
