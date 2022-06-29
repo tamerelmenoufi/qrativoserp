@@ -3,6 +3,8 @@
 
     if($_POST['servico']) $_SESSION['servico'] = $_POST['servico'];
 
+    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj from os a left join empresas b on a.empresa = b.codigo where a.codigo = '{$_SESSION['servico']}'"));
+
     $query = "select
                     a.*,
                     if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
@@ -39,6 +41,31 @@
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div col>
+
+
+        <div class="card">
+            <h5 class="card-header"><?=$e->razao_social?></h5>
+            <div class="card-body">
+                <h5 class="card-title"><?=$e->cnpj?></h5>
+                <p class="card-text">
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><?=$e->titulo?></li>
+                        <li class="list-group-item"><?=$e->descrição?></li>
+                        <li class="list-group-item"><?=$e->situacao?></li>
+                    </ul>
+
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <table id="TableColaboradores" class="table table-hover" style="width:100%">
     <thead>
         <tr>
