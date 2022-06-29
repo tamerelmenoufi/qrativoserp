@@ -16,7 +16,7 @@
         color:#eee;
         position:relative;
     }
-    .Foto div p{
+    p[msg]{
         font-size:10px;
         color:blue;
         position:relative;
@@ -40,7 +40,7 @@
                 <i class="fa-solid fa-image"></i>
             </div>
         </div>
-        <p>Selecione a imagem</p>
+        <p msg>Selecione a imagem</p>
     </div>
 </div>
 <div class="row">
