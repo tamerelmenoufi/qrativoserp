@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<div style="position:absolute; bottom:0; left:0; width:100%; overflow-y: auto; overflow-x: hidden; padding:20px; border:solid 1px red;">
+<div style="position:absolute; bottom:0; left:0; width:100%; overflow: auto; padding:20px; border:solid 1px red;">
     <div class="row">
         <div class="col">
             <div class="ListarFotos"></div>
