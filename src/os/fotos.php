@@ -8,13 +8,12 @@
         height:230px;
         border:solid 1px red;
         display: flex;
-    }
-    .Foto i{
-        display: flex;
-        font-size:70px;
-        color:#eee;
         align-items: center;
         justify-items: center;
+    }
+    .Foto i{
+        font-size:70px;
+        color:#eee;
     }
 </style>
 
