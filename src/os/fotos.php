@@ -7,7 +7,6 @@
         width:100%;
         height:230px;
         border:solid 1px red;
-        display: flex;
     }
     .Foto i{
         display: flex;
