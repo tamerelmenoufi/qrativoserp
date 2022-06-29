@@ -107,13 +107,13 @@
                 <label for="empresa_endereco">Localização da Empresa</label>
             </div>
 
-            <div class="form-floating mb-3">
+            <!-- <div class="form-floating mb-3">
                 <select class="form-select" name="tipo" id="tipo">
                     <option value="solicitacao" <?=(('solicitacao' == $d->tipo)?'selected':false)?>>Ordem de Serviço</option>
                     <option value="servico" <?=(('servico' == $d->tipo)?'selected':false)?>>Solicitação de Serviço</option>
                 </select>
                 <label for="tipo">Tipo da Solicitação</label>
-            </div>
+            </div> -->
 
             <div class="form-floating mb-3">
                 <select class="form-select" name="responsavel" id="responsavel">
