@@ -50,12 +50,12 @@
             <h5 class="card-header"><?=$e->razao_social?></h5>
             <div class="card-body">
                 <h5 class="card-title"><?=$e->cnpj?></h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><?=$e->titulo?></li>
-                    <li class="list-group-item"><?=$e->descricao?></li>
-                    <li class="list-group-item"><?=$e->situacao?></li>
-                </ul>
             </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><?=$e->titulo?></li>
+                <li class="list-group-item"><?=$e->descricao?></li>
+                <li class="list-group-item"><?=$e->situacao?></li>
+            </ul>
         </div>
 
     </div>
