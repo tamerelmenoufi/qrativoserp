@@ -42,7 +42,7 @@
         <?php
         while($d = mysqli_fetch_object($result)){
         ?>
-        <tr linha='<?=$d->codigo?>'>
+        <tr>
             <td><?=$d->titulo?></td>
             <td><?=$d->nome_empresa?></td>
             <td><?=$d->situacao?></td>
@@ -50,10 +50,10 @@
 
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
+                        Ações
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item active" href="#">Action</a></li>
+                        <li linha='<?=$d->codigo?>'><a class="dropdown-item active">Editar</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -93,7 +93,7 @@
         });
 
 
-        $("tr[linha]").click(function(){
+        $("li[linha]").click(function(){
             os = $(this).attr("linha");
 
             $.ajax({
