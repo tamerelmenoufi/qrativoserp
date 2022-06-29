@@ -115,7 +115,7 @@
                     <option value="servico" <?=(('servico' == $d->tipo)?'selected':false)?>>Solicitação de Serviço</option>
                 </select>
                 <label for="tipo">Tipo da Solicitação</label>
-            </div> -->
+            </div>
 
             <div class="form-floating mb-3">
                 <select class="form-select" name="responsavel" id="responsavel">
@@ -131,7 +131,7 @@
                     ?>
                 </select>
                 <label for="responsavel">Responsável pela Solicitação</label>
-            </div>
+            </div> -->
 
 
             <div class="form-floating mb-3">
@@ -160,6 +160,7 @@
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
             <input type="hidden" name="empresa" id="empresa" value="<?=$e->empresa?>">
             <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$e->empresa_responsavel?>">
+            <input type="hidden" name="responsavel" id="responsavel" value="<?=$e->responsavel?>">
             <input type="hidden" name="tipo" id="tipo" value="<?=$e->tipo?>">
             <button
                 salvar
