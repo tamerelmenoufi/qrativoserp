@@ -20,6 +20,7 @@
         font-size:10px;
         color:blue;
         position:relative;
+        text-align:center;
     }
     .FileFoto{
         position:absolute;
