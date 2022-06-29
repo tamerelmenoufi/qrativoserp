@@ -104,9 +104,9 @@
                         Ações
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
-                        <li editar="<?=$d->codigo?>"><a class="dropdown-item" href="#">Editar</a></li>
-                        <li fotos='<?=$d->codigo?>'><a class="dropdown-item" href="#">Registro Fotográfico</a></li>
-                        <li registros='<?=$d->codigo?>'><a class="dropdown-item" href="#">Registro de Eventos</a></li>
+                        <li os="<?=$d->codigo?>" url="src/os/servicos_form.php"><a class="dropdown-item" href="#">Editar</a></li>
+                        <li os='<?=$d->codigo?>' url="src/os/fotos.php"><a class="dropdown-item" href="#">Registro Fotográfico</a></li>
+                        <li os='<?=$d->codigo?>' url="src/os/eventos.php"><a class="dropdown-item" href="#">Registro de Eventos</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Separated link</a></li>
                     </ul>
@@ -145,11 +145,11 @@
         });
 
 
-        $("li[editar]").click(function(){
-            os = $(this).attr("editar");
-
+        $("li[os]").click(function(){
+            os = $(this).attr("os");
+            url = $(this).attr("url");
             $.ajax({
-                url:"src/os/servicos_form.php",
+                url,
                 type:"POST",
                 data:{
                     os,
