@@ -8,7 +8,7 @@
         border:solid 1px red;
         display: flex;
         align-items: center;
-        justify-items: center;
+        justify-content: center;
         text-align:center;
     }
     .Foto div{
