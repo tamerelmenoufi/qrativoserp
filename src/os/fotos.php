@@ -55,7 +55,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <div style="align:flex; justify-content:end">
+        <div style="display:flex; justify-content:end">
             <button class="btn btn-success btn-ms">Salvar</button>
         </div>
     </div>
