@@ -16,7 +16,7 @@
         color:#eee;
         position:relative;
     }
-    .Foto p{
+    .Foto div p{
         font-size:10px;
         color:blue;
         position:relative;
@@ -39,8 +39,8 @@
                 <input type="file" class="FileFoto" />
                 <i class="fa-solid fa-image"></i>
             </div>
-            <p>Selecione a imagem</p>
         </div>
+        <p>Selecione a imagem</p>
     </div>
 </div>
 <div class="row">
