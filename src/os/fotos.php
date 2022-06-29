@@ -33,7 +33,7 @@
 </style>
 
 <div class="row">
-    <div class="col">
+    <div class="col-4">
         <div class="Foto">
             <div>
                 <input type="file" class="FileFoto" />
@@ -42,9 +42,7 @@
         </div>
         <p msg>Selecione a imagem</p>
     </div>
-</div>
-<div class="row">
-    <div class="col">
+    <div class="col-8">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
             <label for="titulo">Título</label>
