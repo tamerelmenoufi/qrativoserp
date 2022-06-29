@@ -10,6 +10,7 @@
         display: flex;
     }
     .Foto i{
+        display: flex;
         font-size:70px;
         color:#eee;
         align-items: center;
