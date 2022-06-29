@@ -58,7 +58,7 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
                         <li linha='<?=$d->codigo?>'><a class="dropdown-item" href="#">Editar</a></li>
-                        <li><a servico='<?=$d->codigo?>' class="dropdown-item" href="#">Ordem de Serviços</a></li>
+                        <li servico='<?=$d->codigo?>'><a class="dropdown-item" href="#">Ordem de Serviços</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Separated link</a></li>
@@ -99,7 +99,6 @@
 
         $("li[linha]").click(function(){
             os = $(this).attr("linha");
-
             $.ajax({
                 url:"src/os/form.php",
                 type:"POST",
@@ -108,15 +107,29 @@
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
-
                     let myOffCanvas = document.getElementById('offcanvasDireita');
                     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     openedCanvas.show();
-
                 }
             });
         });
 
+
+
+        $("li[servico]").click(function(){
+            servico = $(this).attr("servico");
+            $.ajax({
+                url:"src/os/servicos_form.php",
+                type:"POST",
+                data:{
+                    servico,
+                },
+                success:function(dados){
+                    // $(".LateralDireita").html(dados);
+                    $(".tab-pane").html(dados);
+                }
+            });
+        });
 
 
     });
