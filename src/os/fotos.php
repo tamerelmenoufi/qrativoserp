@@ -5,7 +5,6 @@
     .Foto{
         width:100%;
         height:120px;
-        border:solid 1px red;
         display: flex;
         align-items: center;
         justify-content: center;
