@@ -1,7 +1,12 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
-    $query = "select *, if(situacao = '1', 'Liberado', 'Bloqueado') as situacao from os order by titulo";
+    $query = "select
+                    a.*,
+                    if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
+                    b.nome as nome_empresa
+                left join empresas b on a.empresa = b.codigo
+                from os a a.order by a.titulo";
     $result = mysqli_query($con, $query);
 
 ?>
@@ -38,7 +43,7 @@
         ?>
         <tr linha='<?=$d->codigo?>'>
             <td><?=$d->titulo?></td>
-            <td><?=$d->empresa?></td>
+            <td><?=$d->nome_empresa?></td>
             <td><?=$d->situacao?></td>
             <!-- <td>
                 <button
