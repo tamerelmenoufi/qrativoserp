@@ -19,7 +19,7 @@
         <div class="p-2"><h5>Ordem de Serviços</h5></div>
         <div class="p-2">
             <button
-                class="btn btn-secundary"
+                class="btn btn-secondary"
                 voltar
             >
                 <i class="fa-solid fa-plus"></i>
