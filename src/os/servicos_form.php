@@ -1,6 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
+    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj from os a left join empresas b on a.empresa = b.codigo where a.codigo = '{$_SESSION['servico']}'"));
+
     if($_POST['acao'] == 'salvar'){
 
         $data = $_POST;
@@ -59,7 +61,7 @@
                 <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
                 <label for="descricao">Descricão</label>
             </div>
-            <div class="form-floating mb-3">
+            <!-- <div class="form-floating mb-3">
                 <select class="form-select" name="empresa" id="empresa">
                     <option value="">::Selecione::</option>
                     <?php
@@ -89,7 +91,7 @@
                     ?>
                 </select>
                 <label for="empresa_responsavel">Responsável pela Empresa</label>
-            </div>
+            </div> -->
 
             <div class="form-floating mb-3">
                 <select class="form-select" name="empresa_endereco" id="empresa_endereco">
@@ -107,13 +109,13 @@
                 <label for="empresa_endereco">Localização da Empresa</label>
             </div>
 
-            <div class="form-floating mb-3">
+            <!-- <div class="form-floating mb-3">
                 <select class="form-select" name="tipo" id="tipo">
                     <option value="solicitacao" <?=(('solicitacao' == $d->tipo)?'selected':false)?>>Ordem de Serviço</option>
                     <option value="servico" <?=(('servico' == $d->tipo)?'selected':false)?>>Solicitação de Serviço</option>
                 </select>
                 <label for="tipo">Tipo da Solicitação</label>
-            </div>
+            </div> -->
 
             <div class="form-floating mb-3">
                 <select class="form-select" name="responsavel" id="responsavel">
@@ -156,6 +158,9 @@
                 <label for="situacao">Situação</label>
             </div>
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
+            <input type="hidden" name="empresa" id="empresa" value="<?=$e->empresa?>">
+            <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$e->empresa_responsavel?>">
+            <input type="hidden" name="tipo" id="tipo" value="<?=$e->tipo?>">
             <button
                 salvar
                 class="btn btn-primary"
@@ -184,8 +189,6 @@
 
 <script>
     $(function(){
-        $("#telefone").mask("(99) 9 9999-9999");
-        $("#cpf").mask("999.999.999-99");
 
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
@@ -199,14 +202,13 @@
 
             campos.push({name: 'acao', value: 'salvar'})
             $.ajax({
-                url: 'src/os/form.php',
+                url: 'src/os/servicos_form.php',
                 type:"POST",
                 dataType:"json",
                 data: campos,
                 success: function (dados) {
-                    empresa = dados.codigo;
                     $.ajax({
-                        url:"src/os/index.php",
+                        url:"src/os/servicos.php",
                         type:"POST",
                         success:function(dados){
                             $("#paginaHome").html(dados);

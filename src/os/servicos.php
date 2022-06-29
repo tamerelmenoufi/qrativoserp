@@ -74,7 +74,6 @@
         <tr>
             <th>Título</th>
             <th>Empresa</th>
-            <th>Tipo</th>
             <th>Situação</th>
             <th>Ações</th>
         </tr>
@@ -86,22 +85,8 @@
         <tr>
             <td><?=$d->titulo?></td>
             <td><?=$d->nome_empresa?></td>
-            <td><?=$d->tipo?></td>
             <td><?=$d->situacao?></td>
             <td>
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="acoesOs" data-bs-toggle="dropdown" aria-expanded="false">
-                        Ações
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
-                        <li linha='<?=$d->codigo?>'><a class="dropdown-item">Editar</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
-                    </ul>
-                </div>
 
                 <!-- <button
                     editar="<?=$d->codigo?>"
@@ -137,7 +122,7 @@
 
         $("button[offcanvasDireita]").click(function(){
             $.ajax({
-                url:"src/os/form.php",
+                url:"src/os/servicos_form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
