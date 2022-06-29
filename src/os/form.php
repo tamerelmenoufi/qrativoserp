@@ -79,7 +79,7 @@
                 <select class="form-select" name="empresa_responsavel" id="empresa_responsavel">
                     <option value="">::Selecione::</option>
                     <?php
-                    $q = "select * from empresa_contatos where situacao = '1' order by nome";
+                    $q = "select * from empresas_contatos where situacao = '1' order by nome";
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
@@ -95,7 +95,7 @@
                 <select class="form-select" name="empresa_endereco" id="empresa_endereco">
                     <option value="">::Selecione::</option>
                     <?php
-                    $q = "select * from empresa_enderecos where situacao = '1' order by nome";
+                    $q = "select * from empresas_enderecos where situacao = '1' order by nome";
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
