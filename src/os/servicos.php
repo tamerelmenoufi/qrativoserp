@@ -131,7 +131,7 @@
 
 
         $("button[editar]").click(function(){
-            os = $(this).attr("ediat");
+            os = $(this).attr("editar");
 
             $.ajax({
                 url:"src/os/servicos_form.php",
