@@ -104,7 +104,7 @@
                 <label for="situacao">Situação</label>
             </div>
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
-            <input type="hidden" name="vinculo" id="vinculo" value="<?=$d->codigo?>">
+            <input type="hidden" name="vinculo" id="vinculo" value="<?=$em->codigo?>">
             <input type="hidden" name="empresa" id="empresa" value="<?=$em->empresa?>">
             <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$em->empresa_responsavel?>">
             <input type="hidden" name="responsavel" id="responsavel" value="<?=$em->responsavel?>">
