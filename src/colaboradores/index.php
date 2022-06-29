@@ -7,7 +7,7 @@
 ?>
 <div class="col">
     <div class="col d-flex justify-content-between">
-        <div class="p-2">Colaboradores</div>
+        <div class="p-2"><h5>Colaboradores</h5></div>
         <div class="p-2">
             <button
                 class="btn btn-primary"
