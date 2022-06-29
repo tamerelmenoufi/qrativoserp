@@ -1,14 +1,15 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
+    if($_POST['servico']) $_SESSION['servico'] = $_POST['servico'];
+
     $query = "select
                     a.*,
                     if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
-                    b.razao_social as nome_empresa,
-                    (select count(*) from os where vinculo = a.codigo) as quantidade
+                    b.razao_social as nome_empresa
                 from os a
                 left join empresas b on a.empresa = b.codigo
-                where vinculo = '0'
+                where vinculo = '{$_SESSION['servico']}'
                 order by a.titulo";
     $result = mysqli_query($con, $query);
 
@@ -36,7 +37,7 @@
         <tr>
             <th>Título</th>
             <th>Empresa</th>
-            <th>O.S. Vinculadas</th>
+            <th>Tipo</th>
             <th>Situação</th>
             <th>Ações</th>
         </tr>
@@ -48,7 +49,7 @@
         <tr>
             <td><?=$d->titulo?></td>
             <td><?=$d->nome_empresa?></td>
-            <td><?=$d->quantidade?></td>
+            <td><?=$d->tipo?></td>
             <td><?=$d->situacao?></td>
             <td>
 
@@ -57,8 +58,8 @@
                         Ações
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
-                        <li linha='<?=$d->codigo?>'><a class="dropdown-item" href="#">Editar</a></li>
-                        <li><a servico='<?=$d->codigo?>' class="dropdown-item" href="#">Ordem de Serviços</a></li>
+                        <li linha='<?=$d->codigo?>'><a class="dropdown-item">Editar</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Separated link</a></li>
