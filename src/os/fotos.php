@@ -12,7 +12,7 @@
         justify-items: center;
         text-align:center;
     }
-    .Foto i{
+    .Foto div{
         font-size:70px;
         color:#eee;
     }
@@ -21,7 +21,7 @@
 <div class="row">
     <div class="col">
         <div class="Foto">
-            <i class="fa-solid fa-image"></i>
+            <div><i class="fa-solid fa-image"></i></div>
         </div>
     </div>
 </div>
