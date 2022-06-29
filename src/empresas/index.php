@@ -31,7 +31,7 @@
                 </a>
                 <a
                     empresa=""
-                    opc="visualizar"
+                    opc="os"
                     url="src/os/index.php"
                     class="nav-link"
                 >
