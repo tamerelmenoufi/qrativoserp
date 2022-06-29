@@ -14,13 +14,26 @@
     .Foto div{
         font-size:70px;
         color:#eee;
+        position:relative;
+    }
+    .FileFoto{
+        position:absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        width:100%;
+        background:#eee;
+        opacity:0.9;
     }
 </style>
 
 <div class="row">
     <div class="col">
         <div class="Foto">
-            <div><i class="fa-solid fa-image"></i></div>
+            <div>
+                <input type="file" class="FileFoto" />
+                <i class="fa-solid fa-image"></i>
+            </div>
         </div>
     </div>
 </div>
