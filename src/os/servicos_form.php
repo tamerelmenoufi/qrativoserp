@@ -67,7 +67,7 @@
                 <select class="form-select" name="empresa_endereco" id="empresa_endereco">
                     <option value="">::Selecione::</option>
                     <?php
-                    $q = "select * from empresas_enderecos where situacao = '1' order by nome";
+                    $q = "select * from empresas_enderecos where situacao = '1' and empresa = '{$_SESSION['empresa']}' order by nome";
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
