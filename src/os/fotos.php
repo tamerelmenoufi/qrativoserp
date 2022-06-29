@@ -23,7 +23,7 @@
         bottom:0;
         width:100%;
         background:#eee;
-        opacity:0.9;
+        opacity:0;
     }
 </style>
 
