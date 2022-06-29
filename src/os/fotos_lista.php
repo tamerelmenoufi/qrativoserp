@@ -35,7 +35,7 @@
 <div class="row">
     <div class="col">
 
-        <div class="card mb-3">
+        <div class="card mt-3">
             <div class="row g-0">
                 <div class="col-md-4">
                 <img src="..." class="img-fluid rounded-start" alt="...">
