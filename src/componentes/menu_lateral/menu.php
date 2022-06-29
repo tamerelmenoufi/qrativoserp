@@ -19,6 +19,14 @@
 
     <div class="row mb-1">
       <div class="col">
+        <a url="src/home/os/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Ordem de Serviços
+        </a>
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="col">
         <a url="src/empresas/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-clipboard-list"></i> Controle de Ordem de Serviços
         </a>
