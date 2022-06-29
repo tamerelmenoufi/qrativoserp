@@ -88,7 +88,7 @@
             <td><?=$d->situacao?></td>
             <td>
 
-                <button
+                <!-- <button
                     editar="<?=$d->codigo?>"
                     class="btn btn-success btn-xs"
                     data-bs-toggle="offcanvas"
@@ -97,7 +97,22 @@
                     aria-controls="offcanvasDireita"
                 >
                     Ed
-                </button>
+                </button> -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="acoesOs" data-bs-toggle="dropdown" aria-expanded="false">
+                        Ações
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
+                        <li editar="<?=$d->codigo?>"><a class="dropdown-item" href="#">Editar</a></li>
+                        <li fotos='<?=$d->codigo?>'><a class="dropdown-item" href="#">Registro Fotográfico</a></li>
+                        <li registros='<?=$d->codigo?>'><a class="dropdown-item" href="#">Registro de Eventos</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+
+
                 <!-- <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button> -->
             </td>
         </tr>
@@ -130,7 +145,7 @@
         });
 
 
-        $("button[editar]").click(function(){
+        $("li[editar]").click(function(){
             os = $(this).attr("editar");
 
             $.ajax({
