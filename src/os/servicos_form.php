@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
-    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj from os a left join empresas b on a.empresa = b.codigo where a.codigo = '{$_SESSION['servico']}'"));
+    $em = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj from os a left join empresas b on a.empresa = b.codigo where a.codigo = '{$_SESSION['servico']}'"));
 
     if($_POST['acao'] == 'salvar'){
 
@@ -105,10 +105,10 @@
             </div>
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
             <input type="hidden" name="vinculo" id="vinculo" value="<?=$d->codigo?>">
-            <input type="hidden" name="empresa" id="empresa" value="<?=$e->empresa?>">
-            <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$e->empresa_responsavel?>">
-            <input type="hidden" name="responsavel" id="responsavel" value="<?=$e->responsavel?>">
-            <input type="hidden" name="tipo" id="tipo" value="<?=$e->tipo?>">
+            <input type="hidden" name="empresa" id="empresa" value="<?=$em->empresa?>">
+            <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$em->empresa_responsavel?>">
+            <input type="hidden" name="responsavel" id="responsavel" value="<?=$em->responsavel?>">
+            <input type="hidden" name="tipo" id="tipo" value="<?=$em->tipo?>">
             <button
                 salvar
                 class="btn btn-primary"
