@@ -12,7 +12,7 @@
         text-align:center;
     }
     .Foto div{
-        font-size:80px;
+        font-size:100px;
         color:#eee;
         position:relative;
     }
