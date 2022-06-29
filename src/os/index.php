@@ -49,11 +49,11 @@
             <td>
 
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="acoesOs" data-bs-toggle="dropdown" aria-expanded="false">
                         Ações
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                        <li linha='<?=$d->codigo?>'><a class="dropdown-item active">Editar</a></li>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
+                        <li linha='<?=$d->codigo?>'><a class="dropdown-item">Editar</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                         <li><hr class="dropdown-divider"></li>
