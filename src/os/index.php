@@ -34,6 +34,7 @@
         <tr>
             <th>Título</th>
             <th>Empresa</th>
+            <th>Tipo</th>
             <th>Situação</th>
             <th>Ações</th>
         </tr>
@@ -45,6 +46,7 @@
         <tr>
             <td><?=$d->titulo?></td>
             <td><?=$d->nome_empresa?></td>
+            <td><?=$d->tipo?></td>
             <td><?=$d->situacao?></td>
             <td>
 
