@@ -34,7 +34,9 @@
 
 <div class="row">
     <div class="col">
-
+    <?php
+    for($i=0; $i<10;$i++){
+    ?>
         <div class="card mt-3">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -49,8 +51,9 @@
                 </div>
             </div>
         </div>
-
-
+    <?php
+    }
+    ?>
     </div>
 </div>
 
