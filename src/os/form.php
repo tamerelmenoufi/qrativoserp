@@ -209,7 +209,8 @@
                         url:"src/os/index.php",
                         type:"POST",
                         success:function(dados){
-                            $("#paginaHome").html(dados);
+                            // $("#paginaHome").html(dados);
+                            $(".tab-pane").html(dados);
                         }
                     });
 
