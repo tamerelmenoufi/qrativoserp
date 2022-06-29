@@ -4,7 +4,7 @@
 <style>
     .Foto{
         width:100%;
-        height:230px;
+        height:150px;
         border:solid 1px red;
         display: flex;
         align-items: center;
@@ -12,7 +12,7 @@
         text-align:center;
     }
     .Foto div{
-        font-size:70px;
+        font-size:80px;
         color:#eee;
         position:relative;
     }
