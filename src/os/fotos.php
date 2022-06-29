@@ -61,11 +61,14 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col">
-        <div class="ListarFotos"></div>
+<div style="position:absolute; bottom:0; width:100%; overflow:auto; border:solid 1px red;">
+    <div class="row">
+        <div class="col">
+            <div class="ListarFotos"></div>
+        </div>
     </div>
 </div>
+
 
 <script>
     $(function(){
