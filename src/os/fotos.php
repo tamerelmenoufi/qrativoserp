@@ -60,3 +60,20 @@
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col">
+        <div class="ListarFotos"></div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $.ajax({
+            url:"src/os/fotos_lista.php",
+            success:function(dados){
+                $(".ListarFotos").html(dados);
+            }
+        });
+    })
+</script>
