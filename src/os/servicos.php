@@ -54,7 +54,7 @@
 
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><?=$e->titulo?></li>
-                        <li class="list-group-item"><?=$e->descrição?></li>
+                        <li class="list-group-item"><?=$e->descricao?></li>
                         <li class="list-group-item"><?=$e->situacao?></li>
                     </ul>
 
