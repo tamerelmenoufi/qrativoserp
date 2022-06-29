@@ -5,8 +5,9 @@
                     a.*,
                     if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
                     b.razao_social as nome_empresa
+                from os a
                 left join empresas b on a.empresa = b.codigo
-                from os a a.order by a.titulo";
+                order by a.titulo";
     $result = mysqli_query($con, $query);
 
 ?>
