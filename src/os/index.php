@@ -119,7 +119,7 @@
         $("li[servico]").click(function(){
             servico = $(this).attr("servico");
             $.ajax({
-                url:"src/os/servicos_form.php",
+                url:"src/os/servicos.php",
                 type:"POST",
                 data:{
                     servico,
