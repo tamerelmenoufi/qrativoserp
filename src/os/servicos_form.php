@@ -108,7 +108,7 @@
             <input type="hidden" name="empresa" id="empresa" value="<?=$em->empresa?>">
             <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$em->empresa_responsavel?>">
             <input type="hidden" name="responsavel" id="responsavel" value="<?=$em->responsavel?>">
-            <input type="hidden" name="tipo" id="tipo" value="<?=$em->tipo?>">
+            <input type="hidden" name="tipo" id="tipo" value="servico">
             <button
                 salvar
                 class="btn btn-primary"

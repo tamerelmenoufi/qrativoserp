@@ -59,7 +59,7 @@
                 <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
                 <label for="descricao">Descricão</label>
             </div>
-            <div class="form-floating mb-3">
+            <!-- <div class="form-floating mb-3">
                 <select class="form-select" name="empresa" id="empresa">
                     <option value="">::Selecione::</option>
                     <?php
@@ -73,13 +73,13 @@
                     ?>
                 </select>
                 <label for="empresa">Descricão</label>
-            </div>
+            </div> -->
 
             <div class="form-floating mb-3">
                 <select class="form-select" name="empresa_responsavel" id="empresa_responsavel">
                     <option value="">::Selecione::</option>
                     <?php
-                    $q = "select * from empresas_contatos where situacao = '1' order by nome";
+                    $q = "select * from empresas_contatos where situacao = '1' and empresa = '{$_SESSION['empresa']}' order by nome";
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
@@ -95,7 +95,7 @@
                 <select class="form-select" name="empresa_endereco" id="empresa_endereco">
                     <option value="">::Selecione::</option>
                     <?php
-                    $q = "select * from empresas_enderecos where situacao = '1' order by nome";
+                    $q = "select * from empresas_enderecos where situacao = '1' and empresa = '{$_SESSION['empresa']}' order by nome";
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
@@ -156,6 +156,8 @@
                 <label for="situacao">Situação</label>
             </div>
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
+            <input type="hidden" name="empresa" id="empresa" value="<?=$_SESSION['empresa']?>">
+            <input type="hidden" name="tipo" id="tipo" value="solicitacao">
             <button
                 salvar
                 class="btn btn-primary"
