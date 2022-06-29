@@ -13,7 +13,7 @@
 ?>
 <div class="col">
     <div class="col d-flex justify-content-between">
-        <div class="p-2">Ordem de Serviços</div>
+        <div class="p-2"><h3>Ordem de Serviços</h3></div>
         <div class="p-2">
             <button
                 class="btn btn-primary"
