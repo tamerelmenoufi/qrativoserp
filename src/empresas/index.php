@@ -21,10 +21,46 @@
         <h5>Gerenciamento de Empresas</h5>
         <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a empresa="" opc="lista" class="nav-link active"><i class="fa-solid fa-building"></i> Emresas</a>
-                <a empresa="" opc="visualizar" class="nav-link"><i class="fa-solid fa-list-check"></i> Dados da empresa</a>
-                <a empresa="" opc="contatos" class="nav-link"><i class="fa-solid fa-id-badge"></i> Contatos / Representantes</a>
-                <a empresa="" opc="enderecos" class="nav-link"><i class="fa-solid fa-location-dot"></i> Endereços / Filiais</a>
+                <a
+                    empresa=""
+                    opc="lista"
+                    url="src/empresas/lista.php"
+                    class="nav-link active"
+                >
+                    <i class="fa-solid fa-building"></i> Emresas
+                </a>
+                <a
+                    empresa=""
+                    opc="visualizar"
+                    url="src/os/index.php"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-list-check"></i> Solicitações de Serviços
+                </a>
+                <a
+                    empresa=""
+                    opc="visualizar"
+                    url="src/empresas/visualizar.php"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-list-check"></i> Dados da empresa
+                </a>
+                <a
+                    empresa=""
+                    opc="contatos"
+                    url="src/empresas/contatos.php"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-id-badge"></i> Contatos / Representantes
+                </a>
+                <a
+                    empresa=""
+                    opc="enderecos"
+                    url="src/empresas/enderecos.php"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-location-dot"></i> Endereços / Filiais
+                </a>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade show active">...</div>
@@ -51,6 +87,7 @@
 
             empresa = $(this).attr("empresa");
             opc = $(this).attr("opc");
+            url = $(this).attr("url");
 
             if(parseInt(empresa) > 0 || opc == 'lista'){
 
@@ -59,7 +96,7 @@
                 if(opc == 'lista') $("a[empresa]").attr("empresa",'');
 
                 $.ajax({
-                    url:`src/empresas/${opc}.php`,
+                    url,
                     type:"POST",
                     data:{
                         opc,
