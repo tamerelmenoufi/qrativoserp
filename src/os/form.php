@@ -60,7 +60,7 @@
                 <label for="descricao">Descricão</label>
             </div>
             <div class="form-floating mb-3">
-                <select name="empresa" id="empresa">
+                <select class="form-select" name="empresa" id="empresa">
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from empresas where situacao = '1' order by razao_social";
@@ -76,7 +76,7 @@
             </div>
 
             <div class="form-floating mb-3">
-                <select name="empresa_responsavel" id="empresa_responsavel">
+                <select class="form-select" name="empresa_responsavel" id="empresa_responsavel">
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from empresa_contatos where situacao = '1' order by nome";
@@ -92,7 +92,7 @@
             </div>
 
             <div class="form-floating mb-3">
-                <select name="empresa_endereco" id="empresa_endereco">
+                <select class="form-select" name="empresa_endereco" id="empresa_endereco">
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from empresa_enderecos where situacao = '1' order by nome";
@@ -108,7 +108,7 @@
             </div>
 
             <div class="form-floating mb-3">
-                <select name="tipo" id="tipo">
+                <select class="form-select" name="tipo" id="tipo">
                     <option value="solicitacao">Ordem de Serviço</option>
                     <option value="servico">Solicitação de Serviço</option>
                 </select>
@@ -116,7 +116,7 @@
             </div>
 
             <div class="form-floating mb-3">
-                <select name="responsavel" id="responsavel">
+                <select class="form-select" name="responsavel" id="responsavel">
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from colaboradores where situacao = '1' order by nome";
@@ -133,7 +133,7 @@
 
 
             <div class="form-floating mb-3">
-                <select name="executor" id="executor">
+                <select class="form-select" name="executor" id="executor">
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from colaboradores where situacao = '1' order by nome";
