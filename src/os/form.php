@@ -36,7 +36,7 @@
 
 
     if($_POST['os']){
-        $query = "select * from os where codigo = '{$_POST['os']}'";
+        echo $query = "select * from os where codigo = '{$_POST['os']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
     }
