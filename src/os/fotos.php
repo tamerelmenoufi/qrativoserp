@@ -16,6 +16,11 @@
         color:#eee;
         position:relative;
     }
+    .Foto p{
+        font-size:10px;
+        color:blue;
+        position:relative;
+    }
     .FileFoto{
         position:absolute;
         left:0;
@@ -34,6 +39,19 @@
                 <input type="file" class="FileFoto" />
                 <i class="fa-solid fa-image"></i>
             </div>
+            <p>Selecione a imagem</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
+            <label for="titulo">Título</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
+            <label for="descricao">Descricão</label>
         </div>
     </div>
 </div>
