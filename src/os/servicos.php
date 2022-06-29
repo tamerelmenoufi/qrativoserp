@@ -19,6 +19,13 @@
         <div class="p-2"><h5>Ordem de Serviços</h5></div>
         <div class="p-2">
             <button
+                class="btn btn-secundary"
+                voltar
+            >
+                <i class="fa-solid fa-plus"></i>
+                Voltar
+            </button>
+            <button
                 class="btn btn-primary"
                 data-bs-toggle="offcanvas"
                 href="#offcanvasDireita"
@@ -87,6 +94,16 @@
 
 <script>
     $(document).ready(function () {
+
+        $("button[voltar]").click(function(){
+            $.ajax({
+                url:"src/os/index.php",
+                success:function(dados){
+                    // $(".LateralDireita").html(dados);
+                    $(".tab-pane").html(dados);
+                }
+            });
+        });
 
         $("button[offcanvasDireita]").click(function(){
             $.ajax({
