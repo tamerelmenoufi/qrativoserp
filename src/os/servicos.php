@@ -47,12 +47,11 @@
 
 
         <div class="card">
-            <h5 class="card-header"><?=$e->razao_social?></h5>
+            <h5 class="card-header"><?=$e->razao_social?> <?=$e->cnpj?></h5>
             <div class="card-body">
-                <h5 class="card-title"><?=$e->cnpj?></h5>
+                <h5 class="card-title"><?=$e->titulo?></h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><?=$e->titulo?></li>
                 <li class="list-group-item"><?=$e->descricao?></li>
                 <li class="list-group-item"><?=$e->situacao?></li>
             </ul>
