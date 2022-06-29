@@ -88,7 +88,7 @@
             <td><?=$d->situacao?></td>
             <td>
 
-                <!-- <button
+                <button
                     editar="<?=$d->codigo?>"
                     class="btn btn-success btn-xs"
                     data-bs-toggle="offcanvas"
@@ -98,7 +98,7 @@
                 >
                     Ed
                 </button>
-                <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button> -->
+                <!-- <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button> -->
             </td>
         </tr>
         <?php
@@ -130,11 +130,11 @@
         });
 
 
-        $("li[linha]").click(function(){
-            os = $(this).attr("linha");
+        $("button[editar]").click(function(){
+            os = $(this).attr("ediat");
 
             $.ajax({
-                url:"src/os/form.php",
+                url:"src/os/servicos_form.php",
                 type:"POST",
                 data:{
                     os,
