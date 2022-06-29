@@ -56,7 +56,7 @@
                 <label for="titulo">Título</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea name="descricao" id="descricao" class="form-control" placeholder="Descrição"><?=$d->descricao?></textarea>
+                <textarea name="descricao" id="descricao" rows="10" class="form-control" placeholder="Descrição"><?=$d->descricao?></textarea>
                 <label for="descricao">Descricão</label>
             </div>
             <div class="form-floating mb-3">
