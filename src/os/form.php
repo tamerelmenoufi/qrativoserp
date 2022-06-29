@@ -36,7 +36,7 @@
 
 
     if($_POST['os']){
-        echo $query = "select * from os where codigo = '{$_POST['os']}'";
+        $query = "select * from os where codigo = '{$_POST['os']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
     }
@@ -67,7 +67,7 @@
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$e->codigo?>"><?=$e->razao_social?></option>
+                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->empresa)?'selected':false)?>><?=$e->razao_social?></option>
                     <?php
                     }
                     ?>
@@ -83,7 +83,7 @@
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$e->codigo?>"><?=$e->nome?></option>
+                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->empresa_responsavel)?'selected':false)?>><?=$e->nome?></option>
                     <?php
                     }
                     ?>
@@ -99,7 +99,7 @@
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$e->codigo?>"><?=$e->nome?></option>
+                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->empresa_endereco)?'selected':false)?>><?=$e->nome?></option>
                     <?php
                     }
                     ?>
@@ -109,8 +109,8 @@
 
             <div class="form-floating mb-3">
                 <select class="form-select" name="tipo" id="tipo">
-                    <option value="solicitacao">Ordem de Serviço</option>
-                    <option value="servico">Solicitação de Serviço</option>
+                    <option value="solicitacao" <?=(('solicitacao' == $d->tipo)?'selected':false)?>>Ordem de Serviço</option>
+                    <option value="servico" <?=(('servico' == $d->tipo)?'selected':false)?>>Solicitação de Serviço</option>
                 </select>
                 <label for="tipo">Tipo da Solicitação</label>
             </div>
@@ -123,7 +123,7 @@
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$e->codigo?>"><?=$e->nome?></option>
+                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->responsavel)?'selected':false)?>><?=$e->nome?></option>
                     <?php
                     }
                     ?>
@@ -140,7 +140,7 @@
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$e->codigo?>"><?=$e->nome?></option>
+                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->executor)?'selected':false)?>><?=$e->nome?></option>
                     <?php
                     }
                     ?>
