@@ -7,6 +7,7 @@
         width:100%;
         height:230px;
         text-align:center;
+        border:solid 1px red;
     }
     .Foto i{
         font-size:70px;
