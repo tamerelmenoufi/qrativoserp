@@ -61,37 +61,7 @@
                 <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
                 <label for="descricao">Descricão</label>
             </div>
-            <!-- <div class="form-floating mb-3">
-                <select class="form-select" name="empresa" id="empresa">
-                    <option value="">::Selecione::</option>
-                    <?php
-                    $q = "select * from empresas where situacao = '1' order by razao_social";
-                    $r = mysqli_query($con, $q);
-                    while($e = mysqli_fetch_object($r)){
-                    ?>
-                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->empresa)?'selected':false)?>><?=$e->razao_social?></option>
-                    <?php
-                    }
-                    ?>
-                </select>
-                <label for="empresa">Descricão</label>
-            </div>
 
-            <div class="form-floating mb-3">
-                <select class="form-select" name="empresa_responsavel" id="empresa_responsavel">
-                    <option value="">::Selecione::</option>
-                    <?php
-                    $q = "select * from empresas_contatos where situacao = '1' order by nome";
-                    $r = mysqli_query($con, $q);
-                    while($e = mysqli_fetch_object($r)){
-                    ?>
-                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->empresa_responsavel)?'selected':false)?>><?=$e->nome?></option>
-                    <?php
-                    }
-                    ?>
-                </select>
-                <label for="empresa_responsavel">Responsável pela Empresa</label>
-            </div> -->
 
             <div class="form-floating mb-3">
                 <select class="form-select" name="empresa_endereco" id="empresa_endereco">
@@ -108,30 +78,6 @@
                 </select>
                 <label for="empresa_endereco">Localização da Empresa</label>
             </div>
-
-            <!-- <div class="form-floating mb-3">
-                <select class="form-select" name="tipo" id="tipo">
-                    <option value="solicitacao" <?=(('solicitacao' == $d->tipo)?'selected':false)?>>Ordem de Serviço</option>
-                    <option value="servico" <?=(('servico' == $d->tipo)?'selected':false)?>>Solicitação de Serviço</option>
-                </select>
-                <label for="tipo">Tipo da Solicitação</label>
-            </div>
-
-            <div class="form-floating mb-3">
-                <select class="form-select" name="responsavel" id="responsavel">
-                    <option value="">::Selecione::</option>
-                    <?php
-                    $q = "select * from colaboradores where situacao = '1' order by nome";
-                    $r = mysqli_query($con, $q);
-                    while($e = mysqli_fetch_object($r)){
-                    ?>
-                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->responsavel)?'selected':false)?>><?=$e->nome?></option>
-                    <?php
-                    }
-                    ?>
-                </select>
-                <label for="responsavel">Responsável pela Solicitação</label>
-            </div> -->
 
 
             <div class="form-floating mb-3">
