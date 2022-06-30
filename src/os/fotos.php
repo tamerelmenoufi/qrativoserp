@@ -41,7 +41,7 @@
         text-align:center;
         width:100%;
         font-size:10px;
-        opacity:0;
+        opacity:1;
     }
 </style>
 
