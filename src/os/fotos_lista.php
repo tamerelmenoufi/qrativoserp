@@ -10,7 +10,7 @@
 
     Dados de teste
     <?php
-    for($i=0; $i<10;$i++){
+    for($i=0; $i<0;$i++){
     ?>
         <div class="card mt-3">
             <div class="row g-0">

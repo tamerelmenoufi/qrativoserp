@@ -2,6 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 ?>
 <style>
+
     .Foto{
         position:relative;
         width:100%;
