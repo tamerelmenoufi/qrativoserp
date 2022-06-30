@@ -31,6 +31,7 @@
         width:100%;
         background:#eee;
         opacity:0;
+        z-index:10;
     }
 </style>
 
