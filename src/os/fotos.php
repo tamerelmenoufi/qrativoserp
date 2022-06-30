@@ -38,12 +38,18 @@
         z-index:10;
     }
     .Apagar{
-        position:absolute;
+        position:relative;
         text-align:center;
-        margin-top:-60px;
+        margin-top:-45px;
         width:100%;
-        font-size:10px !important;
         opacity:1;
+    }
+    .Apagar span{
+        padding:5px;
+        border-radius:3px;
+        background-color:red;
+        color:#fff;
+        font-size:10px;
     }
 </style>
 
@@ -63,9 +69,9 @@
             </div>
         </div>
         <div class="Apagar">
-            <button class="btn btn-danger btn-sm">
+            <span>
                 <i class="fa-solid fa-eraser"></i>
-            </button>
+            </span>
         </div>
 
         <p msg>Selecione a imagem</p>
