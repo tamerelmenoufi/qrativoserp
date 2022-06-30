@@ -40,9 +40,9 @@
     .Apagar{
         position:absolute;
         text-align:center;
-        margin-top:-40px;
+        margin-top:-60px;
         width:100%;
-        font-size:10px;
+        font-size:10px !important;
         opacity:1;
     }
 </style>
