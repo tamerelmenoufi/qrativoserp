@@ -60,6 +60,7 @@
     <div class="col-4">
         <div class="Foto">
             <div>
+                <i class="fa-solid fa-image"></i>
                 <input type="file" class="FileFoto" />
                 <input
                         type="hidden"
@@ -68,7 +69,6 @@
                         tipo=""
                         value=""
                 />
-                <i class="fa-solid fa-image"></i>
             </div>
         </div>
         <div class="Apagar">
