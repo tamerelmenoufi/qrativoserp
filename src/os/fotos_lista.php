@@ -8,9 +8,8 @@
 <div class="row">
     <div class="col">
 
-    Dados de teste
     <?php
-    for($i=0; $i<0;$i++){
+    for($i=0; $i<10;$i++){
     ?>
         <div class="card mt-3">
             <div class="row g-0">
