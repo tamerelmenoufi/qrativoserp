@@ -36,6 +36,13 @@
         opacity:0;
         z-index:10;
     }
+    .Apagar{
+        position:absolute;
+        text-align:center;
+        width:100%;
+        font-size:10px;
+        opacity:0;
+    }
 </style>
 
 <div class="row">
@@ -52,7 +59,7 @@
                 />
                 <i class="fa-solid fa-image"></i>
             </div>
-            <div style="position:absolute; text-align:center; width:100%;">
+            <div class="Apagar">
                 <button class="btn btn-danger btn-sm">
                     <i class="fa-solid fa-eraser"></i>
                 </button>
@@ -97,7 +104,13 @@
             }
         });
 
+        $(".Foto").hover(function(){
+            $(".Apagar").css("opacity","9");
+        });
 
+        $(".Foto").blur(function(){
+            $(".Apagar").css("opacity","0");
+        });
 
         if (window.File && window.FileList && window.FileReader) {
 
