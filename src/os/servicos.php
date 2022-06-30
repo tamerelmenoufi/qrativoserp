@@ -158,8 +158,8 @@
                     $(".LateralDireita").html(dados);
 
                     let myOffCanvas = document.getElementById('offcanvasDireita');
-                    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
-                    openedCanvas.show();
+                    // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    myOffCanvas.show();
 
                 }
             });
