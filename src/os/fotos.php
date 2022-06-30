@@ -114,11 +114,9 @@
             }
         });
 
-        $(".Foto").hover(function(){
+        $(".Foto").mouseover(function(){
             $(".Apagar span").css("opacity","9");
-        });
-
-        $(".Foto").blur(function(){
+        }).mouseout(function(){
             $(".Apagar span").css("opacity","0");
         });
 
