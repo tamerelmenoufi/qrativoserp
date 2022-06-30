@@ -14,6 +14,8 @@
         font-size:100px;
         color:#eee;
         position:relative;
+        background-position:center;
+        background-size:cover;
     }
     p[msg]{
         font-size:10px;
@@ -103,6 +105,8 @@
                                 $("#encode_file").val(Base64);
                                 $("#encode_file").attr("nome", name);
                                 $("#encode_file").attr("tipo", type);
+
+                                $(".Foto").css("background-image",`url(${Base64})`);
 
 
                             };
