@@ -43,6 +43,7 @@
         margin-top:-45px;
         width:100%;
         opacity:1;
+        z-index:3;
     }
     .Apagar span{
         padding:2px 4px 3px 4px;
@@ -51,7 +52,6 @@
         color:#fff;
         font-size:10px;
         cursor:pointer;
-        z-index: 3;
     }
 </style>
 
