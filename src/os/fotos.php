@@ -3,6 +3,7 @@
 ?>
 <style>
     .Foto{
+        position:relative;
         width:100%;
         height:120px;
         display: flex;
