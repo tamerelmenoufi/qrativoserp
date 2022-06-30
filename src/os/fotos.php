@@ -52,7 +52,7 @@
                 />
                 <i class="fa-solid fa-image"></i>
             </div>
-            <div style="text-align:center; width:100%;">
+            <div style="position:absolute; text-align:center; width:100%;">
                 <button class="btn btn-danger btn-sm">
                     <i class="fa-solid fa-eraser"></i>
                 </button>
