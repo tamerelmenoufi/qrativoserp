@@ -58,26 +58,28 @@
 
 <div class="row">
     <div class="col-4">
-        <div class="Foto">
-            <div>
-                <input type="file" class="FileFoto" />
-                <input
-                        type="hidden"
-                        id="encode_file"
-                        nome=""
-                        tipo=""
-                        value=""
-                />
-                <i class="fa-solid fa-image"></i>
+        <div style="position:relative;">
+            <div class="Foto">
+                <div>
+                    <input type="file" class="FileFoto" />
+                    <input
+                            type="hidden"
+                            id="encode_file"
+                            nome=""
+                            tipo=""
+                            value=""
+                    />
+                    <i class="fa-solid fa-image"></i>
+                </div>
             </div>
-        </div>
-        <div class="Apagar">
-            <span>
-                <i class="fa-solid fa-eraser"></i>
-            </span>
-        </div>
+            <div class="Apagar">
+                <span>
+                    <i class="fa-solid fa-eraser"></i>
+                </span>
+            </div>
 
-        <p msg>Selecione a imagem</p>
+            <p msg>Selecione a imagem</p>
+        </div>
     </div>
     <div class="col-8">
         <div class="form-floating mb-3">
