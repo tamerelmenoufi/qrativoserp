@@ -2,40 +2,15 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 ?>
 <style>
-    .Foto{
-        width:100%;
-        height:120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align:center;
-    }
-    .Foto div{
-        font-size:100px;
-        color:#eee;
-        position:relative;
-    }
-    p[msg]{
-        font-size:10px;
-        color:blue;
-        position:relative;
-        text-align:center;
-    }
-    .FileFoto{
-        position:absolute;
-        left:0;
-        top:0;
-        bottom:0;
-        width:100%;
-        background:#eee;
-        opacity:0;
-    }
+
 </style>
 
 <div class="row">
     <div class="col">
+
+    Dados de teste
     <?php
-    for($i=0; $i<1;$i++){
+    for($i=0; $i<0;$i++){
     ?>
         <div class="card mt-3">
             <div class="row g-0">
