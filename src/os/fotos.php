@@ -38,9 +38,7 @@
         z-index:10;
     }
     .Apagar{
-        left:50%;
-        margin-left:-10px;
-        position:absolute;
+        position:relative;
         text-align:center;
         width:100%;
         font-size:10px;
