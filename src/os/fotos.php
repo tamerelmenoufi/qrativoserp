@@ -122,6 +122,17 @@
             $(".Apagar span").css("opacity","0");
         });
 
+        $(".Apagar span").click(function(){
+
+            $("#encode_file").val('');
+            $("#encode_file").attr("nome", '');
+            $("#encode_file").attr("tipo", '');
+
+            $(".Foto").css("background-image",'');
+
+        });
+
+
         if (window.File && window.FileList && window.FileReader) {
 
             $('input[type="file"]').change(function () {
@@ -141,7 +152,6 @@
                                 $("#encode_file").attr("tipo", type);
 
                                 $(".Foto").css("background-image",`url(${Base64})`);
-                                $(".Foto div i").css("opacity","0");
 
                             };
                             fileReader.readAsDataURL(file);
