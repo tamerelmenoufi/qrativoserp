@@ -18,6 +18,7 @@
         font-size:100px;
         color:#eee;
         position:relative;
+        width:100%;
     }
     p[msg]{
         font-size:10px;
