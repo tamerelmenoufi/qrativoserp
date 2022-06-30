@@ -40,6 +40,7 @@
     .Apagar{
         position:relative;
         text-align:center;
+        margin-top:-40px;
         width:100%;
         font-size:10px;
         opacity:1;
