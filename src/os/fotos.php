@@ -18,7 +18,7 @@
     .Foto div{
         font-size:100px;
         color:#eee;
-        position:relative;
+        position:absolute;
         width:100%;
     }
     p[msg]{
