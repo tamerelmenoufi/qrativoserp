@@ -12,6 +12,7 @@
         background-position:center;
         background-size:100% auto;
         background-repeat:no-repeat;
+        cursor:pointer;
     }
     .Foto div{
         font-size:100px;
@@ -51,6 +52,9 @@
                 <i class="fa-solid fa-image"></i>
             </div>
         </div>
+        <button class="btn btn-danger btn-sm">
+            <i class="fa-solid fa-eraser"></i>
+        </button>
         <p msg>Selecione a imagem</p>
     </div>
     <div class="col-8">
@@ -110,10 +114,6 @@
 
                                 $(".Foto").css("background-image",`url(${Base64})`);
                                 $(".Foto div i").css("opacity","0");
-
-
-
-
 
                             };
                             fileReader.readAsDataURL(file);
