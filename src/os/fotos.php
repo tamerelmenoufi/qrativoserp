@@ -10,7 +10,8 @@
         justify-content: center;
         text-align:center;
         background-position:center;
-        background-size:cover;
+        background-size:100% auto;
+        background-repeat:no-repeat;
     }
     .Foto div{
         font-size:100px;
