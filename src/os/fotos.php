@@ -62,13 +62,12 @@
                 />
                 <i class="fa-solid fa-image"></i>
             </div>
-            <div class="Apagar">
-                <button class="btn btn-danger btn-sm">
-                    <i class="fa-solid fa-eraser"></i>
-                </button>
-            </div>
         </div>
-
+        <div class="Apagar">
+            <button class="btn btn-danger btn-sm">
+                <i class="fa-solid fa-eraser"></i>
+            </button>
+        </div>
 
         <p msg>Selecione a imagem</p>
     </div>
