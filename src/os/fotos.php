@@ -17,8 +17,6 @@
         cursor:pointer;
     }
     .Foto div{
-        font-size:100px;
-        color:#eee;
         position:absolute;
         width:100%;
     }
@@ -55,13 +53,21 @@
         cursor:pointer;
         opacity:0;
     }
+    .iconeImagem{
+        position:absolute;
+        font-size:100px;
+        color:#eee;
+        left:50%;
+        margin-left:-50px;
+        top:20px;
+    }
 </style>
 
 <div class="row">
     <div class="col-4">
         <div class="Foto">
             <div>
-                <i class="fa-solid fa-image"></i>
+                <i class="fa-solid fa-image iconeImagem"></i>
                 <input type="file" class="FileFoto" />
                 <input
                         type="hidden"
