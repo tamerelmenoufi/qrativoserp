@@ -35,7 +35,7 @@
         width:100%;
         background:#eee;
         opacity:0;
-        z-index:10;
+        z-index:2;
     }
     .Apagar{
         position:relative;
@@ -45,11 +45,13 @@
         opacity:1;
     }
     .Apagar span{
-        padding:5px;
+        padding:2px 4px 3px 4px;
         border-radius:3px;
         background-color:red;
         color:#fff;
         font-size:10px;
+        cursor:pointer;
+        z-index: 3;
     }
 </style>
 
