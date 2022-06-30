@@ -110,7 +110,7 @@
         $.ajax({
             url:"src/os/fotos_lista.php",
             success:function(dados){
-                //$(".ListarFotos").html(dados);
+                $(".ListarFotos").html(dados);
             }
         });
 
