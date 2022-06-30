@@ -114,7 +114,7 @@
             }
         });
 
-        $(".Foto").mouseover(function(){
+        $(".Foto .Apagar").mouseover(function(){
             $(".Apagar span").css("opacity","9");
         }).mouseout(function(){
             $(".Apagar span").css("opacity","0");
