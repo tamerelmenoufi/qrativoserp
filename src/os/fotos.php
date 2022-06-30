@@ -59,7 +59,7 @@
         color:#eee;
         left:50%;
         margin-left:-50px;
-        top:20px;
+        top:-40px;
     }
 </style>
 
