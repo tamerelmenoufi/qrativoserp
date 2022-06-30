@@ -52,6 +52,7 @@
         color:#fff;
         font-size:10px;
         cursor:pointer;
+        opacity:0;
     }
 </style>
 
@@ -114,11 +115,11 @@
         });
 
         $(".Foto").hover(function(){
-            $(".Apagar").css("opacity","9");
+            $(".Apagar span").css("opacity","9");
         });
 
         $(".Foto").blur(function(){
-            $(".Apagar").css("opacity","0");
+            $(".Apagar span").css("opacity","0");
         });
 
         if (window.File && window.FileList && window.FileReader) {
