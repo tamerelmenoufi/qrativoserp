@@ -37,6 +37,13 @@
         <div class="Foto">
             <div>
                 <input type="file" class="FileFoto" />
+                <input
+                        type="hidden"
+                        id="encode_file"
+                        nome=""
+                        tipo=""
+                        value=""
+                />
                 <i class="fa-solid fa-image"></i>
             </div>
         </div>
@@ -76,5 +83,39 @@
                 $(".ListarFotos").html(dados);
             }
         });
+
+
+
+        if (window.File && window.FileList && window.FileReader) {
+
+            $('input[type="file"]').change(function () {
+
+                if ($(this).val()) {
+                    var files = $(this).prop("files");
+                    for (var i = 0; i < files.length; i++) {
+                        (function (file) {
+                            var fileReader = new FileReader();
+                            fileReader.onload = function (f) {
+                                var Base64 = f.target.result;
+                                var type = file.type;
+                                var name = file.name;
+
+                                $("#encode_file").val(Base64);
+                                $("#encode_file").attr("nome", name);
+                                $("#encode_file").attr("tipo", type);
+
+
+                            };
+                            fileReader.readAsDataURL(file);
+                        })(files[i]);
+                    }
+                }
+            });
+        } else {
+        alert('Nao suporta HTML5');
+        }
+
+
+
     })
 </script>
