@@ -20,7 +20,6 @@
         color:#eee;
         position:absolute;
         width:100%;
-        min-height:120px;
     }
     p[msg]{
         font-size:10px;
@@ -101,7 +100,7 @@
 
 <div class="row">
     <div class="col">
-        <div class="ListarFotos"></div>
+        <div class="ListarFotos">Sem Informações</div>
     </div>
 </div>
 
