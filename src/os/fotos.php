@@ -28,7 +28,7 @@
         text-align:center;
     }
     .FileFoto{
-        position:absolute;
+        position:relative;
         left:0;
         top:0;
         bottom:0;
