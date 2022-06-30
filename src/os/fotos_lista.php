@@ -35,7 +35,7 @@
 <div class="row">
     <div class="col">
     <?php
-    for($i=0; $i<10;$i++){
+    for($i=0; $i<1;$i++){
     ?>
         <div class="card mt-3">
             <div class="row g-0">
