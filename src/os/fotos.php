@@ -9,13 +9,13 @@
         align-items: center;
         justify-content: center;
         text-align:center;
+        background-position:center;
+        background-size:cover;
     }
     .Foto div{
         font-size:100px;
         color:#eee;
         position:relative;
-        background-position:center;
-        background-size:cover;
     }
     p[msg]{
         font-size:10px;
