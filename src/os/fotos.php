@@ -107,6 +107,10 @@
                                 $("#encode_file").attr("tipo", type);
 
                                 $(".Foto").css("background-image",`url(${Base64})`);
+                                $(".Foto div i").css("opacity","0");
+
+
+
 
 
                             };
