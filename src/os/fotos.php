@@ -49,12 +49,16 @@
                         tipo=""
                         value=""
                 />
+                <div style="text-align:center; width:100%;">
+                    <button class="btn btn-danger btn-sm">
+                        <i class="fa-solid fa-eraser"></i>
+                    </button>
+                </div>
                 <i class="fa-solid fa-image"></i>
             </div>
         </div>
-        <button class="btn btn-danger btn-sm">
-            <i class="fa-solid fa-eraser"></i>
-        </button>
+
+
         <p msg>Selecione a imagem</p>
     </div>
     <div class="col-8">
