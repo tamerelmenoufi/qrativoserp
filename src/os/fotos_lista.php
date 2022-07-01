@@ -16,6 +16,12 @@
         <div class="card mt-3">
             <div class="row">
                 <div class="col d-flex justify-content-end">
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                    </div>
+
                     <button class="btn btn-danger btn-sm m-3">
                         <i class="fa-solid fa-trash"></i>
                     </button>
