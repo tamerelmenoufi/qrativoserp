@@ -9,7 +9,7 @@
                                             ordem = '{$_POST['']',
                                             colaborador = '{$_POST['']',
                                             data_cadastro = '{$_POST['']',
-                                            situacao = '{$_POST['']'"
+                                            situacao = '{$_POST['']'";
     }
 
 ?>
