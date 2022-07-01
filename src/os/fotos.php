@@ -19,7 +19,7 @@
                                             titulo = '{$_POST['titulo']}',
                                             descricao = '{$_POST['descricao']}',
                                             ordem = '{$_POST['ordem']}',
-                                            colaborador = '{$_POST['colaborador']}',
+                                            colaborador = '{$_SESSION['QrAtivosLogin']}',
                                             data_cadastro = NOW(),
                                             situacao = '1'";
         if(mysqli_query($con, $query)){
@@ -237,8 +237,8 @@
                     acao:'salvar'
                 },
                 success:function(dados){
-                    if(dados.status){
-
+                    // if(dados.status){
+                        console.log(dados.status);
                         $.ajax({
                             url:"src/os/fotos_lista.php",
                             type:"POST",
@@ -250,7 +250,7 @@
                             }
                         });
 
-                    }
+                    // }
                 }
             });
 
