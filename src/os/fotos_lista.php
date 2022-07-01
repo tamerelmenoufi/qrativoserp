@@ -14,6 +14,13 @@
     while($d = mysqli_fetch_object($result)){
     ?>
         <div class="card mt-3">
+            <div class="row">
+                <div class="col d-flex justify-content-end">
+                    <button class="btn btn-danger btn-sm">
+                        <i class="fa-solid fa-circle-trash"></i>
+                    </button>
+                </div>
+            </div>
             <div class="row g-0">
                 <div class="col-md-4">
                 <img src="src/os/fotos/<?="{$d->cod_os}/$d->foto"?>" class="img-fluid rounded-start">
