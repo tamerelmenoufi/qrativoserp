@@ -3,13 +3,13 @@
 
     if($_POST['acao'] == 'salvar'){
         $query = "insert into os_fotos set
-                                            cod_os = '{$_SESSION['servico']}',
-                                            foto = '{$_POST['']',
-                                            descricao = '{$_POST['']',
-                                            ordem = '{$_POST['']',
-                                            colaborador = '{$_POST['']',
-                                            data_cadastro = '{$_POST['']',
-                                            situacao = '{$_POST['']'";
+                                            cod_os = '{$_POST['cod_os']}',
+                                            foto = '{$_POST['foto']}',
+                                            descricao = '{$_POST['descricao']}',
+                                            ordem = '{$_POST['ordem']}',
+                                            colaborador = '{$_POST['colaborador']}',
+                                            data_cadastro = NOW(),
+                                            situacao = '1'";
     }
 
 ?>
