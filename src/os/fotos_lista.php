@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
     if($_POST['acao'] == 'status'){
-        echo $q = "update set situacao = '{$_POST['situacao']}' where codigo = '{$_POST['os']}'";
+        echo $q = "update os_fotos set situacao = '{$_POST['situacao']}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
         exit();
     }
