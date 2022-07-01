@@ -16,7 +16,7 @@
         <div class="card mt-3">
             <div class="row">
                 <div class="col d-flex justify-content-end">
-                    <button class="btn btn-danger btn-sm">
+                    <button class="btn btn-danger btn-sm m-3">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
