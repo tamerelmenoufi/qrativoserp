@@ -21,7 +21,8 @@
                                             ordem = '{$_POST['ordem']}',
                                             colaborador = '{$_SESSION['QrAtivosLogin']}',
                                             data_cadastro = NOW(),
-                                            situacao = '1'";
+                                            situacao = '1',
+                                            deletado = '{\"usuario\":\"\", \"data\":\"\"}'";
         if(mysqli_query($con, $query)){
             $retorno = [
                 'status' => true,
