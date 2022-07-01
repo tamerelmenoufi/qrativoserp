@@ -224,6 +224,17 @@
             titulo = $("#titulo").val();
             descricao = $("#descricao").val();
 
+
+            $("#encode_file").attr('nome','');
+            $("#encode_file").attr('tipo','');
+            $("#encode_file").val('');
+            $("#titulo").val('');
+            $("#descricao").val('');
+
+            $(".Foto").css("background-image",'');
+            $(".Foto div i").css("opacity","1");
+
+
             $.ajax({
                 url:"src/os/fotos.php",
                 type:"POST",
