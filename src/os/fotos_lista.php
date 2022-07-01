@@ -7,6 +7,12 @@
         exit();
     }
 
+    if($_POST['acao'] == 'deletar'){
+        $q = "update os_fotos set deletado = '{\"usuario\":\"{$_SESSION['QrAtivosLogin']}\",\"data\":\"".date("Y-m-d H:i:s")."\"}' where codigo = '{$_POST['os']}'";
+        mysqli_query($con, $q);
+        exit();
+    }
+
 ?>
 <style>
 
@@ -87,6 +93,19 @@
                 buttons:{
                     'SIM':function(){
                         $(`div[bloco${os}]`).remove();
+
+                        $.ajax({
+                            url:"src/os/fotos_lista.php",
+                            type:"POST",
+                            data:{
+                                os,
+                                acao:'deletar'
+                            },
+                            success:function(dados){
+                                // console.log(dados);
+                            }
+                        });
+
                     },
                     'NÃO':function(){
 
