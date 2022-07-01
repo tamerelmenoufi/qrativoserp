@@ -1,5 +1,11 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+
+    if($_POST['acao'] == 'status'){
+        mysqli_query($con, "update set situacao = '{$_POST['situacao']}' where codigo = '{$_POST['os']}'");
+        exit();
+    }
+
 ?>
 <style>
 
@@ -51,7 +57,23 @@
 <script>
     $(function(){
         $("input[status]").change(function(){
-            console.log($(this).prop("checked"));
+            os = $(this).attr("status");
+            if($(this).prop("checked") == true){
+                situacao = '1';
+            }else{
+                situacao = '0';
+            }
+            $.ajax({
+                url:"src/os/fotos_lista.php",
+                data:{
+                    os,
+                    situacao,
+                    acao:'status'
+                },
+                success:function(dados){
+
+                }
+            });
         });
     })
 </script>
