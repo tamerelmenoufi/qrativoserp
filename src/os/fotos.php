@@ -33,7 +33,7 @@
                 'msg' => 'Ocorreu um erro na inserção!',
             ];
         }
-        return json_encode($retorno);
+        echo json_encode($retorno);
         exit();
     }
 
