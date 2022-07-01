@@ -16,7 +16,7 @@
     <div class="col">
     <h4>Lista de fotos da OS #<?=$_POST['os']?></h4>
     <?php
-    $query = "select a.*, b.nome as colaborador from os_fotos a left join usuarios b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}'";
+    $query = "select a.*, b.nome as colaborador from os_fotos a left join usuarios b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}' and deletado = ''";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
     ?>
