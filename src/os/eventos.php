@@ -34,6 +34,23 @@
 
 <div class="row">
     <div class="col">
+
+
+        <div class="form-floating mb-3">
+            <select class="form-select" id="status" name="status" aria-label="Tipo de Situação">
+                <?php
+                $q = "select * from os_status where situacao = '1' and JSON_EXTRACT(deletado, \"$.usuario\") > 0";
+                $r = mysqli_query($con, $q);
+                while($s = mysqli_fetch_object($r)){
+                ?>
+                <option value="<?=$s->codigo?>" <?=(($d->status == $s->codigo)?'selected':false)?> ><?=$s->titulo?></option>
+                <?php
+                }
+                ?>
+            </select>
+            <label for="status">Situação</label>
+        </div>
+
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
             <label for="titulo">Título</label>
