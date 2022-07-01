@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col d-flex justify-content-end">
                     <button class="btn btn-danger btn-sm">
-                        <i class="fa-solid fa-circle-trash"></i>
+                        <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
             </div>
