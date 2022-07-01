@@ -66,6 +66,7 @@
             }
             $.ajax({
                 url:"src/os/fotos_lista.php",
+                type:"POST",
                 data:{
                     os,
                     situacao,
