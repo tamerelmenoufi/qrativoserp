@@ -19,7 +19,7 @@
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
         }else{
-            $query = "insert into os_status set data_cadastro = NOW(), {$attr}";
+            $query = "insert into os_status set data_cadastro = NOW(), deletado = '{\"usuario\":\"\", \"data\":\"\"}', {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
