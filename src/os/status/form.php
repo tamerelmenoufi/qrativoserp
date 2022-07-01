@@ -52,8 +52,8 @@
     <div class="col">
         <form id="form-<?= $md5 ?>">
         <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>">
-                <label for="cnpj">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
+                <label for="titulo">Título</label>
             </div>
 
             <div class="form-floating mb-3">
