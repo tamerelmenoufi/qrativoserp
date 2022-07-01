@@ -18,7 +18,7 @@
                 <div class="col d-flex justify-content-end">
 
                     <div class="form-check form-switch m-3">
-                        <input status="<?=$d->codigo?>" class="form-check-input" type="checkbox" role="switch" id="status<?=$d->codigo?>">
+                        <input status="<?=$d->codigo?>" <?=(($d->situacao == '1')?'checked':false)?> class="form-check-input" type="checkbox" role="switch" id="status<?=$d->codigo?>">
                         <label class="form-check-label" for="status<?=$d->codigo?>">Ativar a Imagem para exibição nos relatórios</label>
                     </div>
 
