@@ -2,14 +2,39 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
+
+        if($_POST['foto_nome'] and $_POST['foto_tipo'] and $_POST['foto_value']){
+            $img = base64_decode(str_replace("data:{$_POST['foto_tipo']};base64,", false, $_POST['foto_value']));
+            if(!is_dir("fotos/{$_POST['cod_os']}")) mkdir("fotos/{$_POST['cod_os']}");
+            $ext = substr($_POST['foto_nome'],strrpos($_POST['foto_nome'],'.'), strlen($_POST['foto_nome']));
+            $nome = md5("{$_POST['cod_os']}{$_POST['foto_nome']}{$_POST['foto_tipo']}".date("YmdHis"))."{$ext}";
+            file_put_contents("fotos/{$_POST['cod_os']}/{$nome}", $img);
+        }else{
+            $nome = $_POST['foto_nome'];
+        }
+
         $query = "insert into os_fotos set
                                             cod_os = '{$_POST['cod_os']}',
-                                            foto = '{$_POST['foto']}',
+                                            foto = '{$nome}',
+                                            titulo = '{$_POST['titulo']}',
                                             descricao = '{$_POST['descricao']}',
                                             ordem = '{$_POST['ordem']}',
                                             colaborador = '{$_POST['colaborador']}',
                                             data_cadastro = NOW(),
                                             situacao = '1'";
+        if(mysqli_query($con, $query)){
+            $retorno = [
+                'status' => true,
+                'msg' => 'Imagem Cadastrada com sucesso!',
+            ];
+        }else{
+            $retorno = [
+                'status' => false,
+                'msg' => 'Ocorreu um erro na inserção!',
+            ];
+        }
+        return json_encode($retorno);
+        exit();
     }
 
 ?>
@@ -112,7 +137,7 @@
 <div class="row">
     <div class="col">
         <div style="display:flex; justify-content:end">
-            <button class="btn btn-success btn-ms">Salvar</button>
+            <button SalvarFoto class="btn btn-success btn-ms">Salvar</button>
             <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
         </div>
     </div>
@@ -188,6 +213,48 @@
         alert('Nao suporta HTML5');
         }
 
+
+        $("button[SalvarFoto]").click(function(){
+
+            cod_os = $("#cod_os").val();
+            foto_nome = $("#encode_file").attr('nome');
+            foto_tipo = $("#encode_file").attr('tipo');
+            foto_value = $("#encode_file").val();
+            titulo = $("#titulo").val();
+            descricao = $("#descricao").val();
+
+            $.ajax({
+                url:"src/os/fotos.php",
+                type:"POST",
+                typeData:"JSON",
+                data:{
+                    cod_os,
+                    foto_nome,
+                    foto_tipo,
+                    foto_value,
+                    titulo,
+                    descricao,
+                    acao:'salvar'
+                },
+                success:function(dados){
+                    if(dados.status){
+
+                        $.ajax({
+                            url:"src/os/fotos_lista.php",
+                            type:"POST",
+                            data:{
+                                os:'<?=$_POST['os']?>'
+                            },
+                            success:function(dados){
+                                $(".ListarFotos").html(dados);
+                            }
+                        });
+
+                    }
+                }
+            });
+
+        });
 
 
     })

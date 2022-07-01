@@ -9,7 +9,9 @@
     <div class="col">
     <h4>Lista de fotos da OS #<?=$_POST['os']?></h4>
     <?php
-    for($i=0; $i<10;$i++){
+    $query = "select * from os_fotos where cod_os = '{$_POST['os']}'";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
     ?>
         <div class="card mt-3">
             <div class="row g-0">
