@@ -86,7 +86,7 @@
                 content:"Deseja realmente excluir o registro da imagem?",
                 buttons:{
                     'SIM':function(){
-                        $(`bloco${os}`).remove();
+                        $(`div[bloco${os}]`).remove();
                     },
                     'NÃO':function(){
 
