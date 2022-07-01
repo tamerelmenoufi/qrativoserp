@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
     if($_POST['acao'] == 'status'){
-        echo $q = "update os_fotos set situacao = '{$_POST['situacao']}' where codigo = '{$_POST['os']}'";
+        $q = "update os_fotos set situacao = '{$_POST['situacao']}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
         exit();
     }
@@ -29,7 +29,7 @@
                         <label class="form-check-label" for="status<?=$d->codigo?>">Ativar a Imagem para exibição nos relatórios</label>
                     </div>
 
-                    <button class="btn btn-danger btn-sm m-3">
+                    <button excluir_foto="<?=$d->codigo?>" class="btn btn-danger btn-sm m-3">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
@@ -73,7 +73,24 @@
                     acao:'status'
                 },
                 success:function(dados){
-                    console.log(dados);
+                    // console.log(dados);
+                }
+            });
+        });
+
+
+        $("button[excluir_foto]").click(function(){
+            os = $(this).attr("excluir_foto");
+            $.confirm({
+                title:false,
+                content:"Deseja realmente excluir o registro da imagem?",
+                buttons:{
+                    'SIM':function(){
+
+                    },
+                    'NÃO':function(){
+
+                    }
                 }
             });
         });
