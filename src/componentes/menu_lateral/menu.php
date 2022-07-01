@@ -42,6 +42,14 @@
       </div>
     </div>
 
+    <div class="row mb-1">
+      <div class="col">
+        <a url="src/os/status/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Status de O.S.
+        </a>
+      </div>
+    </div>
+
 
     <div class="row mb-1">
       <div class="col">
