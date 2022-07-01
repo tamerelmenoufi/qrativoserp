@@ -17,9 +17,9 @@
             <div class="row">
                 <div class="col d-flex justify-content-end">
 
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                    <div class="form-check form-switch m-3">
+                        <input status="<?=$d->codigo?>" class="form-check-input" type="checkbox" role="switch" id="status<?=$d->codigo?>">
+                        <label class="form-check-label" for="status<?=$d->codigo?>">Ativar a Imagem para exibição nos relatórios</label>
                     </div>
 
                     <button class="btn btn-danger btn-sm m-3">
@@ -50,6 +50,8 @@
 
 <script>
     $(function(){
-
+        $("input[status]").change(function(){
+            console.log($(this).prop("checked"));
+        });
     })
 </script>
