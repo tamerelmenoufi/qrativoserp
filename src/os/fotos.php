@@ -1,5 +1,17 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+
+    if($_POST['acao'] == 'salvar'){
+        $query = "insert into os_fotos set
+                                            cod_os = '{$_SESSION['servico']}',
+                                            foto = '{$_POST['']',
+                                            descricao = '{$_POST['']',
+                                            ordem = '{$_POST['']',
+                                            colaborador = '{$_POST['']',
+                                            data_cadastro = '{$_POST['']',
+                                            situacao = '{$_POST['']'"
+    }
+
 ?>
 <style>
 
@@ -101,13 +113,14 @@
     <div class="col">
         <div style="display:flex; justify-content:end">
             <button class="btn btn-success btn-ms">Salvar</button>
+            <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="col">
-        <div class="ListarFotos">Sem Informações</div>
+        <div class="ListarFotos"></div>
     </div>
 </div>
 
@@ -116,6 +129,10 @@
     $(function(){
         $.ajax({
             url:"src/os/fotos_lista.php",
+            type:"POST",
+            data:{
+                os:'<?=$_POST['os']?>'
+            },
             success:function(dados){
                 $(".ListarFotos").html(dados);
             }

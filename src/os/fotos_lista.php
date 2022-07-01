@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col">
-
+    <h4>Lista de fotos da OS #<?=$_POST['os']?></h4>
     <?php
     for($i=0; $i<10;$i++){
     ?>
