@@ -20,7 +20,7 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
     ?>
-        <div class="card mt-3">
+        <div bloco<?=$d->codigo?> class="card mt-3">
             <div class="row">
                 <div class="col d-flex justify-content-end">
 
@@ -86,7 +86,7 @@
                 content:"Deseja realmente excluir o registro da imagem?",
                 buttons:{
                     'SIM':function(){
-
+                        $(`bloco${os}`).remove();
                     },
                     'NÃO':function(){
 
