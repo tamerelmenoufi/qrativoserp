@@ -5,6 +5,7 @@
 
         $query = "insert into os_registros set
                                             cod_os = '{$_POST['cod_os']}',
+                                            status = '{$_POST['status']}',
                                             titulo = '{$_POST['titulo']}',
                                             descricao = '{$_POST['descricao']}',
                                             colaborador = '{$_SESSION['QrAtivosLogin']}',
@@ -93,6 +94,7 @@
         $("button[SalvarRegistro]").click(function(){
 
             cod_os = $("#cod_os").val();
+            status = $("#status").val();
             titulo = $("#titulo").val();
             descricao = $("#descricao").val();
 
@@ -105,6 +107,7 @@
                 typeData:"JSON",
                 data:{
                     cod_os,
+                    status,
                     titulo,
                     descricao,
                     acao:'salvar'
