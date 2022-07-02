@@ -49,7 +49,7 @@ $html = '<!DOCTYPE html>
 
     $q = "select * from os_fotos where cod_os = '{$d->codigo}'";
     $r = mysqli_query($con, $q);
-    $i=1;
+    $i=0;
     while($e = mysqli_fetch_object($r)){
         if($i%2 == 0){
             $html .= '<div class="corpo"></div>';
