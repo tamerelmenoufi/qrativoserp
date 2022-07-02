@@ -22,8 +22,18 @@ $html = '<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório O.S. #'.$d->codigo.'</title>
     <style>
+        .corpo{
+            position:relative;
+            width:100%;
+        }
+        .divImg{
+            position:relative;
+            width:50%;
+            float:left;
+            text-align:center;
+        }
         .img{
-            width:200px;
+            width:80%;
         }
     </style>
 </head>
@@ -31,12 +41,12 @@ $html = '<!DOCTYPE html>
     <h2>'.$d->titulo.'</h2>
     <p>'.$d->descricao.'</p>
 
-    <div>';
+    <div class="corpo">';
 
     $q = "select * from os_fotos where cod_os = '{$d->codigo}'";
     $r = mysqli_query($con, $q);
     while($e = mysqli_fetch_object($r)){
-        $html .= '    <img src="http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.'" class="img" />';
+        $html .= '<div class="divImg"><img src="http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.'" class="img" /></div>';
     }
 
     $html .= '</div>
