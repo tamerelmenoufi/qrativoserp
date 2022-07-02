@@ -60,7 +60,5 @@ $context = stream_context_create($opts);
 $result = file_get_contents('http://html2pdf.mohatron.com/', false, $context);
 
 $result = json_decode($result);
-
-echo ($result->doc); exit();
-echo base64_decode($result['doc']);
+echo base64_decode($result->doc);
 // echo $html;
