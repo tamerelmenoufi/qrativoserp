@@ -34,7 +34,7 @@ $html = '<!DOCTYPE html>
             text-align:center;
         }
         .img{
-            position:absolute;
+            position:relative;
             width:80%;
             margin-left:-40%;
             height:250px;
