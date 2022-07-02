@@ -28,10 +28,12 @@ $html = '<!DOCTYPE html>
             clear:both;
         }
         .divImg{
-            position:flex;
+            position:relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width:50%;
             float:left;
-            justify-content:center;
             border:solid 1px green;
         }
         .img{
