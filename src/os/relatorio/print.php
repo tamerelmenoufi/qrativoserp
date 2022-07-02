@@ -35,6 +35,7 @@ $html = '<!DOCTYPE html>
             justify-content: center;
             width:50%;
             float:left;
+            margin-bottom:10px;
         }
         .img{
             position:relative;
@@ -48,6 +49,7 @@ $html = '<!DOCTYPE html>
         .titulo_imagem{
             width:100%;
             text-align:center;
+            paddin:5px;
         }
     </style>
 </head>
