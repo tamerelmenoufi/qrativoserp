@@ -40,7 +40,8 @@ $html = '<!DOCTYPE html>
         .img{
             position:relative;
             width:80%;
-            border:solid 1px red;
+            border:solid 1px green;
+            border-radius:5px;
             height:250px;
             background-size:cover;
             background-position:center;
