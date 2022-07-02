@@ -28,7 +28,7 @@ $html = '<!DOCTYPE html>
         }
         .divImg{
             position:relative;
-            width:50%;
+            width:49%;
             float:left;
             text-align:center;
             border:solid 1px green;
