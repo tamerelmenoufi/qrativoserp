@@ -28,10 +28,10 @@ $html = '<!DOCTYPE html>
             clear:both;
         }
         .divImg{
-            position:relative;
+            position:flex;
             width:50%;
             float:left;
-            text-align:center;
+            justify-content:center;
         }
         .img{
             position:relative;
