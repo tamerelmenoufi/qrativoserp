@@ -49,6 +49,7 @@ $html = '<!DOCTYPE html>
         .titulo_imagem{
             width:100%;
             text-align:center;
+            margin-top:5px;
             paddin:5px;
         }
     </style>
