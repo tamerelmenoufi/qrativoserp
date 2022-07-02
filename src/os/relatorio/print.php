@@ -32,6 +32,7 @@ $html = '<!DOCTYPE html>
             width:50%;
             float:left;
             justify-content:center;
+            border:solid 1px green;
         }
         .img{
             position:relative;
