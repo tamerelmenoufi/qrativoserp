@@ -35,6 +35,10 @@ $html = '<!DOCTYPE html>
         }
         .img{
             width:80%;
+            height:250px;
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
         }
     </style>
 </head>
@@ -52,7 +56,7 @@ $html = '<!DOCTYPE html>
             $html .= '<div class="corpo"></div>';
         }
         $html .= '<div class="divImg">
-                    <img src="http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.'" class="img" />
+                    <div class="img" style="background-image:uel(http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
                     <p>'.$e->titulo.'</p>
                   </div>';
         $i++;
