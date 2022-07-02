@@ -62,7 +62,7 @@ $html = '<!DOCTYPE html>
         }
         $html .= '<div class="divImg">
                     <div class="img" style="background-image:url(http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
-                    <p>'.$e->titulo.'</p>
+                    <!--<p>'.$e->titulo.'</p>-->
                   </div>';
         $i++;
     }
