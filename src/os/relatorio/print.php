@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
 
-    header('Content-Type: application/pdf');
+    // header('Content-Type: application/pdf');
     // header('Content-Length: '.strlen( $content ));
     // header('Content-disposition: inline; filename="' . $name . '"');
     // header('Cache-Control: public, must-revalidate, max-age=0');
@@ -61,5 +61,6 @@ $result = file_get_contents('http://html2pdf.mohatron.com/', false, $context);
 
 $result = json_decode($result);
 
+print_r($result); exit();
 echo base64_decode($result['doc']);
 // echo $html;
