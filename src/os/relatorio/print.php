@@ -29,7 +29,7 @@ $html = '<!DOCTYPE html>
         }
         .divImg{
             position:relative;
-            display: flex;
+            display: flex-row;
             align-items: center;
             justify-content: center;
             width:50%;
