@@ -67,6 +67,7 @@ $html = '<!DOCTYPE html>
     while($e = mysqli_fetch_object($r)){
         if($i%2 == 0){
             $html .= '<div class="corpo"></div>';
+            $html .= '<div style="page-break-before: always;"></div>';
         }
         $html .= '<div class="divImg">
                     <div class="img" style="background-image:url(http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
