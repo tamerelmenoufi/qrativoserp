@@ -25,19 +25,16 @@ $html = '<!DOCTYPE html>
         .corpo{
             position:relative;
             width:100%;
-            border:solid 1px blue;
             clear:both;
         }
         .divImg{
             position:relative;
-            width:49%;
+            width:50%;
             float:left;
             text-align:center;
-            border:solid 1px green;
         }
         .img{
             width:80%;
-            border:solid 1px red;
         }
     </style>
 </head>
