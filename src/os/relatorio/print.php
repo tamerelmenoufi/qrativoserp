@@ -45,6 +45,10 @@ $html = '<!DOCTYPE html>
             background-position:center;
             background-repeat:no-repeat;
         }
+        .titulo_imagem{
+            width:100%;
+            text-align:center;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +66,7 @@ $html = '<!DOCTYPE html>
         }
         $html .= '<div class="divImg">
                     <div class="img" style="background-image:url(http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
-                    <!--<p>'.$e->titulo.'</p>-->
+                    <div class="titulo_imagem">'.$e->titulo.'</div>
                   </div>';
         $i++;
     }
