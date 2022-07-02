@@ -26,6 +26,7 @@ $html = '<!DOCTYPE html>
             position:relative;
             width:100%;
             border:solid 1px blue;
+            clear:both;
         }
         .divImg{
             position:relative;
