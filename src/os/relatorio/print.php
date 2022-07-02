@@ -51,7 +51,10 @@ $html = '<!DOCTYPE html>
         if($i%2 == 0){
             $html .= '<div class="corpo"></div>';
         }
-        $html .= '<div class="divImg"><img src="http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.'" class="img" /></div>';
+        $html .= '<div class="divImg">
+                    <img src="http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.'" class="img" />
+                    <p>'.$d->titulo.'</p>
+                  </div>';
         $i++;
     }
 
