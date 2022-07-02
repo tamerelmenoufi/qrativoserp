@@ -31,9 +31,11 @@ $html = '<!DOCTYPE html>
             width:50%;
             float:left;
             text-align:center;
+            border:solid 1px green;
         }
         .img{
             width:80%;
+            border:solid 1px red;
         }
     </style>
 </head>
