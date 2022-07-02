@@ -46,7 +46,7 @@ $html = '<!DOCTYPE html>
 
 $postdata = http_build_query(
     array(
-        'html' => $html
+        'html' => base64_encode($html)
     )
 );
 $opts = array('http' =>
