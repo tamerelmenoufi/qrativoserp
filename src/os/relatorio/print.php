@@ -36,7 +36,7 @@ $html = '<!DOCTYPE html>
         .img{
             position:relative;
             width:80%;
-            margin-left:-40%;
+            border:solid 1px red;
             height:250px;
             background-size:cover;
             background-position:center;
