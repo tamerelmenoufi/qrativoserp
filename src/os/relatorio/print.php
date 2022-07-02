@@ -36,7 +36,7 @@ $html = '<!DOCTYPE html>
     $q = "select * from os_fotos where cod_os = '{$d->codigo}'";
     $r = mysqli_query($con, $q);
     while($e = mysqli_fetch_object($r)){
-        $html .= '    <img src="http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$d->foto.'" class="img" />';
+        $html .= '    <img src="http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.'" class="img" />';
     }
 
     $html .= '</div>
