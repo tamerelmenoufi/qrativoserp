@@ -297,17 +297,16 @@
                 url:"src/os/fotos.php",
                 type:"POST",
                 typeData:"JSON",
-                data:files,
-                // data:{
-                //     cod_os,
-                //     foto_nome,
-                //     foto_tipo,
-                //     foto_value,
-                //     titulo,
-                //     descricao,
-                //     files,
-                //     acao:'salvar'
-                // },
+                data:{
+                    cod_os,
+                    foto_nome,
+                    foto_tipo,
+                    foto_value,
+                    titulo,
+                    descricao,
+                    files,
+                    acao:'salvar'
+                },
                 success:function(dados){
                     // if(dados.status){
                         console.log(dados.status);
