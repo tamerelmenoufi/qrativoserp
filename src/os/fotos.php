@@ -229,6 +229,21 @@
                                 $(".Foto div i").css("opacity","0");
                                 $(".Apagar span").css("opacity","1");
 
+
+                                $.ajax({
+                                    url:"src/os/upload.php",
+                                    type:"POST",
+                                    data:{
+                                        img:Base64,
+                                    },
+                                    success:function(dados){
+                                        alert('upload');
+                                    },
+                                    error:function(){
+                                        alert('erro upload');
+                                    }
+                                });
+
                             };
                             fileReader.readAsDataURL(file);
                         })(files[i]);
