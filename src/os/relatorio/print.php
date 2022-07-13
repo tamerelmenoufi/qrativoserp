@@ -148,7 +148,7 @@ $html = '<!DOCTYPE html>
         .servico_dados_os{
             position:absolute;
             right:20px;
-            top:70px;
+            bottom:20px;
             color:#000;
             font-size:12px;
             padding:2px;
