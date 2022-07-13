@@ -262,7 +262,7 @@
 
             let files = new FormData();
             files.append('fileName', $('#foto')[0].files[0]);
-            console.log(files);
+            console.log($('#foto')[0].files[0]);
 
             return;
 
