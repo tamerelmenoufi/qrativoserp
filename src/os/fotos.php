@@ -304,7 +304,7 @@
                     foto_value,
                     titulo,
                     descricao,
-                    files,
+                    // files,
                     acao:'salvar'
                 },
                 success:function(dados){
