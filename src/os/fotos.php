@@ -303,7 +303,7 @@
                     foto_value,
                     titulo,
                     descricao,
-                    image:
+                    image,
                     acao:'salvar'
                 },
                 success:function(dados){
