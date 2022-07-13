@@ -138,7 +138,7 @@
             <div class="Foto">
                 <div>
                     <i class="fa-solid fa-image iconeImagem"></i>
-                    <input type="file" class="FileFoto" />
+                    <input type="file" name="image" class="FileFoto" />
                     <input
                             type="hidden"
                             id="encode_file"
@@ -289,22 +289,23 @@
             $(".Foto").css("background-image",'');
             $(".Foto div i").css("opacity","1");
 
+            image = $(this).serialize();
+
             Carregando();
             $.ajax({
                 url:"src/os/fotos.php",
                 type:"POST",
                 typeData:"JSON",
-                data:new FormData(this),
-                // data:{
-                //     cod_os,
-                //     foto_nome,
-                //     foto_tipo,
-                //     foto_value,
-                //     titulo,
-                //     descricao,
-                //     imagem:
-                //     acao:'salvar'
-                // },
+                data:{
+                    cod_os,
+                    foto_nome,
+                    foto_tipo,
+                    foto_value,
+                    titulo,
+                    descricao,
+                    image:
+                    acao:'salvar'
+                },
                 success:function(dados){
                     // if(dados.status){
                         console.log(dados.status);
