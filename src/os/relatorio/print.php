@@ -51,7 +51,7 @@ $html = '<!DOCTYPE html>
             background-size:cover;
             background-position:center;
             background-repeat:no-repeat;
-            background-image:url(http://qrativoserpcom.br/img/titulo_relatorio.png);
+            background-image:url(http://qrativoserp.com.br/img/titulo_relatorio.png);
         }
         .divImg{
             position:relative;
@@ -198,7 +198,7 @@ $html = '<!DOCTYPE html>
         }
 
         $html .= '<div class="divImg">
-                    <div class="img" style="background-image:url(http://qrativoserpcom.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
+                    <div class="img" style="background-image:url(http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
                     <div class="titulo_imagem">'.$e->titulo.'</div>
                   </div>';
         $i++;
