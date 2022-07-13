@@ -262,7 +262,9 @@
 
             let files = new FormData();
             files.append('fileName', $('#foto')[0].files[0]);
+            console.log(files);
 
+            return;
 
             cod_os = $("#cod_os").val();
             foto_nome = $("#encode_file").attr('nome');
