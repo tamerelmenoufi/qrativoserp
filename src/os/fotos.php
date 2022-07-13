@@ -261,7 +261,7 @@
             // e.preventDefault();
 
             let files = new FormData();
-            files.append('fileName', $('#image')[0].files[0]);
+            files.append('fileName', $('#foto')[0].files[0]);
 
 
             cod_os = $("#cod_os").val();
