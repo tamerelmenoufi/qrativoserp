@@ -126,7 +126,7 @@ $html = '<!DOCTYPE html>
         .servico_numero_os{
             position:absolute;
             right:0px;
-            top:0px;
+            top:-10px;
             color:#fff;
             font-size:40px;
             width:auto;
