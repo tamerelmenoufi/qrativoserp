@@ -143,7 +143,7 @@ $html = '<!DOCTYPE html>
             width:auto;
             padding:5px;
             text-align:justify;
-            text-shadow: 0 0 0.2em #fff
+            /* text-shadow: 0 0 0.2em #fff */
         }
         .servico_dados_os{
             position:absolute;
