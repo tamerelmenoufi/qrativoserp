@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
 
@@ -38,9 +38,19 @@
         exit();
     }
 
+
+    $query = "select * from os where codigo = '{$_POST['os']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
 ?>
 <style>
-
+    .Topo<?=$md5?> {
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
     .Foto{
         position:relative;
         width:100%;
@@ -57,6 +67,7 @@
     .Foto div{
         position:absolute;
         width:100%;
+        height:100%;
     }
     p[msg]{
         font-size:10px;
@@ -65,7 +76,7 @@
         text-align:center;
     }
     .FileFoto{
-        position:relative;
+        position:absolute;
         left:0;
         top:0;
         bottom:0;
@@ -77,7 +88,7 @@
     .Apagar{
         position:relative;
         text-align:center;
-        margin-top:-45px;
+        margin-top:0px;
         width:100%;
         opacity:1;
         z-index:3;
@@ -97,12 +108,22 @@
         color:#eee;
         left:50%;
         margin-left:-50px;
-        top:-40px;
+        top:7px;
     }
 </style>
 
+<h4 class="Topo<?=$md5?>">Lista de fotos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
 <div class="row">
-    <div class="col-4">
+    <div class="col">
+        <div class="card mb-3 mt-3 p-3">
+            <small>Esta O.S. está vinculada a solicitação:</small>
+            <h5><?=$d->titulo?></h5>
+            <p><?=$d->descricao?></p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
         <div class="Foto">
             <div>
                 <i class="fa-solid fa-image iconeImagem"></i>
@@ -122,16 +143,16 @@
             </span>
         </div>
 
-        <p msg>Selecione a imagem</p>
+        <p msg>Selecione a imagem*</p>
     </div>
-    <div class="col-8">
+    <div class="col-md-8">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
-            <label for="titulo">Título</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="">
+            <label for="titulo">Título*</label>
         </div>
         <div class="form-floating mb-3">
-            <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
-            <label for="descricao">Descricão</label>
+            <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"></textarea>
+            <label for="descricao">Descricão*</label>
         </div>
     </div>
 </div>
@@ -153,6 +174,7 @@
 
 <script>
     $(function(){
+
         $.ajax({
             url:"src/os/fotos_lista.php",
             type:"POST",
@@ -160,17 +182,18 @@
                 os:'<?=$_POST['os']?>'
             },
             success:function(dados){
+                Carregando('none');
                 $(".ListarFotos").html(dados);
             }
         });
 
-        $(".Foto, .Apagar").mouseover(function(){
-            if($("#encode_file").attr("nome")){
-                $(".Apagar span").css("opacity","1");
-            }
-        }).mouseout(function(){
-            $(".Apagar span").css("opacity","0");
-        });
+        // $(".Foto, .Apagar").mouseover(function(){
+        //     if($("#encode_file").attr("nome")){
+        //         $(".Apagar span").css("opacity","1");
+        //     }
+        // }).mouseout(function(){
+        //     $(".Apagar span").css("opacity","0");
+        // });
 
         $(".Apagar span").click(function(){
 
@@ -179,6 +202,7 @@
             $("#encode_file").attr("tipo", '');
             $(".Foto").css("background-image",'');
             $(".Foto div i").css("opacity","1");
+            $(".Apagar span").css("opacity","0");
 
         });
 
@@ -203,6 +227,7 @@
 
                                 $(".Foto").css("background-image",`url(${Base64})`);
                                 $(".Foto div i").css("opacity","0");
+                                $(".Apagar span").css("opacity","1");
 
                             };
                             fileReader.readAsDataURL(file);
@@ -224,6 +249,19 @@
             titulo = $("#titulo").val();
             descricao = $("#descricao").val();
 
+            if(
+                !cod_os ||
+                !foto_nome ||
+                !foto_tipo ||
+                !foto_value ||
+                !titulo ||
+                !descricao
+            ){
+                $.alert('Registro fotográfico não pode ser inserido<br>Dados Obrigatórios incompletos!');
+                return false;
+            }
+
+
 
             $("#encode_file").attr('nome','');
             $("#encode_file").attr('tipo','');
@@ -234,7 +272,7 @@
             $(".Foto").css("background-image",'');
             $(".Foto div i").css("opacity","1");
 
-
+            Carregando();
             $.ajax({
                 url:"src/os/fotos.php",
                 type:"POST",
@@ -259,10 +297,13 @@
                             },
                             success:function(dados){
                                 $(".ListarFotos").html(dados);
+                                $.alert('Registro inserido com sucesso!');
                             }
                         });
-
                     // }
+                },
+                error:function(){
+                    $.alert('Ocorreu um erro!');
                 }
             });
 

@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'coordenadas'){
         $query = "update empresas_enderecos set coordenadas = '{$_POST['coordenadas']}' where codigo = '{$_POST['codigo']}'";
@@ -58,7 +58,7 @@
 
 
     <script>
-
+        Carregando('none');
         //endereco = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
         coordenadas<?=$md5?> = '<?="{$coordenadas}"?>';
         endereco<?=$md5?> = "<?=$endereco?>";
@@ -137,7 +137,7 @@
 
         $(".ConfirmaCoordenadas").click(function(){
             coordenadas = $(this).attr("coordenadas");
-
+            Carregando();
             $.ajax({
                 url:"src/empresas/editar_endereco.php",
                 type:"POST",

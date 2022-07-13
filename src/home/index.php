@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 ?>
 <div id="paginaHomeTopo"></div>
 <div id="paginaHomeLateral"></div>
@@ -8,10 +8,12 @@
 <script>
 
     function Abrir(u, l){
+        Carregando();
         $.ajax({
             url:u,
             success:function(dados){
                 $(`#${l}`).html(dados);
+                Carregando('none');
             }
         });
     }

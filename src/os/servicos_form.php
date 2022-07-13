@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     $em = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj from os a left join empresas b on a.empresa = b.codigo where a.codigo = '{$_SESSION['servico']}'"));
 
@@ -46,25 +46,30 @@
 
 ?>
 <style>
-
+    .Topo<?=$md5?> {
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
 
 </style>
-<h2 class="Topo">Dados da O.S.</h2>
+<h4 class="Topo<?=$md5?>">Dados da O.S. <?=(($d->codigo)?'#'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT):false)?></h4>
 <div class="row">
     <div class="col">
         <form id="form-<?= $md5 ?>">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>" required>
                 <label for="titulo">Título</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
+                <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição" required><?=$d->descricao?></textarea>
                 <label for="descricao">Descricão</label>
             </div>
 
 
             <div class="form-floating mb-3">
-                <select class="form-select" name="empresa_endereco" id="empresa_endereco">
+                <select class="form-select" name="empresa_endereco" id="empresa_endereco" required>
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from empresas_enderecos where situacao = '1' and empresa = '{$_SESSION['empresa']}' order by nome";
@@ -81,7 +86,7 @@
 
 
             <div class="form-floating mb-3">
-                <select class="form-select" name="executor" id="executor">
+                <select class="form-select" name="executor" id="executor" required>
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from colaboradores where situacao = '1' order by nome";
@@ -137,7 +142,7 @@
 
 <script>
     $(function(){
-
+        Carregando('none');
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
 
@@ -149,6 +154,8 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+
+            Carregando();
             $.ajax({
                 url: 'src/os/servicos_form.php',
                 type:"POST",

@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'status'){
         $q = "update os_registros set situacao = '{$_POST['situacao']}' where codigo = '{$_POST['os']}'";
@@ -20,9 +20,17 @@
 
 <div class="row">
     <div class="col">
-    <h4>Lista de eventos da OS #<?=$_POST['os']?></h4>
     <?php
-    $query = "select a.*, b.nome as colaborador from os_registros a left join usuarios b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = ''";
+    $query = "select
+                    a.*,
+                    b.nome as colaborador,
+                    c.titulo as classificacao,
+                    d.titulo as status
+                from os_registros a
+                left join usuarios b on a.colaborador = b.codigo
+                left join os_classificacao c on a.classificacao = c.codigo
+                left join os_status d on a.status = d.codigo
+            where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(a.deletado,\"$.usuario\") = '' order by a.data_cadastro desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
     ?>
@@ -43,7 +51,7 @@
             <div class="row g-0">
                 <div class="col">
                 <div class="card-body">
-                    <h5 class="card-title"><?=$d->titulo?></h5>
+                    <h5 class="card-title"><?=$d->classificacao?> - <small style="color:#3b3a3a; font-size:12px;"><?=$d->status?></small></h5>
                     <p class="card-text"><?=$d->descricao?></p>
                     <p class="card-text" style="font-size:10px;"><small class="text-muted"><?="{$d->colaborador} em {$d->data_cadastro}"?></small></p>
                 </div>
@@ -60,6 +68,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("input[status]").change(function(){
             os = $(this).attr("status");
             if($(this).prop("checked") == true){
@@ -67,6 +76,7 @@
             }else{
                 situacao = '0';
             }
+            Carregando();
             $.ajax({
                 url:"src/os/eventos_lista.php",
                 type:"POST",
@@ -90,7 +100,7 @@
                 buttons:{
                     'SIM':function(){
                         $(`div[bloco${os}]`).remove();
-
+                        Carregando();
                         $.ajax({
                             url:"src/os/eventos_lista.php",
                             type:"POST",

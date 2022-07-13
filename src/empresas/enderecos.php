@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['empresa']) $_SESSION['empresa'] = $_POST['empresa'];
 ?>
@@ -73,8 +73,9 @@
 ?>
 
 <script>
-
+    Carregando('none');
     function Mapas(e){
+        Carregando();
         $.ajax({
             url:"src/empresas/visualizar_endereco.php",
             type:"POST",
@@ -83,6 +84,7 @@
             },
             success:function(dados){
                 $(`div[e="${e}"]`).html(dados);
+                Carregando('none');
             }
         });
     }
@@ -90,6 +92,7 @@
     $(".mapa").click(function(){
         e = $(this).attr("e");
         if(e){
+            Carregando();
             $.ajax({
                 url:"src/empresas/editar_endereco.php",
                 type:"POST",
@@ -111,6 +114,7 @@
         });
 
         $("button[novoEnderecoEmpresa]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/empresas/enderecos_form.php",
                 type:"POST",
@@ -125,6 +129,7 @@
 
         $("a[editar]").click(function(){
             codigo = $(this).attr("editar");
+            Carregando();
             $.ajax({
                 url:"src/empresas/enderecos_form.php",
                 type:"POST",

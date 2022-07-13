@@ -15,11 +15,11 @@
         $attr = implode(', ', $attr);
 
         if($_POST['codigo']){
-            $query = "update empresas_enderecos set {$attr} where codigo = '{$_POST['codigo']}'";
+            $query = "update os_classificacao set {$attr} where codigo = '{$_POST['codigo']}'";
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
         }else{
-            $query = "insert into empresas_enderecos set data_cadastro = NOW(), {$attr}";
+            $query = "insert into os_classificacao set data_cadastro = NOW(), deletado = '{\"usuario\":\"\", \"data\":\"\"}', {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
@@ -35,8 +35,8 @@
     }
 
 
-    if($_POST['codigo']){
-        $query = "select * from empresas_enderecos where codigo = '{$_POST['codigo']}'";
+    if($_POST['status']){
+        $query = "select * from os_classificacao where codigo = '{$_POST['status']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
     }
@@ -44,44 +44,20 @@
 
 ?>
 <style>
-
-
+    .Topo<?=$md5?> {
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
 </style>
-<h2 class="Topo">Dados do Título do formulário</h2>
+<h4 class="Topo<?=$md5?>">Dados do Status</h4>
 <div class="row">
     <div class="col">
         <form id="form-<?= $md5 ?>">
         <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>" required>
-                <label for="nome">Nome</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" value="<?=$d->estado?>" required>
-                <label for="estado">Estado</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" value="<?=$d->cidade?>" required>
-                <label for="cidade">Cidade</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" value="<?=$d->bairro?>" required>
-                <label for="bairro">Bairro</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" value="<?=$d->cep?>" required>
-                <label for="cep">CEP</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" value="<?=$d->rua?>" required>
-                <label for="rua">Rua</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="numero" name="numero" placeholder="Número" value="<?=$d->numero?>" required>
-                <label for="numero">Número</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Complemento" value="<?=$d->complemento?>">
-                <label for="complemento">Complemento</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>" required>
+                <label for="titulo">Título</label>
             </div>
 
             <div class="form-floating mb-3">
@@ -92,7 +68,6 @@
                 <label for="situacao">Situação</label>
             </div>
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
-            <input type="hidden" name="empresa" id="empresa" value="<?=$_POST['empresa']?>">
             <button
                 salvar
                 class="btn btn-primary"
@@ -122,41 +97,30 @@
 <script>
     $(function(){
         Carregando('none');
-        $("#cep").mask("99.999-999");
-
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
 
             var codigo = $('#codigo').val();
-            var empresa = $('#empresa').val();
             var campos = $(this).serializeArray();
 
             if (codigo) {
                 campos.push({name: 'codigo', value: codigo})
-            }else{
-                campos.push({name: 'empresa', value: empresa})
             }
 
             campos.push({name: 'acao', value: 'salvar'})
             Carregando();
             $.ajax({
-                url: 'src/empresas/enderecos_form.php',
+                url: 'src/os/classificacao/form.php',
                 type:"POST",
                 dataType:"json",
                 data: campos,
                 success: function (dados) {
                     empresa = dados.codigo;
                     $.ajax({
-                        url:"src/empresas/enderecos.php",
+                        url:"src/os/classificacao/index.php",
                         type:"POST",
-                        // data:{
-                        //     empresa,
-                        // },
                         success:function(dados){
-                            $(".tab-pane").html(dados);
-                            // $("a[empresa]").removeClass("active");
-                            // $("a[empresa]").attr("empresa",empresa);
-                            // $(`a[opc="visualizar"]`).addClass("active");
+                            $("#paginaHome").html(dados);
                         }
                     });
 

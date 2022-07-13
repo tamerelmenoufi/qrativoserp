@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     $md5 = md5($md5.$_POST['e']);
 
@@ -34,6 +34,7 @@
     <div id="map<?=$md5?>"></div>
 
     <script>
+        Carregando('none');
         coordenadas<?=$md5?> = '<?="{$coordenadas}"?>';
         endereco<?=$md5?> = "<?=$endereco?>";
         geocoder<?=$md5?> = new google.maps.Geocoder();

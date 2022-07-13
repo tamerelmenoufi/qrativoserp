@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
 
@@ -44,36 +44,40 @@
 
 ?>
 <style>
-
-
+    .Topo<?=$md5?> {
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
 </style>
-<h2 class="Topo">Dados do Colaborador</h2>
+<h4 class="Topo<?=$md5?>">Dados do Colaborador</h4>
 <div class="row">
     <div class="col">
         <form id="form-<?= $md5 ?>">
         <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>">
-                <label for="cnpj">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>" required>
+                <label for="cnpj">Nome*</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" value="<?=$d->cpf?>">
-                <label for="cpf">CPF</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" value="<?=$d->cpf?>" required>
+                <label for="cpf">CPF*</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" value="<?=$d->telefone?>">
-                <label for="telefone">Telefone</label>
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" value="<?=$d->telefone?>" required>
+                <label for="telefone">Telefone*</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" value="<?=$d->email?>">
                 <label for="email">E-mail</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" value="<?=$d->departamento?>">
-                <label for="departamento">Departamento</label>
+                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" value="<?=$d->departamento?>" required>
+                <label for="departamento">Departamento*</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo" value="<?=$d->cargo?>">
-                <label for="cargo">Cargo</label>
+                <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo" value="<?=$d->cargo?>" required>
+                <label for="cargo">Cargo*</label>
             </div>
 
             <div class="form-floating mb-3">
@@ -81,7 +85,7 @@
                     <option value="1" <?=(($d->situacao == '1')?'selected':false)?> >Liberado</option>
                     <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
                 </select>
-                <label for="situacao">Situação</label>
+                <label for="situacao">Situação*</label>
             </div>
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
             <button
@@ -114,7 +118,7 @@
     $(function(){
         $("#telefone").mask("(99) 9 9999-9999");
         $("#cpf").mask("999.999.999-99");
-
+        Carregando('none');
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
 
@@ -126,6 +130,7 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+            Carregando();
             $.ajax({
                 url: 'src/colaboradores/form.php',
                 type:"POST",

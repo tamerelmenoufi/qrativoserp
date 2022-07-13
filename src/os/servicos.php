@@ -1,16 +1,18 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['servico']) $_SESSION['servico'] = $_POST['servico'];
 
-    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj from os a left join empresas b on a.empresa = b.codigo where a.codigo = '{$_SESSION['servico']}'"));
+    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where a.codigo = '{$_SESSION['servico']}'"));
 
     $query = "select
                     a.*,
                     if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
-                    b.razao_social as nome_empresa
+                    b.razao_social as nome_empresa,
+                    c.nome as responsavel
                 from os a
                 left join empresas b on a.empresa = b.codigo
+                left join colaboradores c on a.responsavel = c.codigo
                 where vinculo = '{$_SESSION['servico']}'
                 order by a.titulo";
     $result = mysqli_query($con, $query);
@@ -34,16 +36,16 @@
 </div>
 <div class="row">
     <div col>
-
-
         <div class="card">
             <h5 class="card-header"><?=$e->razao_social?> - <?=$e->cnpj?></h5>
             <div class="card-body">
-                <h6 class="card-title"><?=$e->titulo?></h6>
+                <h6 class="card-title">Solicitação N°: <?=str_pad($e->codigo , 6 , '0' , STR_PAD_LEFT)?> <br> <?=$e->titulo?></h6>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><?=$e->descricao?></li>
                 <li class="list-group-item"><?=$e->situacao?></li>
+                <li class="list-group-item">Criada em <?=$e->data_cadastro?></li>
+                <li class="list-group-item">Responsável: <?=$e->responsavel?></li>
             </ul>
         </div>
 
@@ -72,8 +74,9 @@
 <table id="TableColaboradores" class="table table-hover" style="width:100%">
     <thead>
         <tr>
+            <th>O.S.</th>
             <th>Título</th>
-            <th>Empresa</th>
+            <th>Data</th>
             <th>Situação</th>
             <th>Ações</th>
         </tr>
@@ -83,8 +86,9 @@
         while($d = mysqli_fetch_object($result)){
         ?>
         <tr>
+            <td>#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
             <td><?=$d->titulo?></td>
-            <td><?=$d->nome_empresa?></td>
+            <td><?=$d->data_cadastro?></td>
             <td><?=$d->situacao?></td>
             <td>
 
@@ -124,8 +128,10 @@
 
 <script>
     $(document).ready(function () {
+        Carregando('none');
 
         $("button[voltar]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/os/index.php",
                 success:function(dados){
@@ -136,6 +142,7 @@
         });
 
         $("button[offcanvasDireita]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/os/servicos_form.php",
                 success:function(dados){
@@ -148,6 +155,7 @@
         $("li[os]").click(function(){
             os = $(this).attr("os");
             url = $(this).attr("url");
+            Carregando();
             $.ajax({
                 url,
                 type:"POST",

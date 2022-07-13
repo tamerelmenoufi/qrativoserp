@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
 
@@ -52,15 +52,15 @@
     <div class="col">
         <form id="form-<?= $md5 ?>">
         <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>" required>
                 <label for="cnpj">Nome</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" value="<?=$d->cpf?>">
+                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" value="<?=$d->cpf?>" required>
                 <label for="cpf">CPF</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" value="<?=$d->telefone?>">
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" value="<?=$d->telefone?>" required>
                 <label for="telefone">Telefone</label>
             </div>
             <div class="form-floating mb-3">
@@ -68,11 +68,11 @@
                 <label for="email">E-mail</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" value="<?=$d->departamento?>">
+                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" value="<?=$d->departamento?>" required>
                 <label for="departamento">Departamento</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo" value="<?=$d->cargo?>">
+                <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo" value="<?=$d->cargo?>" required>
                 <label for="cargo">Cargo</label>
             </div>
 
@@ -115,7 +115,7 @@
     $(function(){
         $("#telefone").mask("(99) 9 9999-9999");
         $("#cpf").mask("999.999.999-99");
-
+        Carregando('none');
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
 
@@ -130,6 +130,7 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+            Carregando();
             $.ajax({
                 url: 'src/empresas/contatos_form.php',
                 type:"POST",

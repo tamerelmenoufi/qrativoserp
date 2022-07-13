@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
 
@@ -52,11 +52,11 @@
     <div class="col">
         <form id="form-<?= $md5 ?>">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ" value="<?=$d->cnpj?>">
+                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ" value="<?=$d->cnpj?>" required>
                 <label for="cnpj">CNPJ</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="razao_social" name="razao_social" placeholder="Razão Social" value="<?=$d->razao_social?>">
+                <input type="text" class="form-control" id="razao_social" name="razao_social" placeholder="Razão Social" value="<?=$d->razao_social?>" required>
                 <label for="razao_social">Razão Social</label>
             </div>
             <div class="form-floating mb-3">
@@ -96,7 +96,7 @@
 <script>
     $(function(){
         $("#cnpj").mask("99.999.999/9999-99");
-
+        Carregando('none');
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
 
@@ -108,6 +108,7 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+            Carregando();
             $.ajax({
                 url: 'src/empresas/empresa_form.php',
                 type:"POST",

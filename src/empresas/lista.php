@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     $query = "select *, if(situacao = '1', 'Liberado', 'Bloqueado') as situacao from empresas order by razao_social";
     $result = mysqli_query($con, $query);
@@ -7,7 +7,7 @@
 ?>
 <div class="col">
     <div class="col d-flex justify-content-between">
-        <div class="p-2">Dados da tabel de Empresas (<?=$_POST['opc']?>)</div>
+        <div class="p-2">Empresas</div>
         <div class="p-2">
             <button
                 class="btn btn-primary"
@@ -62,7 +62,7 @@
 
 <script>
     $(document).ready(function () {
-
+        Carregando('none');
         $("button[offcanvasDireita]").click(function(){
             $.ajax({
                 url:"src/empresas/empresa_form.php",
@@ -79,7 +79,7 @@
             $("a[empresa]").attr("empresa",empresa);
             $("a[empresa]").removeClass("active");
             $('a[opc="visualizar"]').addClass("active");
-
+            Carregando();
             $.ajax({
                 url:"src/empresas/visualizar.php",
                 type:"POST",

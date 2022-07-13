@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['empresa']) $_SESSION['empresa'] = $_POST['empresa'];
 ?>
@@ -53,7 +53,9 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("button[novoContatoEmpresa]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/empresas/contatos_form.php",
                 type:"POST",
@@ -68,6 +70,7 @@
 
         $("a[editar]").click(function(){
             codigo = $(this).attr("editar");
+            Carregando();
             $.ajax({
                 url:"src/empresas/contatos_form.php",
                 type:"POST",

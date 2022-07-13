@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
 
@@ -44,24 +44,29 @@
 
 ?>
 <style>
-
+    .Topo<?=$md5?> {
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
 
 </style>
-<h2 class="Topo">Dados da O.S.</h2>
+<h4 class="Topo<?=$md5?>">Dados da Solicitação <?=(($d->codigo)?str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT):false)?></h4>
 <div class="row">
     <div class="col">
         <form id="form-<?= $md5 ?>">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>" required>
                 <label for="titulo">Título</label>
             </div>
             <div class="form-floating mb-3">
-                <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
+                <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição" required><?=$d->descricao?></textarea>
                 <label for="descricao">Descricão</label>
             </div>
 
             <div class="form-floating mb-3">
-                <select class="form-select" name="empresa_responsavel" id="empresa_responsavel">
+                <select class="form-select" name="empresa_responsavel" id="empresa_responsavel" required>
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from empresas_contatos where situacao = '1' and empresa = '{$_SESSION['empresa']}' order by nome";
@@ -77,7 +82,7 @@
             </div>
 
             <div class="form-floating mb-3">
-                <select class="form-select" name="empresa_endereco" id="empresa_endereco">
+                <select class="form-select" name="empresa_endereco" id="empresa_endereco" required>
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from empresas_enderecos where situacao = '1' and empresa = '{$_SESSION['empresa']}' order by nome";
@@ -93,7 +98,7 @@
             </div>
 
             <div class="form-floating mb-3">
-                <select class="form-select" name="responsavel" id="responsavel">
+                <select class="form-select" name="responsavel" id="responsavel" required>
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from colaboradores where situacao = '1' order by nome";
@@ -109,7 +114,7 @@
             </div>
 
 
-            <div class="form-floating mb-3">
+            <!-- <div class="form-floating mb-3">
                 <select class="form-select" name="executor" id="executor">
                     <option value="">::Selecione::</option>
                     <?php
@@ -123,7 +128,7 @@
                     ?>
                 </select>
                 <label for="executor">Executor da Solicitação</label>
-            </div>
+            </div> -->
 
             <div class="form-floating mb-3">
                 <select class="form-select" id="situacao" name="situacao" aria-label="Situação">
@@ -163,6 +168,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("#telefone").mask("(99) 9 9999-9999");
         $("#cpf").mask("999.999.999-99");
 
@@ -177,6 +183,7 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+            Carregando();
             $.ajax({
                 url: 'src/os/form.php',
                 type:"POST",

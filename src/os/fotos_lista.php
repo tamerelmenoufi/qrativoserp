@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'status'){
         $q = "update os_fotos set situacao = '{$_POST['situacao']}' where codigo = '{$_POST['os']}'";
@@ -20,9 +20,8 @@
 
 <div class="row">
     <div class="col">
-    <h4>Lista de fotos da OS #<?=$_POST['os']?></h4>
     <?php
-    $query = "select a.*, b.nome as colaborador from os_fotos a left join usuarios b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = ''";
+    $query = "select a.*, b.nome as colaborador from os_fotos a left join usuarios b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = '' order by a.data_cadastro desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
     ?>
@@ -63,6 +62,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("input[status]").change(function(){
             os = $(this).attr("status");
             if($(this).prop("checked") == true){
@@ -70,6 +70,7 @@
             }else{
                 situacao = '0';
             }
+            Carregando();
             $.ajax({
                 url:"src/os/fotos_lista.php",
                 type:"POST",
@@ -93,7 +94,7 @@
                 buttons:{
                     'SIM':function(){
                         $(`div[bloco${os}]`).remove();
-
+                        Carregando();
                         $.ajax({
                             url:"src/os/fotos_lista.php",
                             type:"POST",

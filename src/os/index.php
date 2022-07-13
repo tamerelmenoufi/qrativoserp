@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     $query = "select
                     a.*,
@@ -8,7 +8,7 @@
                     (select count(*) from os where vinculo = a.codigo) as quantidade
                 from os a
                 left join empresas b on a.empresa = b.codigo
-                where vinculo = '0'
+                where empresa = '{$_SESSION['empresa']}' and vinculo = '0'
                 order by a.titulo";
     $result = mysqli_query($con, $query);
 
@@ -34,6 +34,7 @@
 <table id="TableColaboradores" class="table table-hover" style="width:100%">
     <thead>
         <tr>
+            <th>N° Solicitação</th>
             <th>Título</th>
             <th>Empresa</th>
             <th>O.S. Vinculadas</th>
@@ -46,9 +47,10 @@
         while($d = mysqli_fetch_object($result)){
         ?>
         <tr>
+            <td><?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
             <td><?=$d->titulo?></td>
             <td><?=$d->nome_empresa?></td>
-            <td><?=$d->quantidade?></td>
+            <td><?=$d->quantidade?> OS</td>
             <td><?=$d->situacao?></td>
             <td>
 
@@ -59,9 +61,9 @@
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
                         <li linha='<?=$d->codigo?>'><a class="dropdown-item" href="#">Editar</a></li>
                         <li servico='<?=$d->codigo?>'><a class="dropdown-item" href="#">Ordem de Serviços</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <!-- <li><a class="dropdown-item" href="#">Something else here</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li> -->
                     </ul>
                 </div>
 
@@ -86,8 +88,9 @@
 
 <script>
     $(document).ready(function () {
-
+        Carregando('none');
         $("button[offcanvasDireita]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/os/form.php",
                 success:function(dados){
@@ -98,6 +101,7 @@
 
 
         $("li[linha]").click(function(){
+            Carregando();
             os = $(this).attr("linha");
             $.ajax({
                 url:"src/os/form.php",
@@ -117,6 +121,7 @@
 
 
         $("li[servico]").click(function(){
+            Carregando();
             servico = $(this).attr("servico");
             $.ajax({
                 url:"src/os/servicos.php",

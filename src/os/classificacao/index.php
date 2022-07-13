@@ -1,14 +1,14 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
-    $query = "select *, if(situacao = '1', 'Liberado', 'Bloqueado') as situacao from os_status order by titulo";
+    $query = "select *, if(situacao = '1', 'Liberado', 'Bloqueado') as situacao from os_classificacao order by titulo";
     $result = mysqli_query($con, $query);
 
 ?>
 
 <div class="col-12">
     <div class="col d-flex justify-content-between">
-        <div class="p-3"><h5>Status da OS</h5></div>
+        <div class="p-3"><h5>Classificação da OS</h5></div>
         <div class="p-3">
             <button
                 class="btn btn-primary"
@@ -68,10 +68,11 @@
 <script>
     $(document).ready(function () {
         Carregando('none');
+
         $("button[offcanvasDireita]").click(function(){
             Carregando();
             $.ajax({
-                url:"src/os/status/form.php",
+                url:"src/os/classificacao/form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
@@ -83,7 +84,7 @@
             status = $(this).attr("linha");
             Carregando();
             $.ajax({
-                url:"src/os/status/form.php",
+                url:"src/os/classificacao/form.php",
                 type:"POST",
                 data:{
                     status,

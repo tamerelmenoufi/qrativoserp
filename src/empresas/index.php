@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 ?>
 <style>
     .tab-content{
@@ -31,19 +31,19 @@
                 </a>
                 <a
                     empresa=""
-                    opc="os"
-                    url="src/os/index.php"
-                    class="nav-link"
-                >
-                    <i class="fa-solid fa-list-check"></i> Solicitações de Serviços
-                </a>
-                <a
-                    empresa=""
                     opc="visualizar"
                     url="src/empresas/visualizar.php"
                     class="nav-link"
                 >
                     <i class="fa-solid fa-list-check"></i> Dados da empresa
+                </a>
+                <a
+                    empresa=""
+                    opc="os"
+                    url="src/os/index.php"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-list-check"></i> Solicitações de Serviços
                 </a>
                 <a
                     empresa=""
@@ -79,6 +79,7 @@
                 opc:''
             },
             success:function(dados){
+                Carregando('none');
                 $(".tab-pane").html(dados);
             }
         });
@@ -94,7 +95,7 @@
                 $(".nav-link").removeClass("active");
                 $(this).addClass("active");
                 if(opc == 'lista') $("a[empresa]").attr("empresa",'');
-
+                Carregando();
                 $.ajax({
                     url,
                     type:"POST",
