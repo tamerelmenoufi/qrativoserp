@@ -114,7 +114,7 @@ $html = '<!DOCTYPE html>
             position:absolute;
             color:#fff;
             font-size:20px;
-            width:550px;
+            width:100%;
             padding:20px;
             text-align:justify;
             text-shadow: 0 0 0.2em #101010
