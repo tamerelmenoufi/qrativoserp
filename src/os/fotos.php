@@ -260,7 +260,8 @@
         // $("#form").on('submit',function(e) {
             // e.preventDefault();
 
-            let files = $('#foto')[0].files[0];
+            files = $('#foto').get(0).files[0];
+            console.log(files);
 
             cod_os = $("#cod_os").val();
             foto_nome = $("#encode_file").attr('nome');
