@@ -320,9 +320,10 @@
                         });
                     // }
                 },
-                error:function(erro ){
+                error:function(erro){
 
-                    $.alert('Ocorreu um erro!' + erro);
+                    $.alert('Ocorreu um erro! dados : ' + erro.toString());
+                    //dados de teste
                 }
             });
 
