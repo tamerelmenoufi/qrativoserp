@@ -181,13 +181,18 @@ $html = '<!DOCTYPE html>
         <p class="descricao">'.$d->descricao.'</p>
     </div>';
 
-    //Registros Fotográficos
-    $html .= '<div style="page-break-before: always;"></div>
-    <div class="corpo">';
 
+    //Registros Fotográficos
     $q = "select * from os_fotos where cod_os = '{$d->codigo}'";
     $r = mysqli_query($con, $q);
     $i=0;
+
+    if(mysqli_num_rows($r)){
+
+        $html .= '<div style="page-break-before: always;"></div>';
+    }
+    $html .= '<div class="corpo">';
+
     while($e = mysqli_fetch_object($r)){
         if($i%2 == 0){
             $html .= '<div class="corpo"></div>';
@@ -210,9 +215,6 @@ $html = '<!DOCTYPE html>
     $html .= '</div>';
 
     //Registro de Ocorrências
-    $html .= '<div style="page-break-before: always;"></div>
-    <div class="corpo">';
-
     $q = "select
                 a.*,
                 b.titulo as status,
@@ -226,6 +228,13 @@ $html = '<!DOCTYPE html>
             where a.cod_os = '{$d->codigo}' order by a.data_cadastro asc";
     $r = mysqli_query($con, $q);
     $i=0;
+
+    if(mysqli_num_rows($r)){
+
+        $html .= '<div style="page-break-before: always;"></div>';
+    }
+    $html .= '<div class="corpo">';
+
     while($e = mysqli_fetch_object($r)){
         if($i%2 == 0){
             $html .= '<div class="corpo"></div>';
