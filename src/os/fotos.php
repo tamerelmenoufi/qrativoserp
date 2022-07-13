@@ -294,16 +294,17 @@
                 url:"src/os/fotos.php",
                 type:"POST",
                 typeData:"JSON",
-                data:{
-                    cod_os,
-                    foto_nome,
-                    foto_tipo,
-                    foto_value,
-                    titulo,
-                    descricao,
-                    imagem: new FormData(this),
-                    acao:'salvar'
-                },
+                data:new FormData(this),
+                // data:{
+                //     cod_os,
+                //     foto_nome,
+                //     foto_tipo,
+                //     foto_value,
+                //     titulo,
+                //     descricao,
+                //     imagem:
+                //     acao:'salvar'
+                // },
                 success:function(dados){
                     // if(dados.status){
                         console.log(dados.status);
