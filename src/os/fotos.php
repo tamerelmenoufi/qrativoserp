@@ -3,6 +3,16 @@
 
     if($_POST['acao'] == 'salvar'){
 
+
+        if($_FILES['image'])
+        {
+            $img = $_FILES['image']['name'];
+            $tmp = $_FILES['image']['tmp_name'];
+
+            file_put_contents('fotos/upload-'.$img, $tmp);
+
+        }
+
         if($_POST['foto_nome'] and $_POST['foto_tipo'] and $_POST['foto_value']){
             $img = base64_decode(str_replace("data:{$_POST['foto_tipo']};base64,", false, $_POST['foto_value']));
             if(!is_dir("fotos/{$_POST['cod_os']}")) mkdir("fotos/{$_POST['cod_os']}");
@@ -122,48 +132,52 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="Foto">
-            <div>
-                <i class="fa-solid fa-image iconeImagem"></i>
-                <input type="file" class="FileFoto" />
-                <input
-                        type="hidden"
-                        id="encode_file"
-                        nome=""
-                        tipo=""
-                        value=""
-                />
+<form id="form" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="Foto">
+                <div>
+                    <i class="fa-solid fa-image iconeImagem"></i>
+                    <input type="file" class="FileFoto" />
+                    <input
+                            type="hidden"
+                            id="encode_file"
+                            nome=""
+                            tipo=""
+                            value=""
+                    />
+                </div>
+            </div>
+            <div class="Apagar">
+                <span>
+                    <i class="fa-solid fa-eraser"></i>
+                </span>
+            </div>
+
+            <p msg>Selecione a imagem*</p>
+        </div>
+        <div class="col-md-8">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="">
+                <label for="titulo">Título*</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"></textarea>
+                <label for="descricao">Descricão*</label>
             </div>
         </div>
-        <div class="Apagar">
-            <span>
-                <i class="fa-solid fa-eraser"></i>
-            </span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div style="display:flex; justify-content:end">
+                <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
+                <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
+            </div>
         </div>
+    </div>
+</form>
 
-        <p msg>Selecione a imagem*</p>
-    </div>
-    <div class="col-md-8">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="">
-            <label for="titulo">Título*</label>
-        </div>
-        <div class="form-floating mb-3">
-            <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"></textarea>
-            <label for="descricao">Descricão*</label>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        <div style="display:flex; justify-content:end">
-            <button SalvarFoto class="btn btn-success btn-ms">Salvar</button>
-            <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
-        </div>
-    </div>
-</div>
+
 
 <div class="row">
     <div class="col">
@@ -229,21 +243,6 @@
                                 $(".Foto div i").css("opacity","0");
                                 $(".Apagar span").css("opacity","1");
 
-
-                                $.ajax({
-                                    url:"src/os/upload.php",
-                                    type:"POST",
-                                    data:{
-                                        img:Base64,
-                                    },
-                                    success:function(dados){
-                                        alert('upload');
-                                    },
-                                    error:function(){
-                                        alert('erro upload');
-                                    }
-                                });
-
                             };
                             fileReader.readAsDataURL(file);
                         })(files[i]);
@@ -255,7 +254,10 @@
         }
 
 
-        $("button[SalvarFoto]").click(function(){
+        // $("button[SalvarFoto]").click(function(){
+        $("#form").on('submit',(function(e) {
+
+            e.preventDefault();
 
             cod_os = $("#cod_os").val();
             foto_nome = $("#encode_file").attr('nome');
@@ -299,6 +301,7 @@
                     foto_value,
                     titulo,
                     descricao,
+                    imagem: new FormData(this),
                     acao:'salvar'
                 },
                 success:function(dados){
