@@ -241,7 +241,7 @@
                                 $("#encode_file").attr("nome", name);
                                 $("#encode_file").attr("tipo", type);
 
-                                $(".Foto").css("background-image",`url(${Base64})`);
+                                //$(".Foto").css("background-image",`url(${Base64})`);
                                 $(".Foto div i").css("opacity","0");
                                 $(".Apagar span").css("opacity","1");
 
@@ -257,11 +257,7 @@
 
 
         $("button[SalvarFoto]").click(function(){
-        // $("#form").on('submit',function(e) {
-            // e.preventDefault();
 
-            files = $('#foto').get(0).files[0];
-            console.log(files);
 
             cod_os = $("#cod_os").val();
             foto_nome = $("#encode_file").attr('nome');
@@ -306,7 +302,6 @@
                     foto_value,
                     titulo,
                     descricao,
-                    files,
                     acao:'salvar'
                 },
                 success:function(dados){
