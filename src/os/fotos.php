@@ -134,7 +134,7 @@
         </div>
     </div>
 </div>
-<form id="form" method="post" enctype="multipart/form-data">
+<!-- <form id="form" method="post" enctype="multipart/form-data"> -->
     <div class="row">
         <div class="col-md-4">
             <div class="Foto">
@@ -177,7 +177,7 @@
             </div>
         </div>
     </div>
-</form>
+<!-- </form> -->
 
 
 
@@ -256,10 +256,13 @@
         }
 
 
-        // $("button[SalvarFoto]").click(function(){
-        $("#form").on('submit',(function(e) {
+        $("button[SalvarFoto]").click(function(){
+        // $("#form").on('submit',function(e) {
+            // e.preventDefault();
 
-            e.preventDefault();
+            let files = new FormData();
+            files.append('fileName', $('#image')[0].files[0]);
+
 
             cod_os = $("#cod_os").val();
             foto_nome = $("#encode_file").attr('nome');
@@ -291,8 +294,6 @@
             $(".Foto").css("background-image",'');
             $(".Foto div i").css("opacity","1");
 
-            image = $(this).serialize();
-
             Carregando();
             $.ajax({
                 url:"src/os/fotos.php",
@@ -305,7 +306,7 @@
                     foto_value,
                     titulo,
                     descricao,
-                    image,
+                    files,
                     acao:'salvar'
                 },
                 success:function(dados){
@@ -329,7 +330,7 @@
                 }
             });
 
-        }));
+        });
 
 
     })
