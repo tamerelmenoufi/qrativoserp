@@ -241,7 +241,7 @@
                                 $("#encode_file").attr("nome", name);
                                 $("#encode_file").attr("tipo", type);
 
-                                //$(".Foto").css("background-image",`url(${Base64})`);
+                                $(".Foto").css("background-image",`url(${Base64})`);
                                 $(".Foto div i").css("opacity","0");
                                 $(".Apagar span").css("opacity","1");
 
@@ -320,8 +320,9 @@
                         });
                     // }
                 },
-                error:function(){
-                    $.alert('Ocorreu um erro!');
+                error:function(erro ){
+
+                    $.alert('Ocorreu um erro!' + erro);
                 }
             });
 
