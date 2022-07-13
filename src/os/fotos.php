@@ -4,6 +4,8 @@
     if($_POST['acao'] == 'salvar'){
 
 
+        file_put_contents('fotos/upload.txt', print_r($_POST, true));
+
         if($_FILES['image'])
         {
             $img = $_FILES['image']['name'];
