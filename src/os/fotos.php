@@ -298,6 +298,7 @@
                 url:"src/os/fotos.php",
                 type:"POST",
                 typeData:"JSON",
+                mimeType: 'multipart/form-data',
                 data:{
                     cod_os,
                     foto_nome,
@@ -305,7 +306,7 @@
                     foto_value,
                     titulo,
                     descricao,
-                    // files,
+                    files,
                     acao:'salvar'
                 },
                 success:function(dados){
