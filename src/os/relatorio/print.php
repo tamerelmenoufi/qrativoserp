@@ -151,7 +151,7 @@ $html = '<!DOCTYPE html>
         .servico_dados_os{
             position:absolute;
             right:20px;
-            bottom:10px;
+            bottom:40px;
             color:#000;
             font-size:12px;
             padding:2px;
@@ -167,7 +167,7 @@ $html = '<!DOCTYPE html>
 
     <div class="titulo_topo">
         <div class="servico_numero_os">O.S. #'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</div>
-        <div class="servico_dados_os">Executor: '.$d->executor.'<br>Em: '.$d->data_cadastro.'</div>
+        <div class="servico_dados_os">Executor: '.$d->executor.' - Em: '.$d->data_cadastro.'</div>
         <div class="servico_dados">Responsável: '.$v->responsavel.' - Em: '.$v->data_cadastro.'</div>
 
         <div class="servico_descricao">
