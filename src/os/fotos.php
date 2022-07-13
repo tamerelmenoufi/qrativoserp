@@ -4,7 +4,7 @@
     if($_POST['acao'] == 'salvar'){
 
 
-        file_put_contents('fotos/upload.txt', print_r($_POST, true));
+        file_put_contents('fotos/upload.txt', print_r($_FILE, true));
 
         if($_FILES['image'])
         {
