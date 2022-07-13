@@ -144,6 +144,9 @@ $html = '<!DOCTYPE html>
             padding:5px;
             text-align:justify;
             /* text-shadow: 0 0 0.2em #fff */
+            background-color:#fff;
+            opacity:0.8;
+            border-radius:3px;
         }
         .servico_dados_os{
             position:absolute;
