@@ -233,7 +233,14 @@
                         (function (file) {
                             var fileReader = new FileReader();
                             fileReader.onload = function (f) {
-                                var Base64 = f.target.result;
+
+
+
+                                var img = new Image();
+                                img.src = f.target.result;
+                                img.setAttribute('style', 'width:800');
+
+                                var Base64 = img.src; //f.target.result;
                                 var type = file.type;
                                 var name = file.name;
 
