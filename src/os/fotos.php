@@ -250,13 +250,13 @@
 
                                 // RESIZE THE IMAGES ONE BY ONE.
                                 img.width = (800 * 100)/img.width // (img.width * value) / 100
-                                img.height = (800 * 100)/img.height // (img.height * value) / 100
+                                img.height = (img.height/100)*img.width // (img.height * value) / 100
 
                                 var ctx = canvas.getContext("2d");
-                                ctx.clearRect(0, 0, canvas.width); //, canvas.height
+                                ctx.clearRect(0, 0, canvas.width, canvas.height);
                                 canvas.width = img.width;
                                 canvas.height = img.height;
-                                ctx.drawImage(img, 0, 0, img.width); //, img.height
+                                ctx.drawImage(img, 0, 0, img.width, img.height);
 
                                 // $('.Foto').append(img);      // SHOW THE IMAGES OF THE BROWSER.
                                 console.log(canvas.toDataURL(file.type));
