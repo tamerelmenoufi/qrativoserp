@@ -246,7 +246,7 @@
                                 // CREATE A CANVAS ELEMENT AND ASSIGN THE IMAGES TO IT.
                                 var canvas = document.createElement("canvas");
 
-                                var value = 800;
+                                var value = 50;
 
                                 // RESIZE THE IMAGES ONE BY ONE.
                                 img.width = (img.width * value) / 100
