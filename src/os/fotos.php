@@ -236,9 +236,32 @@
 
 
 
-                                var img = new Image();
-                                img.src = f.target.result;
-                                img.setAttribute('style', 'width:800px');
+                            //////////////////////////////////////////////////////////////////
+
+                            var img = new Image();
+                            img.src = f.target.result;
+
+                            img.onload = function () {
+
+                                // CREATE A CANVAS ELEMENT AND ASSIGN THE IMAGES TO IT.
+                                var canvas = document.createElement("canvas");
+
+                                var value = 800;
+
+                                // RESIZE THE IMAGES ONE BY ONE.
+                                img.width = (img.width * value) / 100
+                                img.height = (img.height * value) / 100
+
+                                var ctx = canvas.getContext("2d");
+                                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                canvas.width = img.width;
+                                canvas.height = img.height;
+                                ctx.drawImage(img, 0, 0, img.width, img.height);
+
+                                //$('#img').append(img);      // SHOW THE IMAGES OF THE BROWSER.
+
+
+                                ///////
 
                                 var Base64 = img.src; //f.target.result;
                                 var type = file.type;
@@ -251,6 +274,18 @@
                                 $(".Foto").css("background-image",`url(${Base64})`);
                                 $(".Foto div i").css("opacity","0");
                                 $(".Apagar span").css("opacity","1");
+
+                                //////
+
+
+
+                            }
+
+                            //////////////////////////////////////////////////////////////////
+
+
+
+
 
                             };
                             fileReader.readAsDataURL(file);
