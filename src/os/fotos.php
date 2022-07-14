@@ -140,7 +140,7 @@
             <div class="Foto">
                 <div>
                     <i class="fa-solid fa-image iconeImagem"></i>
-                    <input type="file" name="foto" id="foto" class="FileFoto" />
+                    <input type="file" name="foto" id="foto" class="FileFoto" accept="image/*;capture=camera" />
                     <input
                             type="hidden"
                             id="encode_file"
