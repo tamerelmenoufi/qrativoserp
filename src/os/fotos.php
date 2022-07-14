@@ -258,7 +258,7 @@
                                 canvas.height = img.height;
                                 ctx.drawImage(img, 0, 0, img.width, img.height);
 
-                                $('#encode_file').append(img);      // SHOW THE IMAGES OF THE BROWSER.
+                                $('.Foto').append(img);      // SHOW THE IMAGES OF THE BROWSER.
 
 
                                 ///////
