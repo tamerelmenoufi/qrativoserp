@@ -315,14 +315,14 @@
                             },
                             success:function(dados){
                                 $(".ListarFotos").html(dados);
-                                $.alert('Registro inserido com sucesso!');
+                                //$.alert('Registro inserido com sucesso!');
                             }
                         });
                     // }
                 },
                 error:function(erro){
 
-                    $.alert('Ocorreu um erro! dados : ' + erro.toString());
+                    // $.alert('Ocorreu um erro!' + erro.toString());
                     //dados de teste
                 }
             });
