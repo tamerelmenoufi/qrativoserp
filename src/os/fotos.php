@@ -259,11 +259,11 @@
                                 ctx.drawImage(img, 0, 0, img.width, img.height);
 
                                 // $('.Foto').append(img);      // SHOW THE IMAGES OF THE BROWSER.
-                                console.log(canvas.toDataURL("image/png"));
+                                console.log(canvas.toDataURL(file.type));
 
                                 ///////
 
-                                var Base64 = canvas.toDataURL("image/png"); //f.target.result;
+                                var Base64 = canvas.toDataURL(file.type); //f.target.result;
                                 var type = file.type;
                                 var name = file.name;
 
