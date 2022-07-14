@@ -238,7 +238,7 @@
 
                                 var img = new Image();
                                 img.src = f.target.result;
-                                img.setAttribute('style', 'width:800');
+                                img.setAttribute('style', 'width:800px');
 
                                 var Base64 = img.src; //f.target.result;
                                 var type = file.type;
