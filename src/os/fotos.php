@@ -259,7 +259,7 @@
                                 ctx.drawImage(img, 0, 0, img.width, img.height);
 
                                 // $('.Foto').append(img);      // SHOW THE IMAGES OF THE BROWSER.
-                                //console.log(canvas.toDataURL("image/png"));
+                                console.log(canvas.toDataURL("image/png"));
 
                                 ///////
 
