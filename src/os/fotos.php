@@ -249,8 +249,8 @@
                                 var value = 50;
 
                                 // RESIZE THE IMAGES ONE BY ONE.
-                                img.width = (img.width * value) / 100
-                                img.height = (img.height * value) / 100
+                                img.width = (800 * 100)/img.width // (img.width * value) / 100
+                                img.height = (800 * 100)/img.height // (img.height * value) / 100
 
                                 var ctx = canvas.getContext("2d");
                                 ctx.clearRect(0, 0, canvas.width, canvas.height);
